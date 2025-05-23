@@ -14,6 +14,14 @@ const About = () => (
       <li>Easy deployment guide</li>
       <li>Email delivery after purchase</li>
     </ul>
+    <h2 className="text-xl font-semibold mb-2 text-blue-700">How Custom Project Orders Work</h2>
+    <ul className="list-disc list-inside mb-4 text-gray-700">
+      <li>Once you share your project idea, we will connect with you via Gmail and WhatsApp for further discussion.</li>
+      <li>To start, you pay half the project amount as an advance.</li>
+      <li>After project completion, you pay the remaining amount to receive your full project.</li>
+      <li>This is our policy for idea-based (custom) projects.</li>
+      <li>If you buy a ready-made project, you pay the full amount as listed and receive your project within a week.</li>
+    </ul>
   </div>
 );
 

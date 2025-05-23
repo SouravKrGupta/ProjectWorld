@@ -34,7 +34,13 @@ const Home = () => (
     </div>
     {/* Call to Action */}
     <div className="text-center mt-8">
-      <p className="text-lg font-medium text-blue-700">Need a project? Fill the Google Form, complete payment, and get your project via email!</p>
+      <p className="text-lg font-medium text-blue-700 mb-4">Need a project? Fill the Google Form, complete payment, and get your project via email!</p>
+      <div className="max-w-2xl mx-auto bg-blue-50 border-l-4 border-blue-500 rounded p-6 mb-4">
+        <h3 className="text-xl font-semibold text-blue-800 mb-2">💡 Share Your Project Idea With Us!</h3>
+        <p className="mb-2 text-gray-700">Have a unique idea for a software project? Let us build it for you!</p>
+        <p className="mb-4 text-gray-700">We offer custom project development services – whether it’s a college submission, a startup MVP, or a personal idea you want to see in action. Just share your project details and our team will get back to you.</p>
+        <a href="/contact" className="inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition font-semibold text-lg">Submit Your Idea</a>
+      </div>
     </div>
   </div>
 );
