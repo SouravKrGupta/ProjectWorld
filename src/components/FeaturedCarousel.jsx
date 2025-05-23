@@ -1,53 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import ProjectCard from './ProjectCard';
 
-const demoProjects = [
-  {
-    id: 1,
-    name: 'Student Management System',
-    description: 'A web app to manage students, courses, and grades.',
-    tech: ['MERN'],
-    category: 'Major',
-    price: '₹1999',
-    image: 'https://placehold.co/300x180?text=Student+Mgmt',
-  },
-  {
-    id: 2,
-    name: 'E-Commerce Store',
-    description: 'A full-stack e-commerce platform with cart and payment.',
-    tech: ['Django', 'MySQL'],
-    category: 'Advanced',
-    price: '₹2999',
-    image: 'https://placehold.co/300x180?text=E-Commerce',
-  },
-  {
-    id: 3,
-    name: 'To-Do App',
-    description: 'A simple MERN to-do list app for beginners.',
-    tech: ['MERN'],
-    category: 'Mini',
-    price: '₹799',
-    image: 'https://placehold.co/300x180?text=To-Do+App',
-  },
-];
+const CATEGORY_ORDER = ['Mini', 'Advanced', 'Major'];
 
-const FeaturedCarousel = () => (
-  <div className="flex gap-6 overflow-x-auto pb-2">
-    {demoProjects.map((project) => (
-      <div key={project.id} className="min-w-[300px] bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-4 border border-blue-100 flex flex-col items-center">
-        <img src={project.image} alt={project.name} className="rounded mb-2 w-full h-40 object-cover" />
-        <h3 className="text-lg font-bold mb-1 text-blue-800">{project.name}</h3>
-        <div className="mb-1 text-sm text-gray-600 flex gap-2 items-center">
-          {project.tech.map((t, i) => (
-            <span key={i} className="bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-xs font-semibold">{t}</span>
-          ))}
-          <span className="bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded text-xs font-semibold">{project.category}</span>
+const FeaturedCarousel = () => {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    fetch('/projects.json')
+      .then((res) => res.json())
+      .then((data) => {
+        // Sort by createdAt (most recent first), then by category order
+        const sorted = data.sort((a, b) => {
+          const dateDiff = new Date(b.createdAt) - new Date(a.createdAt);
+          if (dateDiff !== 0) return dateDiff;
+          const catA = CATEGORY_ORDER.indexOf(a.category);
+          const catB = CATEGORY_ORDER.indexOf(b.category);
+          return catA - catB;
+        });
+        setProjects(sorted.slice(0, 3));
+      });
+  }, []);
+
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project) => (
+        <ProjectCard key={project.id} project={project} />
+      ))}
+      {projects.length === 0 && (
+        <div className="col-span-3 text-center text-gray-500">
+          No projects found.
         </div>
-        <div className="mb-2 text-blue-700 font-semibold">{project.price}</div>
-        <p className="mb-2 text-sm text-gray-700 text-center">{project.description}</p>
-        <a href={`/projects/${project.id}`} className="inline-block bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700 transition">View Details</a>
-      </div>
-    ))}
-  </div>
-);
+      )}
+    </div>
+  );
+};
 
 export default FeaturedCarousel;

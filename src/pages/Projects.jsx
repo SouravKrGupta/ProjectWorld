@@ -1,43 +1,20 @@
 // Projects page for Project World
-import React, { useState } from 'react';
-import Filterbar from '../components/Filterbar';
+import React, { useEffect, useState } from 'react';
 import ProjectCard from '../components/ProjectCard';
-
-const demoProjects = [
-	{
-		id: 1,
-		name: 'Student Management System',
-		description: 'A web app to manage students, courses, and grades.',
-		tech: ['MERN'],
-		category: 'Major',
-		price: '₹1999',
-		image: 'https://placehold.co/300x180?text=Student+Mgmt',
-	},
-	{
-		id: 2,
-		name: 'E-Commerce Store',
-		description: 'A full-stack e-commerce platform with cart and payment.',
-		tech: ['Django', 'MySQL'],
-		category: 'Advanced',
-		price: '₹2999',
-		image: 'https://placehold.co/300x180?text=E-Commerce',
-	},
-	{
-		id: 3,
-		name: 'To-Do App',
-		description: 'A simple MERN to-do list app for beginners.',
-		tech: ['MERN'],
-		category: 'Mini',
-		price: '₹799',
-		image: 'https://placehold.co/300x180?text=To-Do+App',
-	},
-];
+import Filterbar from '../components/Filterbar';
 
 const Projects = () => {
+	const [projects, setProjects] = useState([]);
 	const [tech, setTech] = useState('All');
 	const [type, setType] = useState('All');
 
-	const filtered = demoProjects.filter(
+	useEffect(() => {
+		fetch('/projects.json')
+			.then(res => res.json())
+			.then(data => setProjects(data));
+	}, []);
+
+	const filtered = projects.filter(
 		p =>
 			(tech === 'All' || p.tech.includes(tech)) &&
 			(type === 'All' || p.category === type)

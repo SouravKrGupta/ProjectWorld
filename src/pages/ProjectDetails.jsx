@@ -1,57 +1,19 @@
 // Project Details page for Project World
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-
-const demoProjects = [
-  {
-    id: 1,
-    name: 'Student Management System',
-    description: 'A web app to manage students, courses, and grades. Features: CRUD for students/courses, authentication, dashboard, and export reports.',
-    tech: ['MERN'],
-    category: 'Major',
-    price: '₹1999',
-    image: 'https://placehold.co/600x300?text=Student+Mgmt',
-    features: [
-      'Student/course CRUD',
-      'Authentication',
-      'Dashboard',
-      'Export reports',
-    ],
-  },
-  {
-    id: 2,
-    name: 'E-Commerce Store',
-    description: 'A full-stack e-commerce platform with cart and payment. Features: product catalog, cart, checkout, admin panel, and order history.',
-    tech: ['Django', 'MySQL'],
-    category: 'Advanced',
-    price: '₹2999',
-    image: 'https://placehold.co/600x300?text=E-Commerce',
-    features: [
-      'Product catalog',
-      'Cart & checkout',
-      'Admin panel',
-      'Order history',
-    ],
-  },
-  {
-    id: 3,
-    name: 'To-Do App',
-    description: 'A simple MERN to-do list app for beginners. Features: add/edit/delete tasks, mark complete, and responsive UI.',
-    tech: ['MERN'],
-    category: 'Mini',
-    price: '₹799',
-    image: 'https://placehold.co/600x300?text=To-Do+App',
-    features: [
-      'Add/edit/delete tasks',
-      'Mark complete',
-      'Responsive UI',
-    ],
-  },
-];
 
 const ProjectDetails = () => {
   const { id } = useParams();
-  const project = demoProjects.find(p => p.id === Number(id));
+  const [project, setProject] = useState(null);
+
+  useEffect(() => {
+    fetch('/projects.json')
+      .then(res => res.json())
+      .then(data => {
+        const found = data.find(p => p.id === Number(id));
+        setProject(found);
+      });
+  }, [id]);
 
   if (!project) return <div className="container mx-auto px-4 py-8">Project not found.</div>;
 
@@ -70,10 +32,14 @@ const ProjectDetails = () => {
           </div>
           <div className="mb-2 text-blue-700 font-semibold text-lg">{project.price}</div>
           <p className="mb-4 text-gray-700">{project.description}</p>
-          <h2 className="text-lg font-semibold mb-1 text-blue-700">Features:</h2>
-          <ul className="list-disc list-inside mb-4 text-gray-700">
-            {project.features.map((f, i) => <li key={i}>{f}</li>)}
-          </ul>
+          {project.features && (
+            <>
+              <h2 className="text-lg font-semibold mb-1 text-blue-700">Features:</h2>
+              <ul className="list-disc list-inside mb-4 text-gray-700">
+                {project.features.map((f, i) => <li key={i}>{f}</li>)}
+              </ul>
+            </>
+          )}
           <div className="mb-4">Delivery method: <span className="font-semibold">Zip file emailed after payment confirmation.</span></div>
           <a href="https://forms.gle/your-google-form-link" target="_blank" rel="noopener noreferrer" className="inline-block bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition font-semibold">Fill Google Form to Purchase</a>
         </div>
