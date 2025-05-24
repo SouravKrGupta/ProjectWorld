@@ -1,6 +1,19 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
+const Logo = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="16" cy="16" r="14" stroke="url(#gradient)" strokeWidth="4"/>
+    <path d="M16 8L24 20H8L16 8Z" fill="url(#gradient)"/>
+    <defs>
+      <linearGradient id="gradient" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#2563eb"/>
+        <stop offset="1" stopColor="#9333ea"/>
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -8,8 +21,11 @@ const Navbar = () => {
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="text-2xl font-extrabold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Project World
+          <Link to="/" className="flex items-center space-x-2">
+            <Logo />
+            <span className="text-2xl font-extrabold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Project World
+            </span>
           </Link>
           
           {/* Mobile menu button */}
