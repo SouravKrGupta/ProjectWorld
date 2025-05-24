@@ -55,18 +55,32 @@ const FeaturedCarousel = () => {
             <div className="relative h-full flex items-center z-20">
               <div className="container mx-auto px-6 lg:px-8">
                 <div className="w-full lg:w-1/2">
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  {/* Category Badge */}
+                  <div className="inline-block mb-6">
+                    <div className="relative group">
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-50 group-hover:opacity-75 transition duration-200"></div>
+                      <div className="relative px-5 py-2 bg-white rounded-full flex items-center gap-2 border border-blue-100/50">
+                        <span className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600"></span>
+                        <span className="text-sm font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                          {project.category}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Tech Stack */}
+                  <div className="flex flex-wrap gap-2 mb-8">
                     {project.tech.map((tech, i) => (
                       <span
                         key={i}
-                        className="px-4 py-1.5 text-sm font-medium rounded-full bg-white/80 text-gray-800 backdrop-blur-sm border border-blue-100 shadow-sm"
+                        className="px-4 py-1.5 text-sm font-medium rounded-full bg-white/80 text-gray-800 backdrop-blur-sm border border-blue-100 shadow-sm hover:bg-white hover:shadow transition-all duration-200"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
 
-                  <h2 className="text-5xl font-bold mb-6 text-gray-800">
+                  <h2 className="text-5xl font-bold mb-6 text-gray-800 leading-tight">
                     {project.name}
                   </h2>
 
@@ -75,7 +89,7 @@ const FeaturedCarousel = () => {
                   </p>
 
                   <div className="flex items-center gap-4 mb-8">
-                    <span className="text-3xl font-bold text-blue-800">
+                    <span className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                       {project.price}
                     </span>
                   </div>
