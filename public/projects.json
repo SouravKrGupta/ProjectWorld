@@ -6,7 +6,7 @@
     "tech": ["MERN"],
     "category": "Major",
     "price": "₹1999",
-    "image": "/project-images/student-mgmt.jpg",
+    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
     "features": [
       "Student/course CRUD",
       "Authentication",
@@ -22,7 +22,7 @@
     "tech": ["Django", "MySQL"],
     "category": "Advanced",
     "price": "₹2999",
-    "image": "/project-images/ecommerce.jpg",
+    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
     "features": [
       "Product catalog",
       "Cart & checkout",
@@ -38,7 +38,7 @@
     "tech": ["MERN"],
     "category": "Mini",
     "price": "₹799",
-    "image": "/project-images/todo.jpg",
+    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
     "features": [
       "Add/edit/delete tasks",
       "Mark complete",
@@ -53,7 +53,7 @@
     "tech": ["Node.js", "Express", "MongoDB", "React"],
     "category": "Major",
     "price": "₹2499",
-    "image": "/project-images/blog-platform.jpg",
+    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
     "features": [
       "User authentication",
       "Markdown editor",
@@ -69,7 +69,7 @@
     "tech": ["PHP", "MySQL", "Bootstrap"],
     "category": "Advanced",
     "price": "₹1799",
-    "image": "/project-images/quiz-system.jpg",
+    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
     "features": [
       "Quiz creation",
       "Timer",
@@ -85,7 +85,7 @@
     "tech": ["React", "Tailwind CSS"],
     "category": "Mini",
     "price": "₹499",
-    "image": "/project-images/portfolio.jpg",
+    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
     "features": [
       "Project gallery",
       "Contact form",
@@ -100,7 +100,7 @@
     "tech": ["Laravel", "MySQL"],
     "category": "Major",
     "price": "₹2299",
-    "image": "/project-images/inventory.jpg",
+    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
     "features": [
       "Stock tracking",
       "Supplier management",
@@ -116,7 +116,7 @@
     "tech": ["React", "API"],
     "category": "Mini",
     "price": "₹599",
-    "image": "/project-images/weather.jpg",
+    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
     "features": [
       "Current weather",
       "5-day forecast",
@@ -131,7 +131,7 @@
     "tech": ["Django", "SQLite"],
     "category": "Major",
     "price": "₹2099",
-    "image": "/project-images/library.jpg",
+    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
     "features": [
       "Book catalog",
       "Member management",
@@ -147,7 +147,7 @@
     "tech": ["React", "Node.js", "MongoDB"],
     "category": "Mini",
     "price": "₹899",
-    "image": "/project-images/expense-tracker.jpg",
+    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
     "features": [
       "Add/edit/delete expenses",
       "Category-wise analytics",
@@ -162,7 +162,7 @@
     "tech": ["Node.js", "Socket.io", "React"],
     "category": "Advanced",
     "price": "₹2599",
-    "image": "/project-images/chat-app.jpg",
+    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
     "features": [
       "Real-time messaging",
       "Chat rooms",
@@ -178,7 +178,7 @@
         "tech": ["React", "API"],
         "category": "Mini",
         "price": "₹699",
-        "image": "/project-images/recipe-finder.jpg",
+        "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
         "features": [
         "Search recipes",
         "Save favorites",
@@ -193,7 +193,7 @@
     "tech": ["React", "Node.js", "MongoDB"],
     "category": "Major",
     "price": "₹1999",
-    "image": "/project-images/fitness-tracker.jpg",
+    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
     "features": [
       "Workout logging",
       "Diet tracking",
@@ -208,7 +208,7 @@
     "tech": ["Django", "PostgreSQL"],
     "category": "Advanced",
     "price": "₹2499",
-    "image": "/project-images/event-management.jpg",
+    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
     "features": [
       "Event creation",
       "Registration management",
@@ -223,7 +223,7 @@
         "tech": ["React", "Node.js", "MongoDB"],
         "category": "Mini",
         "price": "₹799",
-        "image": "/project-images/travel-planner.jpg",
+        "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
         "features": [
         "Trip planning",
         "Itinerary management",
