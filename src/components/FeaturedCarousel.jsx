@@ -1,81 +1,137 @@
-import React, { useEffect, useState } from 'react';
-import ProjectCard from './ProjectCard';
-
-const CATEGORY_ORDER = ['Mini', 'Advanced', 'Major'];
-
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 const FeaturedCarousel = () => {
   const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     fetch('/projects.json')
-      .then((res) => res.json())
-      .then((data) => {
-        // Sort by createdAt (most recent first), then by category order
-        const sorted = data.sort((a, b) => {
-          const dateDiff = new Date(b.createdAt) - new Date(a.createdAt);
-          if (dateDiff !== 0) return dateDiff;
-          const catA = CATEGORY_ORDER.indexOf(a.category);
-          const catB = CATEGORY_ORDER.indexOf(b.category);
-          return catA - catB;
-        });
-        setProjects(sorted.slice(0, 3));
-        setLoading(false);
-      })
-      .catch(() => {
-        setLoading(false);
+      .then(res => res.json())
+      .then(data => {
+        // Get featured or latest projects
+        const featuredProjects = data.slice(0, 5);
+        setProjects(featuredProjects);
       });
   }, []);
 
-  if (loading) {
-    return (
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {[1, 2, 3].map((n) => (
-          <div key={n} className="animate-pulse">
-            <div className="bg-gray-200 rounded-2xl h-64 mb-4"></div>
-            <div className="h-4 bg-gray-200 rounded w-3/4 mb-4"></div>
-            <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(timer);
+  }, [projects.length]);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
+  };
+
+  return (
+    <div className="relative rounded-2xl overflow-hidden bg-white">
+      {/* Main Carousel */}
+      <div className="relative h-[600px] overflow-hidden">
+        {projects.map((project, index) => (
+          <div
+            key={project.id}
+            className={`absolute inset-0 transition-all duration-700 transform ${
+              index === currentIndex ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'
+            }`}
+          >
+            {/* Background Image with Gradient Overlay */}
+            <div className="absolute inset-0">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-100/90 via-purple-100/80 to-white/60 z-10" />
+              <img
+                src={project.image}
+                alt={project.name}
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
+            {/* Content */}
+            <div className="relative h-full flex items-center z-20">
+              <div className="container mx-auto px-6 lg:px-8">
+                <div className="w-full lg:w-1/2">
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tech.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="px-4 py-1.5 text-sm font-medium rounded-full bg-white/80 text-gray-800 backdrop-blur-sm border border-blue-100 shadow-sm"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <h2 className="text-5xl font-bold mb-6 text-gray-800">
+                    {project.name}
+                  </h2>
+
+                  <p className="text-xl mb-8 line-clamp-3 text-gray-600">
+                    {project.description}
+                  </p>
+
+                  <div className="flex items-center gap-4 mb-8">
+                    <span className="text-3xl font-bold text-blue-800">
+                      {project.price}
+                    </span>
+                  </div>
+
+                  <Link
+                    to={`/projects/${project.id}`}
+                    className="inline-flex items-center px-8 py-4 rounded-lg text-white bg-gradient-to-r from-blue-400 to-purple-400 hover:from-blue-500 hover:to-purple-500 transition-all duration-200 text-lg font-medium group shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+                  >
+                    View Project
+                    <svg className="w-6 h-6 ml-2 transform transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         ))}
       </div>
-    );
-  }
 
-  return (
-    <div className="relative py-12">
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white"></div>
-      <div className="relative">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Featured Projects</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Discover our handpicked selection of outstanding projects that showcase innovation and excellence.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-          {projects.length === 0 && (
-            <div className="col-span-1 md:col-span-2 lg:col-span-3 text-center py-12">
-              <svg 
-                className="mx-auto h-12 w-12 text-gray-400 mb-4" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" 
-                />
-              </svg>
-              <h3 className="text-lg font-medium text-gray-900 mb-1">No Projects Found</h3>
-              <p className="text-gray-500">Check back later for new and exciting projects.</p>
-            </div>
-          )}
-        </div>
+      {/* Navigation Buttons - Now at the bottom */}
+      <div className="absolute bottom-8 right-8 flex space-x-3 z-30">
+        <button
+          onClick={prevSlide}
+          className="p-3 rounded-full bg-white/80 hover:bg-white/90 text-blue-600 backdrop-blur-sm border border-blue-100 transition-all duration-200 shadow-sm hover:shadow-md"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <button
+          onClick={nextSlide}
+          className="p-3 rounded-full bg-white/80 hover:bg-white/90 text-blue-600 backdrop-blur-sm border border-blue-100 transition-all duration-200 shadow-sm hover:shadow-md"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Dots Navigation */}
+      <div className="absolute bottom-8 left-8 flex space-x-2 z-30">
+        {projects.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`transition-all duration-200 ${
+              index === currentIndex
+                ? 'w-12 h-1.5 bg-gradient-to-r from-blue-400 to-purple-400'
+                : 'w-3 h-1.5 bg-gray-300 hover:bg-gray-400'
+            }`}
+          >
+            <span className="sr-only">Slide {index + 1}</span>
+          </button>
+        ))}
       </div>
     </div>
   );

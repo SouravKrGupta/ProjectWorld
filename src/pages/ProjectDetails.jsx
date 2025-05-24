@@ -6,6 +6,7 @@ const ProjectDetails = () => {
   const { id } = useParams();
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     fetch('/projects.json')
@@ -13,6 +14,7 @@ const ProjectDetails = () => {
       .then(data => {
         const found = data.find(p => p.id === Number(id));
         setProject(found);
+        setData(data);
         setLoading(false);
       })
       .catch(() => {
@@ -96,7 +98,7 @@ const ProjectDetails = () => {
                   <img 
                     src={project.image} 
                     alt={project.name} 
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className=" w-full h-full object-cover"
                   />
                 </div>
               </div>
@@ -181,15 +183,28 @@ const ProjectDetails = () => {
 
         {/* Related Projects Section */}
         <div className="mt-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">You Might Also Like</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">More {project.category} Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((n) => (
-              <div key={n} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-200">
-                <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden mb-4 bg-gray-100"></div>
-                <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
-                <div className="h-4 bg-gray-200 rounded w-1/2"></div>
-              </div>
-            ))}
+            {project && data && data
+              .filter(p => p.category === project.category && p.id !== project.id)
+              .slice(0, 3)
+              .map((relatedProject) => (
+                <Link 
+                  to={`/project/${relatedProject.id}`} 
+                  key={relatedProject.id} 
+                  className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-200"
+                >
+                  <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden mb-4">
+                    <img 
+                      src={relatedProject.image} 
+                      alt={relatedProject.name} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-2">{relatedProject.name}</h3>
+                  <div className="text-blue-600 font-medium">{relatedProject.price}</div>
+                </Link>
+              ))}
           </div>
         </div>
       </div>
