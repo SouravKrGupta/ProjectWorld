@@ -99,7 +99,7 @@ const Projects = () => {
 									<input
 										type="email"
 										placeholder="Enter your email"
-										className="flex-1 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
+										className="flex-1 px-4 py-3 placeholder-white rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
 									/>
 									<button
 										type="submit"
