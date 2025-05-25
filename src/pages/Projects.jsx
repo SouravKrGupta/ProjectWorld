@@ -115,44 +115,38 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* Newsletter Section */}
-      <div className={theme === 'dark' ? 'py-16 bg-gray-900' : 'py-16 bg-white'}>
-        <div className="container mx-auto px-4">
-          <div
-            className={`max-w-4xl mx-auto rounded-2xl overflow-hidden ${
-              theme === 'dark'
-                ? 'bg-gradient-to-r from-purple-700 to-blue-900 shadow-xl shadow-black/70'
-                : 'bg-gradient-to-r from-blue-600 to-purple-600 shadow-xl'
-            }`}
-          >
-            <div className="p-8 sm:p-12">
-              <div className="text-center">
-                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-                  Stay Updated with New Projects
-                </h3>
-                <p className="text-blue-100 mb-8">
-                  Subscribe to our newsletter and be the first to know when we add new projects.
-                </p>
-                <form className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="flex-1 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
-                  />
-                  <button
-                    type="submit"
-                    className="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200"
-                  >
-                    Subscribe
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+			{/* Newsletter Section */}
+			<div className="py-16 bg-white">
+				<div className="container mx-auto px-4">
+					<div className="max-w-4xl mx-auto bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl shadow-xl overflow-hidden">
+						<div className="p-8 sm:p-12">
+							<div className="text-center">
+								<h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+									Stay Updated with New Projects
+								</h3>
+								<p className="text-blue-100 mb-8">
+									Subscribe to our newsletter and be the first to know when we add new projects.
+								</p>
+								<form className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
+									<input
+										type="email"
+										placeholder="Enter your email"
+										className="flex-1 px-4 py-3 placeholder-white rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+									/>
+									<button
+										type="submit"
+										className="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200"
+									>
+										Subscribe
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default Projects;
