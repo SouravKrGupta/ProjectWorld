@@ -33,7 +33,7 @@ const Home = () => {
 
   // Helper to handle bg colors for categories with dark mode fallback
   const getCategoryBg = (color) =>
-    `bg-${color}-50 dark:bg-${color}-900`;
+    `bg-${color}-80 dark:bg-${color}-900`;
 
   const getCategoryTextPrimary = (color) =>
     `text-${color}-900 dark:text-${color}-300`;

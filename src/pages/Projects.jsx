@@ -116,7 +116,7 @@ const Projects = () => {
       </div>
 
 			{/* Newsletter Section */}
-			<div className="py-16 bg-white">
+			<div className="py-16 bg-blue">
 				<div className="container mx-auto px-4">
 					<div className="max-w-4xl mx-auto bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl shadow-xl overflow-hidden">
 						<div className="p-8 sm:p-12">
