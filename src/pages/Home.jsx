@@ -287,12 +287,7 @@ const Home = () => {
         </div>
       </div>
     </div>
-      {/* Featured Projects Section */}
-      <div className={`py-16 ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}>
-        <div className="container mx-auto px-4">
-          <FeaturedCarousel />
-        </div>
-      </div>
+    
 
       {/* CTA Section */}
       <div className={`py-16 ${
