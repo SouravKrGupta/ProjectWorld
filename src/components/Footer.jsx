@@ -96,7 +96,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-gray-100 dark:border-gray-700">
+        <div className="mt-8 pt-8 border-t border-gray-400 dark:border-gray-700">
           <div className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-center`}>
             &copy; {new Date().getFullYear()} Project World. All rights reserved.
           </div>
