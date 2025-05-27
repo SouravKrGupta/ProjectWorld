@@ -414,7 +414,7 @@ const ProjectDetails = () => {
                 .slice(0, 3)
                 .map((relatedProject) => (
                   <Link
-                    to={`/project/${relatedProject.id}`}
+                    to={`/projects/${relatedProject.id}`}
                     key={relatedProject.id}
                     className={cn(
                       "rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-200",
