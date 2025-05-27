@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext'; // Adjust path if needed
-
+import emailjs from '@emailjs/browser';
+// https://www.emailjs.com/docs/tutorial/overview/
 const contactMethods = [
   {
     icon: "📧",
@@ -27,6 +28,8 @@ const contactMethods = [
 
 const Contact = () => {
   const { theme } = useContext(ThemeContext);
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState({ type: '', message: '' });
 
   const [formData, setFormData] = useState({
     name: '',
@@ -34,10 +37,45 @@ const Contact = () => {
     message: ''
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    setLoading(true);
+    setStatus({ type: '', message: '' });
+
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      };
+
+      await emailjs.send(
+        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        templateParams,
+        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+      );
+
+      setStatus({
+        type: 'success',
+        message: 'Thank you! Your message has been sent successfully.'
+      });
+
+      // Clear form
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setStatus({
+        type: 'error',
+        message: 'Oops! Something went wrong. Please try again later.'
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -116,6 +154,15 @@ const Contact = () => {
               {/* Form */}
               <div>
                 <h2 className={`text-3xl font-bold mb-8 ${textPrimary}`}>Send us a Message</h2>
+                {status.message && (
+                  <div className={`mb-6 p-4 rounded-lg ${
+                    status.type === 'success' 
+                      ? 'bg-green-100 text-green-700 border border-green-400' 
+                      : 'bg-red-100 text-red-700 border border-red-400'
+                  }`}>
+                    {status.message}
+                  </div>
+                )}
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label className={`block text-sm font-medium mb-2 ${textPrimary}`}>Name</label>
@@ -127,6 +174,7 @@ const Contact = () => {
                       className={`w-full px-4 py-3 rounded-lg border ${inputBgClass} ${inputFocusClass} transition-colors duration-200`}
                       placeholder="Your name"
                       required
+                      disabled={loading}
                     />
                   </div>
                   <div>
@@ -139,6 +187,7 @@ const Contact = () => {
                       className={`w-full px-4 py-3 rounded-lg border ${inputBgClass} ${inputFocusClass} transition-colors duration-200`}
                       placeholder="your@email.com"
                       required
+                      disabled={loading}
                     />
                   </div>
                   <div>
@@ -151,13 +200,15 @@ const Contact = () => {
                       className={`w-full px-4 py-3 rounded-lg border ${inputBgClass} ${inputFocusClass} transition-colors duration-200`}
                       placeholder="Your message"
                       required
+                      disabled={loading}
                     ></textarea>
                   </div>
                   <button
                     type="submit"
-                    className={`w-full px-6 py-3 rounded-lg text-white font-semibold ${buttonBgClass} transition-all duration-200 transform hover:-translate-y-0.5`}
+                    disabled={loading}
+                    className={`w-full px-6 py-3 rounded-lg text-white font-semibold ${buttonBgClass} transition-all duration-200 transform hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed`}
                   >
-                    Send Message
+                    {loading ? 'Sending...' : 'Send Message'}
                   </button>
                 </form>
               </div>
