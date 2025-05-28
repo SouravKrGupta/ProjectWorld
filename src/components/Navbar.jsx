@@ -46,8 +46,8 @@ const Navbar = () => {
                   to={path}
                   className={({ isActive }) =>
                     isActive
-                      ? 'text-blue-800 dark:text-blue-400 font-semibold border-b-2 border-blue-600 dark:border-blue-400'
-                      : 'text-gray-900 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200'
+                      ? `font-semibold border-b-2 border-blue-600 dark:border-blue-400 ${theme === 'dark' ? 'text-gray-100' : 'text-gray-900'}`
+                      : `${theme === 'dark' ? 'text-gray-300' : 'text-gray-900'} hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200`
                   }
                 >
                   {labels[index]}
@@ -97,32 +97,41 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-4">
+            {/* Theme toggle for mobile */}
             <button
               onClick={toggleTheme}
-              className="text-gray-900 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400"
+              className="relative w-10 h-10 flex items-center justify-center transition-transform transform hover:scale-110 duration-300 ease-in-out"
               aria-label="Toggle theme"
             >
-              {theme === 'light' ? (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 3v1M12 20v1M4.22 4.22l.7.7M18.36 18.36l.7.7M1 12h1M22 12h1M4.22 19.78l.7-.7M18.36 5.64l.7-.7M12 7a5 5 0 100 10 5 5 0 000-10z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              ) : (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              )}
+              <div className="absolute transition-opacity duration-300 ease-in-out">
+                {theme === 'light' ? (
+                  <svg className="w-6 h-6 text-yellow-500 animate-spin-slow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 3v1M12 20v1M4.22 4.22l.7.7M18.36 18.36l.7.7M1 12h1M22 12h1M4.22 19.78l.7-.7M18.36 5.64l.7-.7M12 7a5 5 0 100 10 5 5 0 000-10z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                ) : (
+                  <svg className="w-6 h-6 text-blue-300 animate-ping-once" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                )}
+              </div>
             </button>
+            {/* Mobile menu toggle */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-900 dark:text-gray-400 hover:text-blue-600 focus:outline-none"
+              className={`relative w-10 h-10 flex items-center justify-center focus:outline-none border-2 ${isOpen ? (theme === 'dark' ? 'border-blue-400' : 'border-blue-600') : 'border-transparent'} transition-all duration-300 bg-purple-600  dark:bg-gray-800 rounded-lg shadow-md`}
+              aria-label="Toggle navigation menu"
             >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="absolute transition-opacity duration-300 ease-in-out">
                 {isOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <svg className="h-6 w-6 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
                 ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <svg className="h-6 w-6 text-gray-900 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
                 )}
-              </svg>
+              </div>
             </button>
           </div>
         </div>
@@ -137,11 +146,12 @@ const Navbar = () => {
                   key={path}
                   to={path}
                   onClick={() => setIsOpen(false)}
-                  className={({ isActive }) =>
-                    isActive
-                      ? 'text-blue-600 dark:text-blue-400 font-semibold bg-blue-50 dark:bg-gray-800 px-4 py-2 rounded-lg'
-                      : 'text-gray-900 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 px-4 py-2 rounded-lg transition-colors duration-200'
-                  }
+                  className={({ isActive }) => {
+                    if (isActive) {
+                      return `font-semibold px-4 py-2 rounded-lg ${theme === 'dark' ? 'text-gray-100 bg-gray-800' : 'text-gray-900 bg-blue-100'} `;
+                    }
+                    return `${theme === 'dark' ? 'text-gray-300' : 'text-gray-900'} hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-100 dark:hover:bg-gray-800 px-4 py-2 rounded-lg transition-colors duration-200`;
+                  }}
                 >
                   {labels[index]}
                 </NavLink>

@@ -28,21 +28,21 @@ const Home = () => {
   }, []);
 
   const bgClasses = {
-    blue: "bg-blue-100 dark:bg-blue-100",
-    orange: "bg-blue-100 dark:bg-blue-100",
-    yellow: "bg-blue-100 dark:bg-blue-100",
+    blue: "bg-gradient-to-r from-blue-600 to-purple-600 text-white",
+    orange: "bg-gradient-to-r from-orange-500 to-pink-500 text-white",
+    yellow: "bg-gradient-to-r from-yellow-400 to-pink-400 text-white",
   };
 
   const textPrimaryClasses = {
-    blue: "text-blue-900 dark:text-gray-900",
-    orange: "text-orange-900 dark:text-gray-900",
-    yellow: "text-yellow-900 dark:text-gray-900",
+    blue: "text-gray-900 dark:text-gray-100",
+    orange: "text-gray-900 dark:text-gray-100",
+    yellow: "text-gray-900 dark:text-gray-100",
   };
 
   const textSecondaryClasses = {
-    blue: "text-blue-700 dark:text-gray-900",
-    orange: "text-orange-700 dark:text-gray-900",
-    yellow: "text-yellow-700 dark:text-gray-900",
+    blue: "text-gray-800 dark:text-gray-200",
+    orange: "text-gray-800 dark:text-gray-200",
+    yellow: "text-gray-800 dark:text-gray-200",
   };
 
   return (
@@ -186,7 +186,7 @@ const Home = () => {
       </div>
 
       {/* Featured Projects Section */}
-      <div className="py-16 bg-white">
+      <div className={`py-16 ${theme === "dark" ? "bg-gray-900" : "bg-white"}`}>
         <div className="container mx-auto px-4">
           <FeaturedCarousel />
         </div>
