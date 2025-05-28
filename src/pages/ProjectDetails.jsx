@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useContext } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { ThemeContext } from '../context/ThemeContext'; // adjust path to your context
+import React, { useEffect, useState, useContext } from "react";
+import { useParams, Link } from "react-router-dom";
+import { ThemeContext } from "../context/ThemeContext"; // adjust path to your context
 
 const ProjectDetails = () => {
   const { id } = useParams();
@@ -10,10 +10,10 @@ const ProjectDetails = () => {
   const { theme } = useContext(ThemeContext); // get theme from context
 
   useEffect(() => {
-    fetch('/projects.json')
-      .then(res => res.json())
-      .then(data => {
-        const found = data.find(p => p.id === Number(id));
+    fetch("/projects.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const found = data.find((p) => p.id === Number(id));
         setProject(found);
         setData(data);
         setLoading(false);
@@ -24,7 +24,7 @@ const ProjectDetails = () => {
   }, [id]);
 
   // Utility function for classNames
-  const cn = (...classes) => classes.filter(Boolean).join(' ');
+  const cn = (...classes) => classes.filter(Boolean).join(" ");
 
   if (loading) {
     return (
@@ -230,11 +230,11 @@ const ProjectDetails = () => {
             <div className="flex flex-col lg:flex-row gap-12">
               {/* Image Section */}
               <div className="lg:w-1/2">
-                <div className="relative aspect-w-16 aspect-h-9 rounded-xl overflow-hidden">
+                <div className="rounded-xl overflow-hidden w-full h-[400px] flex items-center justify-center bg-gray-100 dark:bg-white">
                   <img
                     src={project.image}
                     alt={project.name}
-                    className="w-full h-full object-cover"
+                    className="object-contain max-h-full max-w-full"
                   />
                 </div>
               </div>
@@ -291,7 +291,11 @@ const ProjectDetails = () => {
                     theme === "dark" ? "prose-invert prose-blue" : "prose-blue"
                   )}
                 >
-                  <p className={theme === "dark" ? "text-gray-300" : "text-gray-600"}>
+                  <p
+                    className={
+                      theme === "dark" ? "text-gray-300" : "text-gray-600"
+                    }
+                  >
                     {project.description}
                   </p>
                 </div>
@@ -308,10 +312,7 @@ const ProjectDetails = () => {
                     </h2>
                     <ul className="space-y-3">
                       {project.features.map((feature, index) => (
-                        <li
-                          key={index}
-                          className="flex items-start"
-                        >
+                        <li key={index} className="flex items-start">
                           <svg
                             className="w-5 h-5 text-green-500 mr-3 mt-1"
                             fill="none"
@@ -325,7 +326,13 @@ const ProjectDetails = () => {
                               d="M5 13l4 4L19 7"
                             />
                           </svg>
-                          <span className={theme === "dark" ? "text-gray-300" : "text-gray-600"}>
+                          <span
+                            className={
+                              theme === "dark"
+                                ? "text-gray-300"
+                                : "text-gray-600"
+                            }
+                          >
                             {feature}
                           </span>
                         </li>
@@ -348,8 +355,13 @@ const ProjectDetails = () => {
                   >
                     Delivery Information
                   </h3>
-                  <p className={theme === "dark" ? "text-gray-300" : "text-gray-600"}>
-                    After your payment is confirmed, you'll receive the complete project files via email in a zip format.
+                  <p
+                    className={
+                      theme === "dark" ? "text-gray-300" : "text-gray-600"
+                    }
+                  >
+                    After your payment is confirmed, you'll receive the complete
+                    project files via email in a zip format.
                   </p>
                 </div>
 
@@ -410,7 +422,9 @@ const ProjectDetails = () => {
             {project &&
               data &&
               data
-                .filter((p) => p.category === project.category && p.id !== project.id)
+                .filter(
+                  (p) => p.category === project.category && p.id !== project.id
+                )
                 .slice(0, 3)
                 .map((relatedProject) => (
                   <Link

@@ -148,8 +148,8 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className={`inline-block w-full sm:w-auto px-8 py-4 rounded-lg font-semibold transition-all duration-200 transform hover:-translate-y-0.5 
                       ${theme === 'dark' 
-                        ? 'bg-gray-800 text-blue-400 hover:bg-gray-700 border border-blue-500' 
-                        : 'bg-white text-blue-600 hover:bg-blue-50'
+                        ? 'bg-white text-blue-400 hover:bg-white-400 border border-white-500' 
+                        : 'bg-white text-white hover:bg-white-50'
                       }`}
                   >
                     Submit Project Request

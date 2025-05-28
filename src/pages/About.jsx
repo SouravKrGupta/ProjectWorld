@@ -81,12 +81,15 @@ const About = () => {
     theme === "dark"
       ? "bg-gray-900 text-gray-100"
       : "bg-gradient-to-b from-blue-50 via-white to-white text-gray-900";
-  const featureBgClass = theme === "dark" ? "bg-gray-800" : "bg-white";
-  const featureTextClass = theme === "dark" ? "text-gray-300" : "text-gray-600";
-  const textPrimary = theme === "dark" ? "text-white" : "text-gray-900";
-  const textSecondary = theme === "dark" ? "text-gray-300" : "text-gray-900";
+  const featureBgClass = theme === "dark" ? "bg-blue-100" : "bg-white";
+  const featureTextClass = theme === "dark" ? "text-gray-800" : "text-gray-600";
+  const textPrimary = theme === "dark" ? "text-gray-200" : "text-gray-900";
+  const textPrimaryHeading = theme === "dark" ? "text-gray-900" : "text-gray-900";
+  const textSecondary = theme === "dark" ? "text-gray-900" : "text-gray-900";
   const textAccent = theme === "dark" ? "text-blue-300" : "text-blue-600";
   const badgeBg = theme === "dark" ? "bg-blue-800/40" : "bg-blue-50";
+  const textSecondaryDesc = theme === "dark" ? "text-gray-100" : "text-gray-900";
+  const textPrimaryHead = theme === "dark" ? "text-gray-200" : "text-gray-900";
 
   return (
     <div className={`min-h-screen ${bgClass}`}>
@@ -97,7 +100,7 @@ const About = () => {
             <h1 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               About Project World
             </h1>
-            <p className={`text-lg sm:text-xl leading-relaxed ${textSecondary}`}>
+            <p className={`text-lg sm:text-xl leading-relaxed ${textSecondaryDesc}`}>
               We're on a mission to simplify the project development journey by providing high-quality, ready-to-use software projects for students and professionals.
             </p>
           </div>
@@ -115,7 +118,7 @@ const About = () => {
                 className={`${featureBgClass} rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-200`}
               >
                 <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className={`text-xl font-semibold mb-2 ${textPrimary}`}>{feature.title}</h3>
+                <h3 className={`text-xl font-semibold mb-2 ${textPrimaryHeading}`}>{feature.title}</h3>
                 <p className={featureTextClass}>{feature.description}</p>
               </div>
             ))}
@@ -138,7 +141,7 @@ const About = () => {
                   <div className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                     {step.number}
                   </div>
-                  <h3 className={`text-xl font-semibold mb-2 ${textPrimary}`}>{step.title}</h3>
+                  <h3 className={`text-xl font-semibold mb-2 ${textPrimaryHeading}`}>{step.title}</h3>
                   <p className={featureTextClass}>{step.description}</p>
                 </div>
               </div>
@@ -155,7 +158,7 @@ const About = () => {
             <h2 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6">
               Meet Our Founders
             </h2>
-            <p className={`text-xl leading-relaxed ${textSecondary}`}>
+            <p className={`text-xl leading-relaxed ${textSecondaryDesc}`}>
               The visionary minds behind Project World, committed to revolutionizing project development and delivery.
             </p>
           </div>
@@ -185,7 +188,7 @@ const About = () => {
                   {/* Founder Info */}
                   <div className="flex-grow text-center md:text-left">
                     <div className="relative inline-block">
-                      <h3 className={`text-3xl font-bold mb-2 group-hover:text-blue-600 transition-colors duration-300 ${textPrimary}`}>
+                      <h3 className={`text-3xl font-bold mb-2 group-hover:text-blue-600 transition-colors duration-300 ${textPrimaryHead}`}>
                         {founder.name}
                       </h3>
                       <div className="h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-500"></div>
@@ -194,7 +197,7 @@ const About = () => {
                       <p className={`font-medium px-4 py-1.5 rounded-full text-sm inline-block ${textAccent} ${badgeBg}`}>
                         {founder.role}
                       </p>
-                      <p className={`${textSecondary} text-base leading-relaxed`}>
+                      <p className={`${textSecondaryDesc} text-base leading-relaxed`}>
                         {founder.description}
                       </p>
                       {/* Social Links */}
