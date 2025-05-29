@@ -6,15 +6,15 @@ const contactMethods = [
   {
     icon: "📧",
     title: "Email",
-    value: "projectworld@example.com",
-    link: "mailto:projectworld@example.com",
+    value: "contact.projectworld@gmail.com",
+    link: "mailto:contact.projectworld@gmail.com",
     description: "Send us an email anytime"
   },
   {
     icon: "📱",
     title: "WhatsApp",
-    value: "+91-XXXXXXXXXX",
-    link: "https://wa.me/91XXXXXXXXXX",
+    value: "+91-8877760363",
+    link: "https://wa.me/918877760363",
     description: "Chat with us on WhatsApp"
   },
   {

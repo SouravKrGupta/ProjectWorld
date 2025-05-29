@@ -56,7 +56,7 @@ const founders = [
     description: "A passionate tech entrepreneur with expertise in full-stack development and project architecture. Leading the technical vision and development strategy of Project World.",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzp0Z6ns4nJ_5jyECXsThghkk_E94XGYFawg&s",
     social: {
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/sourav-kumar-gupta-18b638200/",
       github: "#",
       twitter: "#"
     }
