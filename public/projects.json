@@ -1,234 +1,194 @@
 [
   {
     "id": 1,
-    "name": "Student Management System",
-    "description": "A web app to manage students, courses, and grades.",
-    "tech": ["MERN"],
+    "name": "Appointment System",
+    "description": "A MERN stack application for scheduling medical appointments with intuitive dashboards for both doctors and patients.",
+    "tech": ["MERN", "Ant Design"],
     "category": "Major",
-    "price": "₹1999",
-    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
+    "price": "₹1500",
+    "image": "https://souravkumargupta.netlify.app/static/media/doc.e944a71bcacf3504468e.png",
     "features": [
-      "Student/course CRUD",
-      "Authentication",
-      "Dashboard",
-      "Export reports"
+      "Doctor and patient registration",
+      "Appointment booking and management",
+      "Admin dashboard",
+      "Notifications system"
     ],
-    "createdAt": "2024-05-01T10:00:00Z"
+    "createdAt": "2024-06-01T10:00:00Z"
   },
   {
     "id": 2,
-    "name": "E-Commerce Store",
-    "description": "A full-stack e-commerce platform with cart and payment.",
-    "tech": ["Django", "MySQL"],
-    "category": "Advanced",
-    "price": "₹2999",
-    "image": "https://sfdora.org/wp-content/uploads/2021/10/tara-components-c-4-2-3.jpg",
+    "name": "3D Portfolio",
+    "description": "A modern 3D portfolio built with React.js and Three.js to showcase developer skills with immersive animations.",
+    "tech": ["React", "Three.js", "Tailwind CSS"],
+    "category": "Mini",
+    "price": "₹1000",
+    "image": "https://raw.githubusercontent.com/ladunjexa/reactjs18-3d-portfolio/refs/heads/main/.github/README_ASSETS/3d-portfolio.png",
     "features": [
-      "Product catalog",
-      "Cart & checkout",
-      "Admin panel",
-      "Order history"
+      "3D hero section",
+      "Interactive project showcases",
+      "Animated contact form",
+      "Responsive design"
     ],
-    "createdAt": "2024-05-02T11:30:00Z"
+    "createdAt": "2024-06-01T10:00:00Z"
   },
   {
     "id": 3,
-    "name": "To-Do App",
-    "description": "A simple MERN to-do list app for beginners.",
-    "tech": ["MERN"],
-    "category": "Mini",
-    "price": "₹799",
-    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
+    "name": "Event Management System",
+    "description": "A full-stack platform for organizing events with user registrations, admin controls, and attendee tracking.",
+    "tech": ["React", "Node.js", "Express", "MySQL"],
+    "category": "Advanced",
+    "price": "₹2000",
+    "image": "https://media.licdn.com/dms/image/v2/D5612AQHAAb9IJYeHbg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1693199223255?e=1753920000&v=beta&t=7sUGpLLAM7IzGAT-c3mX8iVcExRAaQLKRRtUIfWEgy8",
     "features": [
-      "Add/edit/delete tasks",
-      "Mark complete",
-      "Responsive UI"
+      "Event creation and editing",
+      "User registration and authentication",
+      "Attendee tracking",
+      "Admin panel"
     ],
-    "createdAt": "2024-05-03T09:15:00Z"
+    "createdAt": "2024-06-01T10:00:00Z"
   },
   {
     "id": 4,
-    "name": "Blog Platform",
-    "description": "A multi-user blog platform with markdown support and comments.",
-    "tech": ["Node.js", "Express", "MongoDB", "React"],
+    "name": "Food Application",
+    "description": "A MERN stack-based food delivery platform to browse restaurants, menus, and manage online orders.",
+    "tech": ["MERN"],
     "category": "Major",
-    "price": "₹2499",
-    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
+    "price": "₹1500",
+    "image": "https://heloix.com/wp-content/uploads/2021/03/restaurant.png",
     "features": [
-      "User authentication",
-      "Markdown editor",
-      "Comment system",
-      "Responsive design"
+      "Restaurant listing",
+      "Menu browsing",
+      "Order placement",
+      "User authentication"
     ],
-    "createdAt": "2024-05-04T14:00:00Z"
+    "createdAt": "2024-06-01T10:00:00Z"
   },
   {
     "id": 5,
-    "name": "Online Quiz System",
-    "description": "A web app for creating and taking quizzes with instant results.",
-    "tech": ["PHP", "MySQL", "Bootstrap"],
-    "category": "Advanced",
-    "price": "₹1799",
-    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
+    "name": "Fitness Application",
+    "description": "A fitness tracking app with workout logging, diet management, and visual progress tracking.",
+    "tech": ["React", "Node.js", "Express", "MongoDB", "Material UI", "RapidAPI", "Formspree"],
+    "category": "Major",
+    "price": "₹1500",
+    "image": "https://souravkumargupta.netlify.app/static/media/fitness.c908d568b8502ba2cb0c.png",
     "features": [
-      "Quiz creation",
-      "Timer",
-      "Result analytics",
-      "Admin panel"
+      "Workout logging",
+      "Diet tracking",
+      "Progress charts",
+      "Contact form integration"
     ],
-    "createdAt": "2024-05-05T13:45:00Z"
+    "createdAt": "2024-06-01T10:00:00Z"
   },
   {
     "id": 6,
-    "name": "Portfolio Website",
-    "description": "A personal portfolio website with project showcase and contact form.",
-    "tech": ["React", "Tailwind CSS"],
-    "category": "Mini",
-    "price": "₹499",
-    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
-    "features": [
-      "Project gallery",
-      "Contact form",
-      "Responsive layout"
-    ],
-    "createdAt": "2024-05-06T08:20:00Z"
-  },
-  {
-    "id": 7,
-    "name": "Inventory Management System",
-    "description": "A system to manage inventory, suppliers, and stock levels.",
-    "tech": ["Laravel", "MySQL"],
-    "category": "Major",
-    "price": "₹2299",
-    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
-    "features": [
-      "Stock tracking",
-      "Supplier management",
-      "Reports",
-      "User roles"
-    ],
-    "createdAt": "2024-05-07T10:10:00Z"
-  },
-  {
-    "id": 8,
-    "name": "Weather App",
-    "description": "A weather forecast app using OpenWeatherMap API.",
-    "tech": ["React", "API"],
-    "category": "Mini",
-    "price": "₹599",
-    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
-    "features": [
-      "Current weather",
-      "5-day forecast",
-      "Location search"
-    ],
-    "createdAt": "2024-05-08T12:00:00Z"
-  },
-  {
-    "id": 9,
-    "name": "Library Management System",
-    "description": "A web app to manage books, members, and lending records.",
-    "tech": ["Django", "SQLite"],
-    "category": "Major",
-    "price": "₹2099",
-    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
-    "features": [
-      "Book catalog",
-      "Member management",
-      "Issue/return books",
-      "Fine calculation"
-    ],
-    "createdAt": "2024-05-09T15:30:00Z"
-  },
-  {
-    "id": 10,
-    "name": "Expense Tracker",
-    "description": "A personal finance tracker with charts and analytics.",
-    "tech": ["React", "Node.js", "MongoDB"],
-    "category": "Mini",
-    "price": "₹899",
-    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
-    "features": [
-      "Add/edit/delete expenses",
-      "Category-wise analytics",
-      "Monthly reports"
-    ],
-    "createdAt": "2024-05-10T09:00:00Z"
-  },
-  {
-    "id": 11,
     "name": "Chat Application",
-    "description": "A real-time chat app with rooms and private messaging.",
-    "tech": ["Node.js", "Socket.io", "React"],
+    "description": "A real-time chat app featuring group chats, private messages, and live communication using Socket.io.",
+    "tech": ["React", "Node.js", "Express", "MongoDB", "Material UI", "Socket.io"],
     "category": "Advanced",
-    "price": "₹2599",
-    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
+    "price": "₹2000",
+    "image": "https://blog.happyfox.com/wp-content/uploads/2019/05/in-app-chat-blog-cover-image.png",
     "features": [
       "Real-time messaging",
       "Chat rooms",
       "Private messages",
       "User authentication"
     ],
-    "createdAt": "2024-05-11T16:00:00Z"
-  },
-    {
-        "id": 12,
-        "name": "Recipe Finder",
-        "description": "A web app to search and save recipes from various sources.",
-        "tech": ["React", "API"],
-        "category": "Mini",
-        "price": "₹699",
-        "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
-        "features": [
-        "Search recipes",
-        "Save favorites",
-        "Filter by ingredients"
-        ],
-        "createdAt": "2024-05-12T11:00:00Z"
-    },
-  { 
-    "id": 13,
-    "name": "Fitness Tracker",
-    "description": "A web app to track workouts, diet, and progress.",
-    "tech": ["React", "Node.js", "MongoDB"],
-    "category": "Major",
-    "price": "₹1999",
-    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
-    "features": [
-      "Workout logging",
-      "Diet tracking",
-      "Progress charts"
-    ],
-    "createdAt": "2024-05-13T10:30:00Z"
+    "createdAt": "2024-06-01T10:00:00Z"
   },
   {
-    "id": 14,
-    "name": "Event Management System",
-    "description": "A system to manage events, registrations, and attendees.",
-    "tech": ["Django", "PostgreSQL"],
-    "category": "Advanced",
-    "price": "₹2499",
-    "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
+    "id": 7,
+    "name": "MERN Blog App",
+    "description": "A blogging platform with rich Markdown support, comments, and responsive UI for readers and authors.",
+    "tech": ["MERN", "Material UI"],
+    "category": "Major",
+    "price": "₹1500",
+    "image": "https://souravkumargupta.netlify.app/static/media/blog.e47e340f233ed18ec4e1.png",
     "features": [
-      "Event creation",
-      "Registration management",
-      "Attendee tracking"
+      "User authentication",
+      "Markdown editor",
+      "Comment system",
+      "Responsive design"
     ],
-    "createdAt": "2024-05-14T12:45:00Z"
+    "createdAt": "2024-06-01T10:00:00Z"
   },
-    {
-        "id": 15,
-        "name": "Travel Planner",
-        "description": "A web app to plan trips, manage itineraries, and share experiences.",
-        "tech": ["React", "Node.js", "MongoDB"],
-        "category": "Mini",
-        "price": "₹799",
-        "image": "https://plan.io/images/blog/project-lifecycle.png?1747227010",
-        "features": [
-        "Trip planning",
-        "Itinerary management",
-        "User reviews"
-        ],
-        "createdAt": "2024-05-15T14:00:00Z"
-    }  
+  {
+    "id": 8,
+    "name": "ChatGPT Clone",
+    "description": "An AI chatbot application mimicking ChatGPT, built with full-stack technologies and styled UI.",
+    "tech": ["React", "Node.js", "Express", "MongoDB", "Material UI"],
+    "category": "Advanced",
+    "price": "₹2000",
+    "image": "https://souravkumargupta.netlify.app/static/media/chat.3503adcffb5077be8b4d.png",
+    "features": [
+      "AI-powered chat interface",
+      "User authentication",
+      "Conversation history",
+      "Responsive design"
+    ],
+    "createdAt": "2024-06-01T10:00:00Z"
+  },
+  {
+    "id": 9,
+    "name": "Notes App",
+    "description": "A fast and user-friendly note-taking app with full CRUD functionality and responsive interface.",
+    "tech": ["MERN"],
+    "category": "Mini",
+    "price": "₹1000",
+    "image": "https://souravkumargupta.netlify.app/static/media/noteapp.8e16598c69b8be622e17.png",
+    "features": [
+      "Add/edit/delete notes",
+      "User authentication",
+      "Responsive UI",
+      "Search functionality"
+    ],
+    "createdAt": "2024-06-01T10:00:00Z"
+  },
+  {
+    "id": 10,
+    "name": "Ecommerce App 2023",
+    "description": "A full-featured MERN e-commerce app with cart, checkout, and admin management features.",
+    "tech": ["MERN"],
+    "category": "Major",
+    "price": "₹1500",
+    "image": "https://souravkumargupta.netlify.app/static/media/ecommerce.ed536ee4076c68822ddf.png",
+    "features": [
+      "Product catalog",
+      "Shopping cart",
+      "Checkout process",
+      "Admin panel"
+    ],
+    "createdAt": "2024-06-01T10:00:00Z"
+  },
+  {
+    "id": 11,
+    "name": "Tic Tac Toe",
+    "description": "A classic two-player Tic Tac Toe game built in C with a simple console UI and replay option.",
+    "tech": ["C"],
+    "category": "Mini",
+    "price": "₹1000",
+    "image": "https://souravkumargupta.netlify.app/static/media/tic.0261253f923f17de827b.png",
+    "features": [
+      "Two-player mode",
+      "Simple UI",
+      "Win/draw detection",
+      "Replay option"
+    ],
+    "createdAt": "2024-06-01T10:00:00Z"
+  },
+  {
+    "id": 12,
+    "name": "Think-Bots (Quiz App)",
+    "description": "A fun and interactive quiz application built with vanilla HTML, CSS, and JavaScript for two players.",
+    "tech": ["HTML", "CSS", "JavaScript"],
+    "category": "Mini",
+    "price": "₹1000",
+    "image": "https://souravkumargupta.netlify.app/static/media/quiz.bf3d544d8724268310c0.png",
+    "features": [
+      "Multiple-choice questions",
+      "player mode",
+      "Score tracking",
+      "Responsive UI"
+    ],
+    "createdAt": "2024-06-01T10:00:00Z"
+  }
 ]
