@@ -20,8 +20,8 @@ const contactMethods = [
   {
     icon: "💬",
     title: "Social Media",
-    value: "@projectworld",
-    link: "#",
+    value: "contact.projectworld",
+    link: "https://www.instagram.com/contact.projectworld/",
     description: "Follow us for updates"
   }
 ];
@@ -50,10 +50,10 @@ const Contact = () => {
       };
 
       await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        'service_9wiwekp', // Replace with your EmailJS service ID
+        'template_gjdnuua', // Replace with your EmailJS template ID
         templateParams,
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+        'loT6JcaO4ScYj_x2s' // Replace with your EmailJS public key
       );
 
       setStatus({
