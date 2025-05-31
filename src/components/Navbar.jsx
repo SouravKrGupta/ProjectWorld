@@ -38,8 +38,8 @@ const Navbar = () => {
 
           {/* Desktop Menu + Theme Toggle */}
           <div className="hidden md:flex items-center space-x-6">
-            {['/', '/about', '/projects', '/contact'].map((path, index) => {
-              const labels = ['Home', 'About', 'Projects', 'Contact Us'];
+            {['/', '/about', '/projects', '/courses', '/contact'].map((path, index) => {
+              const labels = ['Home', 'About', 'Projects', 'Courses', 'Contact Us'];
               return (
                 <NavLink
                   key={path}
@@ -139,8 +139,8 @@ const Navbar = () => {
         {/* Mobile menu */}
         <div className={`${isOpen ? 'block' : 'hidden'} md:hidden pb-4`}>
           <div className="flex flex-col space-y-2">
-            {['/', '/about', '/projects', '/contact'].map((path, index) => {
-              const labels = ['Home', 'About', 'Projects', 'Contact Us'];
+            {['/', '/about', '/projects', '/courses', '/contact'].map((path, index) => {
+              const labels = ['Home', 'About', 'Projects', 'Courses', 'Contact Us'];
               return (
                 <NavLink
                   key={path}

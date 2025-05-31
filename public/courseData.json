@@ -1,0 +1,148 @@
+{
+  "computerScienceEngineering": {
+    "department": "Computer Science and Engineering",
+    "totalSemesters": 8,
+    "pricing": {
+      "fullSemesterPrice": 500
+    },
+    "googleFormLink": "https://forms.google.com/your-form-link",
+    "semesters": [
+      {
+        "semester": 1,
+        "subjects": [
+          {
+            "code": "MA101",
+            "name": "Engineering Mathematics I",
+            "notes": [
+              { 
+                "title": "Unit 1 - Calculus", 
+                "url": "https://forms.google.com/math-unit1",
+                "unitNumber": 1
+              },
+              { 
+                "title": "Unit 2 - Differential Equations", 
+                "url": "https://forms.google.com/math-unit2",
+                "unitNumber": 2
+              },
+              { 
+                "title": "Unit 3 - Integration", 
+                "url": "https://forms.google.com/math-unit3",
+                "unitNumber": 3
+              },
+              { 
+                "title": "Unit 4 - Series and Sequences", 
+                "url": "https://forms.google.com/math-unit4",
+                "unitNumber": 4
+              }
+            ]
+          },
+          {
+            "code": "PH101",
+            "name": "Engineering Physics",
+            "notes": [
+              { 
+                "title": "Unit 1 - Mechanics", 
+                "url": "https://forms.google.com/physics-unit1",
+                "unitNumber": 1
+              },
+              { 
+                "title": "Unit 2 - Optics", 
+                "url": "https://forms.google.com/physics-unit2",
+                "unitNumber": 2
+              },
+              { 
+                "title": "Unit 3 - Modern Physics", 
+                "url": "https://forms.google.com/physics-unit3",
+                "unitNumber": 3
+              }
+            ]
+          },
+          {
+            "code": "CS101",
+            "name": "Introduction to Programming",
+            "notes": [
+              { 
+                "title": "Unit 1 - Basics of C", 
+                "url": "https://forms.google.com/cs-unit1",
+                "unitNumber": 1
+              },
+              { 
+                "title": "Unit 2 - Control Structures", 
+                "url": "https://forms.google.com/cs-unit2",
+                "unitNumber": 2
+              },
+              { 
+                "title": "Unit 3 - Functions", 
+                "url": "https://forms.google.com/cs-unit3",
+                "unitNumber": 3
+              },
+              { 
+                "title": "Unit 4 - Arrays and Pointers", 
+                "url": "https://forms.google.com/cs-unit4",
+                "unitNumber": 4
+              },
+              { 
+                "title": "Unit 5 - Structures", 
+                "url": "https://forms.google.com/cs-unit5",
+                "unitNumber": 5
+              }
+            ]
+          },
+          {
+            "code": "EN101",
+            "name": "Technical English",
+            "notes": [
+              { "title": "Unit 1 - Communication Skills", "url": "#" },
+              { "title": "Unit 2 - Technical Writing", "url": "#" }
+            ]
+          },
+          {
+            "code": "ME101",
+            "name": "Engineering Drawing",
+            "notes": [
+              { "title": "Unit 1 - Basic Drawing", "url": "#" },
+              { "title": "Unit 2 - Projections", "url": "#" }
+            ]
+          }
+        ]
+      },
+      {
+        "semester": 2,
+        "subjects": [
+          {
+            "code": "CS201",
+            "name": "Programming Fundamentals",
+            "notes": [
+              { "title": "Unit 1 - Introduction to C++", "url": "#" },
+              { "title": "Unit 2 - Object Oriented Programming", "url": "#" }
+            ]
+          },
+          {
+            "code": "MA102",
+            "name": "Engineering Mathematics II",
+            "notes": [
+              { "title": "Unit 1 - Linear Algebra", "url": "#" },
+              { "title": "Unit 2 - Probability", "url": "#" }
+            ]
+          },
+          {
+            "code": "PH102",
+            "name": "Engineering Chemistry",
+            "notes": [
+              { "title": "Unit 1 - Chemical Bonding", "url": "#" },
+              { "title": "Unit 2 - Electrochemistry", "url": "#" }
+            ]
+          },
+          {
+            "code": "EC101",
+            "name": "Basic Electronics",
+            "notes": [
+              { "title": "Unit 1 - Circuit Basics", "url": "#" },
+              { "title": "Unit 2 - Digital Electronics", "url": "#" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+} 
