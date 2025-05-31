@@ -142,6 +142,63 @@
             ]
           }
         ]
+      },
+      {
+        "semester": 5,
+        "subjects": [
+          {
+            "code": "CS4104",
+            "name": "Computer Organization and Architecture",
+            "notes": [
+              { "title": "Unit 1 - Basics of Digital Electronics", "url": "#" },
+              { "title": "Unit 2 - Basic Computer Organization", "url": "#" },
+              { "title": "Unit 3 - Control Unit", "url": "#" },
+              { "title": "Unit 4 - Computer Arithmetic", "url": "#" },
+              { "title": "Unit 5 - Input-Output Organization", "url": "#" },
+              { "title": "Unit 6 - Introduction to Parallel Processing", "url": "#" }
+            ]
+          },
+          {
+            "code": "CS3104",
+            "name": "Compiler Design ",
+            "notes": [
+              { "title": "Unit 1 - Introduction to compiler and Finite automata ", "url": "#" },
+              { "title": "Unit 2 - Context free grammar and Pushdown automata", "url": "#" },
+              { "title": "Unit 3 - Lexical Analysis", "url": "#" },
+              { "title": "Unit 4 - Syntax Analysis", "url": "#" },
+              { "title": "Unit 5 - Semantic Analysis", "url": "#" },
+              { "title": "Unit 6 - Code Generation", "url": "#" }
+            ]
+          },
+          {
+            "code": "CS3003",
+            "name": "Computer Graphics ",
+            "notes": [
+              { "title": "Unit 1 - Introduction to Computer Graphics", "url": "#" },
+              { "title": "Unit 2 - 2D Transformations", "url": "#" },
+              { "title": "Unit 3 - 3D Viewing and 3D Transformations", "url": "#" },
+              { "title": "Unit 4 - 3D Modeling and Computer Animation", "url": "#" },
+              { "title": "Unit 5 - Introduction to Computer Graphics", "url": "#" },
+              { "title": "Unit 6 - 2D Transformations", "url": "#" }
+            ]
+          },
+          {
+            "code": "CS3003",
+            "name": "List of Professional Electives-I (Web Technology) ",
+            "notes": [
+              { "title": "Unit 1 - HTML", "url": "#" },
+              { "title": "Unit 2 - CSS", "url": "#" }
+            ]
+          },
+          {
+            "code": "CS3003",
+            "name": "List of Open Elective-1 (System Analysis and Design) ",
+            "notes": [
+              { "title": "Unit 1 - Circuit Basics", "url": "#" },
+              { "title": "Unit 2 - Digital Electronics", "url": "#" }
+            ]
+          }
+        ]
       }
     ]
   }

@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
+import { useSearchParams } from 'react-router-dom';
 
 const SubjectCard = ({ subject, perSubjectPrice, theme, handlePurchase }) => {
   const unitCount = subject.notes.length;
@@ -105,6 +106,7 @@ const Courses = () => {
   const [selectedSemester, setSelectedSemester] = useState(1);
   const [loading, setLoading] = useState(true);
   const { theme } = useContext(ThemeContext);
+  const [searchParams] = useSearchParams();
 
   useEffect(() => {
     const fetchCourseData = async () => {
@@ -121,6 +123,16 @@ const Courses = () => {
 
     fetchCourseData();
   }, []);
+
+  useEffect(() => {
+    const semesterParam = searchParams.get('semester');
+    if (semesterParam) {
+      const semester = parseInt(semesterParam);
+      if (semester >= 1 && semester <= 8) {
+        setSelectedSemester(semester);
+      }
+    }
+  }, [searchParams]);
 
   const handlePurchase = (type, subjectCode = null) => {
     const formUrl = courseData.googleFormLink;

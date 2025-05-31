@@ -19,12 +19,24 @@ const categories = [
 const Home = () => {
   const { theme } = useContext(ThemeContext);
   const [reviews, setReviews] = useState([]);
+  const [courseData, setCourseData] = useState(null);
 
   useEffect(() => {
+    // Fetch reviews
     fetch("/review.json")
       .then((res) => res.json())
       .then((data) => setReviews(data))
       .catch((error) => console.error("Error loading reviews:", error));
+
+    // Fetch course data
+    fetch("/courseData.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setCourseData(data.computerScienceEngineering);
+      })
+      .catch((error) => {
+        console.error("Error loading course data:", error);
+      });
   }, []);
 
   const bgClasses = {
@@ -181,6 +193,132 @@ const Home = () => {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Courses Section */}
+      <div className={`py-16 ${theme === "dark" ? "bg-gray-800" : "bg-blue-50"}`}>
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-4xl mx-auto mb-12">
+            <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6">
+              Explore Our Notes
+            </h2>
+            <p className={`text-lg ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
+              Comprehensive study materials for every semester
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {courseData?.semesters.map((semesterData) => {
+              const semester = semesterData.semester;
+              const semesterInfo = {
+                1: {
+                  icon: "🎓",
+                  title: "Foundation",
+                  color: "from-blue-500 to-cyan-500"
+                },
+                2: {
+                  icon: "📚",
+                  title: "Core Concepts",
+                  color: "from-purple-500 to-pink-500"
+                },
+                3: {
+                  icon: "💻",
+                  title: "Programming",
+                  color: "from-orange-500 to-red-500"
+                },
+                4: {
+                  icon: "🔧",
+                  title: "Systems",
+                  color: "from-green-500 to-teal-500"
+                },
+                5: {
+                  icon: "🤖",
+                  title: "Advanced",
+                  color: "from-indigo-500 to-purple-500"
+                },
+                6: {
+                  icon: "🔐",
+                  title: "Security",
+                  color: "from-pink-500 to-rose-500"
+                },
+                7: {
+                  icon: "🎯",
+                  title: "Specialization",
+                  color: "from-amber-500 to-orange-500"
+                },
+                8: {
+                  icon: "🚀",
+                  title: "Industry Ready",
+                  color: "from-emerald-500 to-green-500"
+                }
+              }[semester];
+
+              return (
+                <Link
+                  key={semester}
+                  to={`/courses?semester=${semester}`}
+                  className={`group relative overflow-hidden rounded-xl transition-all duration-300 transform hover:-translate-y-2 ${
+                    theme === "dark"
+                      ? "bg-gray-900 hover:bg-gray-800"
+                      : "bg-white hover:bg-gray-50"
+                  } shadow-lg hover:shadow-xl`}
+                >
+                  {/* Gradient Background */}
+                  <div className={`absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-300 bg-gradient-to-br ${semesterInfo.color}`}></div>
+                  
+                  {/* Content */}
+                  <div className="relative p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-3xl">{semesterInfo.icon}</span>
+                      <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                        theme === "dark" 
+                          ? "bg-gray-800 text-gray-300" 
+                          : "bg-gray-100 text-gray-800"
+                      }`}>
+                        Semester {semester}
+                      </span>
+                    </div>
+                    
+                    <h3 className={`text-xl font-bold mb-3 ${
+                      theme === "dark" ? "text-gray-100" : "text-gray-900"
+                    }`}>
+                      {semesterInfo.title}
+                    </h3>
+                    
+                    <div className="space-y-2">
+                      {semesterData.subjects.slice(0, 3).map((subject, idx) => (
+                        <div
+                          key={idx}
+                          className={`flex items-center text-sm ${
+                            theme === "dark" ? "text-gray-400" : "text-gray-600"
+                          }`}
+                        >
+                          <svg className="w-4 h-4 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                          </svg>
+                          {subject.name}
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className={`mt-4 pt-4 border-t ${
+                      theme === "dark" ? "border-gray-800" : "border-gray-100"
+                    }`}>
+                      <span className={`inline-flex items-center text-sm font-medium ${
+                        theme === "dark" ? "text-blue-400" : "text-blue-600"
+                      }`}>
+                        View {semesterData.subjects.length} Subjects
+                        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>
