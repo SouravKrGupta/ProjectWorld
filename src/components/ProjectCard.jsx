@@ -40,7 +40,7 @@ const ProjectCard = ({ project }) => (
           View Details
         </Link>
         <a
-          href="https://forms.gle/your-google-form-link"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSc5OmqXL8-JOnoRU5brsJandVHrulaKH7J-SOZLLBV1v9AzOg/viewform"
           target="_blank"
           rel="noopener noreferrer"
           className="flex-1 inline-flex justify-center items-center px-4 py-2 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-colors duration-200"

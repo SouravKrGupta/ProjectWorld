@@ -367,7 +367,7 @@ const ProjectDetails = () => {
 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
-                    href="https://forms.gle/your-google-form-link"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSc5OmqXL8-JOnoRU5brsJandVHrulaKH7J-SOZLLBV1v9AzOg/viewform"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={cn(
