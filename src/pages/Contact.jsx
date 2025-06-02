@@ -100,13 +100,13 @@ const Contact = () => {
   return (
     <div className={`min-h-screen ${bgClass}`}>
       {/* Hero Section */}
-      <div className="py-16 sm:py-24">
-        <div className="container mx-auto px-4">
+      <div className="py-8 sm:py-12 md:py-16">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Get in Touch
             </h1>
-            <p className={`text-lg sm:text-xl leading-relaxed ${textSecondary}`}>
+            <p className={`text-sm sm:text-base md:text-lg leading-relaxed ${textSecondary}`}>
               Have questions about our projects or need a custom solution? We're here to help you succeed.
             </p>
           </div>
@@ -114,48 +114,49 @@ const Contact = () => {
       </div>
 
       {/* Contact Methods */}
-      <div className="py-12">
-  <div className="container mx-auto px-4">
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      {contactMethods.map((method, index) => (
-        <a
-          key={index}
-          href={method.link}
-          className={`${cardBgClass} rounded-xl p-6 shadow-lg transition-shadow duration-200`}
-          style={{
-            boxShadow: '0 4px 6px rgba(128,90,213,0.5)',
-            transition: 'box-shadow 0.3s ease-in-out',
-          }}
-          onMouseEnter={e => {
-            e.currentTarget.style.boxShadow = '0 0 15px 5px rgba(128, 90, 213, 0.3), 0 0 25px 10px rgba(148, 112, 234, 0.2)';
-          }}
-          onMouseLeave={e => {
-            e.currentTarget.style.boxShadow = '0 4px 6px rgba(128,90,213,0.5)';
-          }}
-        >
-          <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-200">
-            {method.icon}
+      <div className="py-8 sm:py-12">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-5xl mx-auto">
+            {contactMethods.map((method, index) => (
+              <a
+                key={index}
+                href={method.link}
+                className={`${cardBgClass} rounded-xl p-4 sm:p-6 shadow-lg transition-all duration-200`}
+                style={{
+                  boxShadow: '0 4px 6px rgba(128,90,213,0.5)',
+                  transition: 'all 0.3s ease-in-out',
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.boxShadow = '0 0 15px 5px rgba(128, 90, 213, 0.3), 0 0 25px 10px rgba(148, 112, 234, 0.2)';
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.boxShadow = '0 4px 6px rgba(128,90,213,0.5)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">
+                  {method.icon}
+                </div>
+                <h3 className={`text-lg sm:text-xl font-semibold mb-2 ${textPrimary}`}>{method.title}</h3>
+                <p className="text-blue-600 font-medium mb-2 text-sm sm:text-base">{method.value}</p>
+                <p className={`${textSecondary} text-sm sm:text-base`}>{method.description}</p>
+              </a>
+            ))}
           </div>
-          <h3 className={`text-xl font-semibold mb-2 ${textPrimary}`}>{method.title}</h3>
-          <p className="text-blue-600 font-medium mb-2">{method.value}</p>
-          <p className={textSecondary}>{method.description}</p>
-        </a>
-      ))}
-    </div>
-  </div>
-</div>
-
+        </div>
+      </div>
 
       {/* Contact Form Section */}
-      <div className={`py-16 ${sectionBgClass}`}>
-        <div className="container mx-auto px-4">
+      <div className={`py-8 sm:py-12 md:py-16 ${sectionBgClass}`}>
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
               {/* Form */}
               <div>
-                <h2 className={`text-3xl font-bold mb-8 ${textPrimary}`}>Send us a Message</h2>
+                <h2 className={`text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 ${textPrimary}`}>Send us a Message</h2>
                 {status.message && (
-                  <div className={`mb-6 p-4 rounded-lg ${
+                  <div className={`mb-4 sm:mb-6 p-3 sm:p-4 rounded-lg text-sm sm:text-base ${
                     status.type === 'success' 
                       ? 'bg-green-100 text-green-700 border border-green-400' 
                       : 'bg-red-100 text-red-700 border border-red-400'
@@ -163,41 +164,41 @@ const Contact = () => {
                     {status.message}
                   </div>
                 )}
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                   <div>
-                    <label className={`block text-sm font-medium mb-2 ${textPrimary}`}>Name</label>
+                    <label className={`block text-sm font-medium mb-1.5 sm:mb-2 ${textPrimary}`}>Name</label>
                     <input
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 rounded-lg border ${inputBgClass} ${inputFocusClass} transition-colors duration-200`}
+                      className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border ${inputBgClass} ${inputFocusClass} transition-colors duration-200`}
                       placeholder="Your name"
                       required
                       disabled={loading}
                     />
                   </div>
                   <div>
-                    <label className={`block text-sm font-medium mb-2 ${textPrimary}`}>Email</label>
+                    <label className={`block text-sm font-medium mb-1.5 sm:mb-2 ${textPrimary}`}>Email</label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 rounded-lg border ${inputBgClass} ${inputFocusClass} transition-colors duration-200`}
+                      className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border ${inputBgClass} ${inputFocusClass} transition-colors duration-200`}
                       placeholder="your@email.com"
                       required
                       disabled={loading}
                     />
                   </div>
                   <div>
-                    <label className={`block text-sm font-medium mb-2 ${textPrimary}`}>Message</label>
+                    <label className={`block text-sm font-medium mb-1.5 sm:mb-2 ${textPrimary}`}>Message</label>
                     <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
                       rows="4"
-                      className={`w-full px-4 py-3 rounded-lg border ${inputBgClass} ${inputFocusClass} transition-colors duration-200`}
+                      className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border ${inputBgClass} ${inputFocusClass} transition-colors duration-200`}
                       placeholder="Your message"
                       required
                       disabled={loading}
@@ -206,7 +207,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={loading}
-                    className={`w-full px-6 py-3 rounded-lg text-white font-semibold ${buttonBgClass} transition-all duration-200 transform hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed`}
+                    className={`w-full px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg text-white font-semibold ${buttonBgClass} transition-all duration-200 transform hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed`}
                   >
                     {loading ? 'Sending...' : 'Send Message'}
                   </button>
@@ -214,41 +215,41 @@ const Contact = () => {
               </div>
 
               {/* Custom Project Info */}
-              <div className={`${cardBgClass} rounded-2xl p-8`}>
-                <h2 className={`text-2xl font-bold mb-6 ${textPrimary}`}>Custom Project Request</h2>
-                <div className="space-y-6">
-                  <p className={textSecondary}>
+              <div className={`${cardBgClass} rounded-xl p-6 sm:p-8`}>
+                <h2 className={`text-xl sm:text-2xl font-bold mb-4 sm:mb-6 ${textPrimary}`}>Custom Project Request</h2>
+                <div className="space-y-4 sm:space-y-6">
+                  <p className={`text-sm sm:text-base ${textSecondary}`}>
                     Have a unique project idea? We offer custom development services for:
                   </p>
-                  <ul className={`space-y-4 ${textPrimary}`}>
+                  <ul className={`space-y-3 sm:space-y-4 ${textPrimary}`}>
                     <li className="flex items-start">
-                      <svg className="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 mr-2 sm:mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                       </svg>
-                      <span>College Submissions</span>
+                      <span className="text-sm sm:text-base">College Submissions</span>
                     </li>
                     <li className="flex items-start">
-                      <svg className="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 mr-2 sm:mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                       </svg>
-                      <span>Startup MVPs</span>
+                      <span className="text-sm sm:text-base">Startup MVPs</span>
                     </li>
                     <li className="flex items-start">
-                      <svg className="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 mr-2 sm:mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                       </svg>
-                      <span>Personal Projects</span>
+                      <span className="text-sm sm:text-base">Personal Projects</span>
                     </li>
                   </ul>
-                  <div className={`${sectionBgClass} rounded-xl p-6 border border-gray-200`}>
-                    <h3 className={`text-lg font-semibold mb-4 ${textPrimary}`}>Required Information</h3>
-                    <ul className={`space-y-2 ${textSecondary}`}>
+                  <div className={`${sectionBgClass} rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-200`}>
+                    <h3 className={`text-base sm:text-lg font-semibold mb-3 sm:mb-4 ${textPrimary}`}>Required Information</h3>
+                    <ul className={`space-y-2 ${textSecondary} text-sm sm:text-base`}>
                       <li>• Project Title</li>
                       <li>• Description of the Idea</li>
                       <li>• Preferred Tech Stack</li>
                       <li>• Deployment Requirements</li>
                     </ul>
-                    <div className="mt-4 text-sm text-gray-500">
+                    <div className="mt-3 sm:mt-4 text-xs sm:text-sm text-gray-500">
                       🔒 Your idea is safe with us. We maintain strict confidentiality.
                     </div>
                   </div>
@@ -256,7 +257,7 @@ const Contact = () => {
                     href="https://forms.gle/your-google-form-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full px-6 py-3 rounded-lg bg-blue-600 text-white text-center font-semibold hover:bg-blue-700 transition-colors duration-200"
+                    className="block w-full px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg bg-blue-600 text-white text-center text-sm sm:text-base font-semibold hover:bg-blue-700 transition-colors duration-200"
                   >
                     Submit Project Request
                   </a>
