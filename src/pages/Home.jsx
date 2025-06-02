@@ -327,132 +327,85 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Reviews Section */}
+      {/* Vision Section (Previously Reviews Section) */}
       <div className="py-20 bg-gradient-to-b from-white via-blue-50/20 to-white relative overflow-hidden">
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply blur-3xl opacity-20"></div>
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-purple-100 rounded-full mix-blend-multiply blur-3xl opacity-20"></div>
         <div className="container mx-auto px-4 relative">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6">
-              What Our Students Say
+              Our Vision & Impact
             </h2>
             <p className="text-lg text-gray-600">
-              Trusted by students and faculty from top institutions across India
+              Shaping the future of technical education and career development
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto perspective-1000">
-            {reviews.map((review, index) => (
-              <div key={index} className="group h-[400px] [perspective:1000px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            {reviews.map((item) => (
+              <div key={item.id} className="group h-[480px] [perspective:1000px]">
                 <div className="relative h-full w-full transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                   {/* Front of Card */}
-                  <div className="absolute inset-0 bg-white rounded-2xl shadow-lg p-6 [backface-visibility:hidden]">
-                    <div className="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-t-2xl"></div>
-                    <div className="pt-4 h-full flex flex-col">
-                      <div className="flex items-center mb-4">
-                        {[...Array(review.rating)].map((_, i) => (
-                          <svg
-                            key={i}
-                            className="w-5 h-5 text-yellow-400"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                          </svg>
-                        ))}
+                  <div className="absolute inset-0 bg-white rounded-2xl shadow-lg [backface-visibility:hidden] flex flex-col">
+                    <div className={`h-24 ${item.iconBg} rounded-t-2xl flex items-center justify-center flex-shrink-0`}>
+                      <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg">
+                        <img
+                          src={item.icon}
+                          alt={item.title}
+                          className="w-7 h-7"
+                          onError={(e) => {
+                            e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(
+                              item.title
+                            )}&background=0D8ABC&color=fff`;
+                          }}
+                        />
                       </div>
-                      <div className="flex items-center mb-6">
-                        <div className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 p-[2px]">
-                          <div className="rounded-full overflow-hidden w-full h-full bg-white">
-                            <img
-                              src={review.avatar}
-                              alt={review.name}
-                              className="w-full h-full object-cover"
-                              onError={(e) => {
-                                e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(
-                                  review.name
-                                )}&background=0D8ABC&color=fff`;
-                              }}
-                            />
-                          </div>
-                        </div>
-                        <div className="ml-4">
-                          <h4 className="font-semibold text-gray-900 text-lg">
-                            {review.name}
-                          </h4>
-                          <p className="text-blue-600 font-medium">
-                            {review.college}
-                          </p>
-                        </div>
+                    </div>
+                    <div className="p-5 flex-grow flex flex-col">
+                      <div className="mb-3">
+                        <h3 className="text-lg font-bold text-gray-900 mb-1">{item.title}</h3>
+                        <p className="text-xs text-blue-600 font-medium uppercase tracking-wider">{item.subtitle}</p>
                       </div>
-                      <p className="text-gray-600 line-clamp-4 flex-grow">
-                        "{review.review.substring(0, 100)}..."
+                      <p className="text-gray-600 text-sm leading-relaxed line-clamp-6 flex-grow">
+                        {item.content}
                       </p>
-                      <div className="text-center mt-4 text-sm text-blue-600">
-                        <span className="inline-flex items-center gap-1">
-                          Read More
-                          <svg
-                            className="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M19 9l-7 7-7-7"
-                            />
-                          </svg>
-                        </span>
+                      <div className="pt-3 mt-3 border-t border-gray-100">
+                        <div className="flex items-center justify-between">
+                          <span className="px-2.5 py-1 bg-gray-100 text-gray-600 text-xs font-medium rounded-full">
+                            {item.category}
+                          </span>
+                          <span className="inline-flex items-center text-blue-600 text-xs font-medium">
+                            View Details
+                            <svg className="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
 
                   {/* Back of Card */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 text-white rounded-2xl p-6 [transform:rotateY(180deg)] [backface-visibility:hidden]">
-                    <div className="h-full flex flex-col">
-                      <div className="flex-grow">
-                        <p className="text-lg mb-6 leading-relaxed">
-                          "{review.review}"
-                        </p>
-                        <div className="space-y-2">
-                          <p className="font-semibold">{review.program}</p>
-                          <p className="text-blue-100">
-                            Batch of {2023 - Math.floor(Math.random() * 3)}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="border-t border-white/20 pt-4 mt-4">
-                        <h5 className="font-semibold mb-2">
-                          Project Completed
-                        </h5>
-                        <p className="text-sm text-blue-100">
-                          {
-                            [
-                              "Final Year Project",
-                              "Major Project",
-                              "Semester Project",
-                            ][Math.floor(Math.random() * 3)]
-                          }
-                        </p>
-                      </div>
-                      <div className="text-center mt-4 text-sm text-white/90">
-                        <span className="inline-flex items-center gap-1">
-                          Flip Back
-                          <svg
-                            className="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M15 15l-7-7 7-7"
-                            />
-                          </svg>
-                        </span>
+                  <div className={`absolute inset-0 ${item.iconBg} text-white rounded-2xl p-5 [transform:rotateY(180deg)] [backface-visibility:hidden] flex flex-col`}>
+                    <div className="mb-4 flex-shrink-0">
+                      <h4 className="text-lg font-bold mb-2">{item.highlight}</h4>
+                      <div className="h-0.5 w-12 bg-white/30 rounded"></div>
+                    </div>
+                    <div className="flex-grow">
+                      <p className="text-white/90 text-sm leading-relaxed line-clamp-[12]">
+                        {item.content}
+                      </p>
+                    </div>
+                    <div className="pt-4 mt-auto">
+                      <h5 className="font-semibold mb-3 text-base">Key Metrics</h5>
+                      <div className="grid grid-cols-2 gap-2">
+                        {Object.entries(item.metrics).map(([key, value]) => (
+                          <div key={key} className="bg-white/10 rounded-lg p-2.5">
+                            <div className="text-sm font-bold text-white mb-0.5">{value}</div>
+                            <div className="text-[10px] text-white/80 capitalize">
+                              {key.replace(/([A-Z])/g, ' $1').trim()}
+                            </div>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -461,27 +414,45 @@ const Home = () => {
             ))}
           </div>
 
-          {/* College Logos */}
+          {/* Value Propositions - Updated for consistency */}
           <div className="mt-20 pt-10 border-t border-gray-200">
-            <p className="text-center text-gray-600 mb-8">
-              Trusted by students from premier institutions
+            <p className="text-center text-lg text-gray-600 font-medium mb-10">
+              Our Commitment to Excellence
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-8 opacity-70">
-              <span className="text-xl font-semibold text-gray-400">
-                IIT Bombay
-              </span>
-              <span className="text-xl font-semibold text-gray-400">
-                NIT Trichy
-              </span>
-              <span className="text-xl font-semibold text-gray-400">
-                BITS Pilani
-              </span>
-              <span className="text-xl font-semibold text-gray-400">
-                VIT Vellore
-              </span>
-              <span className="text-xl font-semibold text-gray-400">
-                DTU Delhi
-              </span>
+            <div className="flex flex-wrap justify-center items-center gap-6">
+              <div className="flex items-center space-x-3 text-gray-700 bg-white/50 backdrop-blur-sm rounded-xl p-3 shadow-sm hover:shadow-md transition-all duration-200">
+                <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                </div>
+                <span className="font-semibold text-base">Quality First</span>
+              </div>
+              <div className="flex items-center space-x-3 text-gray-700 bg-white/50 backdrop-blur-sm rounded-xl p-3 shadow-sm hover:shadow-md transition-all duration-200">
+                <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z" />
+                  </svg>
+                </div>
+                <span className="font-semibold text-base">Modern Tech</span>
+              </div>
+              <div className="flex items-center space-x-3 text-gray-700 bg-white/50 backdrop-blur-sm rounded-xl p-3 shadow-sm hover:shadow-md transition-all duration-200">
+                <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />
+                  </svg>
+                </div>
+                <span className="font-semibold text-base">Expert Support</span>
+              </div>
+              <div className="flex items-center space-x-3 text-gray-700 bg-white/50 backdrop-blur-sm rounded-xl p-3 shadow-sm hover:shadow-md transition-all duration-200">
+                <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path d="M12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                  </svg>
+                </div>
+                <span className="font-semibold text-base">Community</span>
+              </div>
             </div>
           </div>
         </div>
