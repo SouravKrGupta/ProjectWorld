@@ -192,6 +192,141 @@ const Home = () => {
         </div>
       </div>
 
+      {/* DSA Sheets Section */}
+      <div className={`py-20 relative overflow-hidden ${theme === "dark" ? "bg-gray-800" : "bg-gradient-to-b from-white via-blue-50/20 to-white"}`}>
+        {/* Background decorative elements */}
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply blur-3xl opacity-20"></div>
+        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-purple-100 rounded-full mix-blend-multiply blur-3xl opacity-20"></div>
+        
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6">
+              Prepare for Technical Interviews 
+              </h2>
+              <p className={`text-lg ${theme === "dark" ? "text-gray-300" : "text-gray-600"} max-w-3xl mx-auto`}>
+                Access hand-picked DSA sheets from India's best tech educators and YouTubers
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Left side - Featured Educators */}
+              <div className={`group p-8 rounded-2xl shadow-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl
+                ${theme === "dark" ? "bg-gray-900" : "bg-white/90 backdrop-blur-sm"}`}>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5 rounded-2xl transform transition-transform group-hover:scale-105"></div>
+                <h3 className={`relative text-xl font-semibold mb-8 pb-3 border-b ${theme === "dark" ? "text-white border-gray-700" : "text-gray-900 border-gray-200"}`}>
+                  Learn from the Best 🌟
+                </h3>
+                <ul className="relative space-y-6">
+                  <li className="flex items-center transform transition-transform hover:translate-x-2">
+                    <span className="mr-4 text-yellow-500 text-2xl">⭐</span>
+                    <div className="flex-1">
+                      <h4 className={`font-semibold ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
+                        Striver (Raj Vikramaditya)
+                      </h4>
+                      <p className={`text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
+                        Take U Forward - SDE Sheet
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex items-center transform transition-transform hover:translate-x-2">
+                    <span className="mr-4 text-yellow-500 text-2xl">⭐</span>
+                    <div className="flex-1">
+                      <h4 className={`font-semibold ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
+                        Love Babbar
+                      </h4>
+                      <p className={`text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
+                        450 DSA Questions Sheet
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex items-center transform transition-transform hover:translate-x-2">
+                    <span className="mr-4 text-yellow-500 text-2xl">⭐</span>
+                    <div className="flex-1">
+                      <h4 className={`font-semibold ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
+                        Fraz
+                      </h4>
+                      <p className={`text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
+                        LeadCoding 250 Questions
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex items-center transform transition-transform hover:translate-x-2">
+                    <span className="mr-4 text-yellow-500 text-2xl">⭐</span>
+                    <div className="flex-1">
+                      <h4 className={`font-semibold ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
+                        Apna College
+                      </h4>
+                      <p className={`text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
+                        375 Curated Problems
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex items-center transform transition-transform hover:translate-x-2">
+                    <span className="mr-4 text-yellow-500 text-2xl">⭐</span>
+                    <div className="flex-1">
+                      <h4 className={`font-semibold ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
+                        Arsh Goyal
+                      </h4>
+                      <p className={`text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
+                        SDE Sheet 280 Questions
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Right side - Call to Action */}
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl transform rotate-1 group-hover:rotate-2 transition-transform duration-200"></div>
+                <div className={`relative p-8 rounded-2xl bg-gradient-to-br from-blue-600 to-purple-600 text-white shadow-lg transform -rotate-1 group-hover:-rotate-2 transition-transform duration-200`}>
+                  <h3 className="text-xl font-semibold mb-8 pb-3 border-b border-white/20">
+                    Why These DSA Sheets? 🚀
+                  </h3>
+                  <ul className="space-y-6 mb-8">
+                    <li className="flex items-center transform transition-transform hover:translate-x-2">
+                      <span className="mr-4 text-2xl">✨</span>
+                      <span className="text-blue-100">Created by working professionals from Google, Amazon, Microsoft</span>
+                    </li>
+                    <li className="flex items-center transform transition-transform hover:translate-x-2">
+                      <span className="mr-4 text-2xl">✨</span>
+                      <span className="text-blue-100">Most followed DSA educators on YouTube</span>
+                    </li>
+                    <li className="flex items-center transform transition-transform hover:translate-x-2">
+                      <span className="mr-4 text-2xl">✨</span>
+                      <span className="text-blue-100">Proven success in placements & interviews</span>
+                    </li>
+                    <li className="flex items-center transform transition-transform hover:translate-x-2">
+                      <span className="mr-4 text-2xl">✨</span>
+                      <span className="text-blue-100">Free access to all practice sheets</span>
+                    </li>
+                  </ul>
+                  <Link
+                    to="/dsa-sheets"
+                    className="inline-flex items-center px-6 py-3 rounded-lg bg-white text-blue-600 hover:bg-blue-50 transition-all duration-200 transform hover:-translate-y-0.5 hover:shadow-lg font-semibold"
+                  >
+                    Access All DSA Sheets
+                    <svg
+                      className="w-5 h-5 ml-2 transition-transform duration-200 group-hover:translate-x-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Reviews Section */}
       <div className="py-20 bg-gradient-to-b from-white via-blue-50/20 to-white relative overflow-hidden">
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply blur-3xl opacity-20"></div>

@@ -21,6 +21,9 @@ const Navbar = () => {
   // Get theme and toggleTheme from context
   const { theme, toggleTheme } = useContext(ThemeContext);
 
+  const navLinks = ['/', '/about', '/projects', '/dsa-sheets', '/contact'];
+  const labels = ['Home', 'About', 'Projects', 'DSA Sheets', 'Contact Us'];
+
   return (
     <nav
       className={`shadow-md sticky top-0 z-50 transition-colors duration-500 ${
@@ -38,22 +41,19 @@ const Navbar = () => {
 
           {/* Desktop Menu + Theme Toggle */}
           <div className="hidden md:flex items-center space-x-6">
-            {['/', '/about', '/projects', '/contact'].map((path, index) => {
-              const labels = ['Home', 'About', 'Projects', 'Contact Us'];
-              return (
-                <NavLink
-                  key={path}
-                  to={path}
-                  className={({ isActive }) =>
-                    isActive
-                      ? `font-semibold border-b-2 border-blue-600 dark:border-blue-400 ${theme === 'dark' ? 'text-gray-100' : 'text-gray-900'}`
-                      : `${theme === 'dark' ? 'text-gray-300' : 'text-gray-900'} hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200`
-                  }
-                >
-                  {labels[index]}
-                </NavLink>
-              );
-            })}
+            {navLinks.map((path, index) => (
+              <NavLink
+                key={path}
+                to={path}
+                className={({ isActive }) =>
+                  isActive
+                    ? `font-semibold border-b-2 border-blue-600 dark:border-blue-400 ${theme === 'dark' ? 'text-gray-100' : 'text-gray-900'}`
+                    : `${theme === 'dark' ? 'text-gray-300' : 'text-gray-900'} hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200`
+                }
+              >
+                {labels[index]}
+              </NavLink>
+            ))}
 
             {/* Theme toggle (moved beside nav links) */}
             <button
@@ -139,24 +139,21 @@ const Navbar = () => {
         {/* Mobile menu */}
         <div className={`${isOpen ? 'block' : 'hidden'} md:hidden pb-4`}>
           <div className="flex flex-col space-y-2">
-            {['/', '/about', '/projects', '/contact'].map((path, index) => {
-              const labels = ['Home', 'About', 'Projects', 'Contact Us'];
-              return (
-                <NavLink
-                  key={path}
-                  to={path}
-                  onClick={() => setIsOpen(false)}
-                  className={({ isActive }) => {
-                    if (isActive) {
-                      return `font-semibold px-4 py-2 rounded-lg ${theme === 'dark' ? 'text-gray-100 bg-gray-800' : 'text-gray-900 bg-blue-100'} `;
-                    }
-                    return `${theme === 'dark' ? 'text-gray-300' : 'text-gray-900'} hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-100 dark:hover:bg-gray-800 px-4 py-2 rounded-lg transition-colors duration-200`;
-                  }}
-                >
-                  {labels[index]}
-                </NavLink>
-              );
-            })}
+            {navLinks.map((path, index) => (
+              <NavLink
+                key={path}
+                to={path}
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) => {
+                  if (isActive) {
+                    return `font-semibold px-4 py-2 rounded-lg ${theme === 'dark' ? 'text-gray-100 bg-gray-800' : 'text-gray-900 bg-blue-100'} `;
+                  }
+                  return `${theme === 'dark' ? 'text-gray-300' : 'text-gray-900'} hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-100 dark:hover:bg-gray-800 px-4 py-2 rounded-lg transition-colors duration-200`;
+                }}
+              >
+                {labels[index]}
+              </NavLink>
+            ))}
           </div>
         </div>
       </div>
