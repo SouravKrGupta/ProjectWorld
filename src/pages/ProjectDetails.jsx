@@ -472,16 +472,33 @@ const ProjectDetails = () => {
                       />
                     </svg>
                   </a>
-                  <button
-                    className={cn(
-                      "inline-flex justify-center items-center px-6 sm:px-8 py-3 sm:py-4 rounded-lg border-2 font-semibold text-sm sm:text-base transition-colors duration-200",
-                      theme === "dark"
-                        ? "border-blue-400 text-blue-400 hover:bg-blue-900"
-                        : "border-blue-600 text-blue-600 hover:bg-blue-50"
-                    )}
-                  >
-                    Preview Demo
-                  </button>
+                  {project.demoUrl ? (
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={cn(
+                        "inline-flex justify-center items-center px-6 sm:px-8 py-3 sm:py-4 rounded-lg border-2 font-semibold text-sm sm:text-base transition-colors duration-200",
+                        theme === "dark"
+                          ? "border-blue-400 text-blue-400 hover:bg-blue-900"
+                          : "border-blue-600 text-blue-600 hover:bg-blue-50"
+                      )}
+                    >
+                      Preview Demo
+                    </a>
+                  ) : (
+                    <button
+                      disabled
+                      className={cn(
+                        "inline-flex justify-center items-center px-6 sm:px-8 py-3 sm:py-4 rounded-lg border-2 font-semibold text-sm sm:text-base transition-colors duration-200 opacity-50 cursor-not-allowed",
+                        theme === "dark"
+                          ? "border-gray-400 text-gray-400"
+                          : "border-gray-400 text-gray-400"
+                      )}
+                    >
+                      Demo Not Available
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

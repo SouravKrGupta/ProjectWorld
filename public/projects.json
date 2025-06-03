@@ -7,6 +7,7 @@
     "category": "Major",
     "price": "₹1500",
     "image": "https://souravkumargupta.netlify.app/static/media/doc.e944a71bcacf3504468e.png",
+    "demoUrl": "",
     "features": [
       "Doctor and patient registration",
       "Appointment booking and management",
@@ -23,6 +24,7 @@
     "category": "Mini",
     "price": "₹1000",
     "image": "https://raw.githubusercontent.com/ladunjexa/reactjs18-3d-portfolio/refs/heads/main/.github/README_ASSETS/3d-portfolio.png",
+    "demoUrl": "https://3dportfolioskg.netlify.app/",
     "features": [
       "3D hero section",
       "Interactive project showcases",
@@ -39,6 +41,7 @@
     "category": "Advanced",
     "price": "₹2000",
     "image": "https://media.licdn.com/dms/image/v2/D5612AQHAAb9IJYeHbg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1693199223255?e=1753920000&v=beta&t=7sUGpLLAM7IzGAT-c3mX8iVcExRAaQLKRRtUIfWEgy8",
+    "demoUrl": "",
     "features": [
       "Event creation and editing",
       "User registration and authentication",
@@ -55,6 +58,7 @@
     "category": "Major",
     "price": "₹1500",
     "image": "https://heloix.com/wp-content/uploads/2021/03/restaurant.png",
+    "demoUrl": "",
     "features": [
       "Restaurant listing",
       "Menu browsing",
@@ -71,6 +75,7 @@
     "category": "Major",
     "price": "₹1500",
     "image": "https://souravkumargupta.netlify.app/static/media/fitness.c908d568b8502ba2cb0c.png",
+    "demoUrl": "",
     "features": [
       "Workout logging",
       "Diet tracking",
@@ -87,6 +92,7 @@
     "category": "Advanced",
     "price": "₹2000",
     "image": "https://blog.happyfox.com/wp-content/uploads/2019/05/in-app-chat-blog-cover-image.png",
+    "demoUrl": "",
     "features": [
       "Real-time messaging",
       "Chat rooms",
@@ -103,6 +109,7 @@
     "category": "Major",
     "price": "₹1500",
     "image": "https://souravkumargupta.netlify.app/static/media/blog.e47e340f233ed18ec4e1.png",
+    "demoUrl": "",
     "features": [
       "User authentication",
       "Markdown editor",
@@ -119,6 +126,7 @@
     "category": "Advanced",
     "price": "₹2000",
     "image": "https://souravkumargupta.netlify.app/static/media/chat.3503adcffb5077be8b4d.png",
+    "demoUrl": "",
     "features": [
       "AI-powered chat interface",
       "User authentication",
@@ -135,6 +143,7 @@
     "category": "Mini",
     "price": "₹1000",
     "image": "https://souravkumargupta.netlify.app/static/media/noteapp.8e16598c69b8be622e17.png",
+    "demoUrl": "",
     "features": [
       "Add/edit/delete notes",
       "User authentication",
@@ -151,6 +160,7 @@
     "category": "Major",
     "price": "₹1500",
     "image": "https://souravkumargupta.netlify.app/static/media/ecommerce.ed536ee4076c68822ddf.png",
+    "demoUrl": "",
     "features": [
       "Product catalog",
       "Shopping cart",
@@ -167,6 +177,7 @@
     "category": "Mini",
     "price": "₹1000",
     "image": "https://souravkumargupta.netlify.app/static/media/tic.0261253f923f17de827b.png",
+    "demoUrl": "",
     "features": [
       "Two-player mode",
       "Simple UI",
@@ -183,6 +194,7 @@
     "category": "Mini",
     "price": "₹1000",
     "image": "https://souravkumargupta.netlify.app/static/media/quiz.bf3d544d8724268310c0.png",
+    "demoUrl": "",
     "features": [
       "Multiple-choice questions",
       "player mode",
@@ -199,6 +211,7 @@
     "category": "Major",
     "price": "₹3000",
     "image": "https://www.blog.shippypro.com/hs-fs/hubfs/Blog/fashion-ecommerce.jpg?width=1920&height=1080&name=fashion-ecommerce.jpg",
+    "demoUrl": "",
     "features": [
       "Product listing and filtering",
       "Cart and checkout functionality",
