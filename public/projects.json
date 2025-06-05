@@ -211,7 +211,7 @@
     "category": "Major",
     "price": "₹3000",
     "image": "https://www.blog.shippypro.com/hs-fs/hubfs/Blog/fashion-ecommerce.jpg?width=1920&height=1080&name=fashion-ecommerce.jpg",
-    "demoUrl": "",
+    "demoUrl": "https://fasco-react-tailwindcss.netlify.app/",
     "features": [
       "Product listing and filtering",
       "Cart and checkout functionality",
