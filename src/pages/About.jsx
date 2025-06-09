@@ -149,7 +149,7 @@ const About = () => {
       </div>
 
       {/* Founders Section */}
-      <div className="py-16 sm:py-24 md:py-32 bg-gradient-to-br from-white via-blue-50/10 to-white relative overflow-hidden dark:from-gray-900 dark:to-gray-900">
+      <div className="py-16 sm:py-24 md:py-32  from-white via-blue-50/10 to-white relative overflow-hidden dark:from-gray-900 dark:to-gray-900">
         <div className="absolute inset-0 bg-grid-slate-100 dark:bg-grid-gray-800 [mask-image:linear-gradient(0deg,transparent,black,transparent)] pointer-events-none"></div>
         <div className="container mx-auto px-4 sm:px-6 relative">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 md:mb-24">
