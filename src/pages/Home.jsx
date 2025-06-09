@@ -5,10 +5,11 @@ import FeaturedCarousel from "../components/FeaturedCarousel";
 import { ThemeContext } from "../context/ThemeContext"; // Adjust path as needed
 
 const stats = [
-  { label: "Projects Sold", value: "1200+", icon: "📦" },
-  { label: "Happy Clients", value: "950+", icon: "😊" },
-  { label: "Tech Stacks", value: "3+", icon: "💻" },
+  { label: "Projects Ready", value: "25+", icon: "📦" }, // or "Projects Available"
+  { label: "Clients Onboarded", value: "10+", icon: "😊" }, // or "Early Clients"
+  { label: "Tech Stacks", value: "5+", icon: "💻" }, // Django, MySQL, Node, MongoDB, React
 ];
+
 
 const categories = [
   { name: "Mini Projects", icon: "📱", color: "blue" },          
