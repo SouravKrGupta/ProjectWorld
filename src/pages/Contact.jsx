@@ -20,8 +20,8 @@ const contactMethods = [
   {
     icon: "💬",
     title: "Social Media",
-    value: "contact.projectworld",
-    link: "https://www.instagram.com/contact.projectworld/",
+    value: "contact.zypject",
+    link: "https://www.instagram.com/contact.zypject/",
     description: "Follow us for updates"
   }
 ];
