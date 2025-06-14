@@ -12,7 +12,7 @@ const Footer = () => {
           {/* Main Info */}
           <div className="col-span-1 sm:col-span-2">
             <h3 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-3 sm:mb-4">
-              ProjectNest
+              Zypject
             </h3>
             <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'} text-sm sm:text-base mb-4 max-w-md`}>
               Discover amazing projects and connect with talented developers from around the world.
@@ -92,7 +92,7 @@ const Footer = () => {
 
         <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-gray-400 dark:border-gray-700">
           <div className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-center text-sm sm:text-base`}>
-            &copy; {new Date().getFullYear()} ProjectNest . All rights reserved.
+            &copy; {new Date().getFullYear()} Zypject. All rights reserved.
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-// About page for ProjectNest 
+// About page for Zypject
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../context/ThemeContext'; // Adjust path as per your project
@@ -53,7 +53,7 @@ const founders = [
   {
     name: "Sourav Kumar Gupta",
     role: "Founder & CEO",
-    description: "A passionate tech entrepreneur with expertise in full-stack development and project architecture. Leading the technical vision and development strategy of ProjectNest .",
+    description: "A passionate tech entrepreneur with expertise in full-stack development and project architecture. Leading the technical vision and development strategy of Zypject.",
     image: "https://avatars.githubusercontent.com/u/89971045?s=400&u=f67fc032815039900ae416aa5fe3e20706b1c2ca&v=4",
     social: {
       linkedin: "https://www.linkedin.com/in/sourav-kumar-gupta-18b638200/"
@@ -63,7 +63,7 @@ const founders = [
   {
     name: "Riya Singh",
     role: "Co-Founder & COO",
-    description: "An innovative leader focusing on operations and client success. Driving the business strategy and ensuring seamless project delivery at ProjectNest .",
+    description: "An innovative leader focusing on operations and client success. Driving the business strategy and ensuring seamless project delivery at Zypject.",
     image: "https://media.licdn.com/dms/image/v2/D5603AQEhhppYrQfbjA/profile-displayphoto-shrink_800_800/B56ZQ29nUyHQAg-/0/1736088910699?e=1753920000&v=beta&t=aCC7k1mjckphbqhOaq681Srm_8ZSwTfiYRdTUknoQ_I",
     social: {
       linkedin: "https://www.linkedin.com/in/riya-singh-34b1aa19a/"
@@ -96,7 +96,7 @@ const About = () => {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              About ProjectNest 
+              About Zypject
             </h1>
             <p className={`text-sm sm:text-base md:text-lg leading-relaxed ${textSecondaryDesc}`}>
               We're on a mission to simplify the project development journey by providing high-quality, ready-to-use software projects for students and professionals.
@@ -157,7 +157,7 @@ const About = () => {
               Meet Our Founders
             </h2>
             <p className={`text-sm sm:text-base md:text-lg leading-relaxed ${textSecondaryDesc}`}>
-              The visionary minds behind ProjectNest , committed to revolutionizing project development and delivery.
+              The visionary minds behind Zypject, committed to revolutionizing project development and delivery.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 max-w-7xl mx-auto">

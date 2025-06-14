@@ -1,4 +1,4 @@
-// Projects page for ProjectNest 
+// Projects page for Zypject
 import React, { useEffect, useState, useContext } from "react";
 import ProjectCard from "../components/ProjectCard";
 import Filterbar from "../components/Filterbar";

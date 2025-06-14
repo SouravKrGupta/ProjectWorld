@@ -1,6 +1,6 @@
-# ProjectNest 
+# Zypject
 
-ProjectNest  is a modern web application built with React and Vite, offering a curated collection of ready-made software projects for students, developers, and professionals. The platform features Mini, Major, and Advanced projects using popular tech stacks like MERN, Django REST Framework, and MySQL.
+Zypject is a modern web application built with React and Vite, offering a curated collection of ready-made software projects for students, developers, and professionals. The platform features Mini, Major, and Advanced projects using popular tech stacks like MERN, Django REST Framework, and MySQL.
 
 ## Features
 

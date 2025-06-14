@@ -35,7 +35,7 @@ const Navbar = () => {
           <Link to="/" className="flex items-center space-x-1.5 sm:space-x-2">
             <Logo />
             <span className="text-lg sm:text-2xl font-extrabold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              ProjectNest 
+              Zypject
             </span>
         
           </Link>
