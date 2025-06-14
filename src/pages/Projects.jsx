@@ -1,4 +1,4 @@
-// Projects page for Project World
+// Projects page for ProjectNest 
 import React, { useEffect, useState, useContext } from "react";
 import ProjectCard from "../components/ProjectCard";
 import Filterbar from "../components/Filterbar";

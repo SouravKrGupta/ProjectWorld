@@ -1,4 +1,4 @@
-// Home page for Project World
+// Home page for ProjectNest 
 import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import FeaturedCarousel from "../components/FeaturedCarousel";
