@@ -83,9 +83,9 @@ const About = () => {
   const featureTextClass = theme === "dark" ? "text-gray-800" : "text-gray-600";
   const textPrimary = theme === "dark" ? "text-gray-200" : "text-gray-900";
   const textPrimaryHeading = theme === "dark" ? "text-gray-900" : "text-gray-900";
-  const textSecondary = theme === "dark" ? "text-gray-900" : "text-gray-900";
-  const textAccent = theme === "dark" ? "text-blue-300" : "text-blue-600";
-  const badgeBg = theme === "dark" ? "bg-blue-800/40" : "bg-blue-50";
+  const textSecondary = theme === "dark" ? "text-gray-400" : "text-gray-600";
+  const textAccent = theme === "dark" ? "text-blue-400" : "text-blue-600";
+  const badgeBg = theme === "dark" ? "bg-blue-900/40" : "bg-blue-50";
   const textSecondaryDesc = theme === "dark" ? "text-gray-100" : "text-gray-900";
   const textPrimaryHead = theme === "dark" ? "text-gray-200" : "text-gray-900";
 
