@@ -227,7 +227,7 @@
   "tech": ["React.js", "Tailwind CSS", "Django", "Django REST Framework", "MySQL", "gTTS", "PyMuPDF"],
   "category": "Major",
   "price": "₹4000",
-  "image": "/public/book.png",
+  "image": "/book.png",
   "demoUrl": "",
   "features": [
     "User registration and JWT authentication",
