@@ -219,5 +219,25 @@
       "Responsive and mobile-friendly design"
     ],
     "createdAt": "2024-06-01T12:00:00Z"
-  }
+  },
+  {
+  "id": 14,
+  "name": "Book World – AI PDF Reader & Audio Platform",
+  "description": "An AI-powered web platform that enables users to upload, read, and listen to books using integrated PDF viewing and Google Text-to-Speech audio generation.",
+  "tech": ["React.js", "Tailwind CSS", "Django", "Django REST Framework", "MySQL", "gTTS", "PyMuPDF"],
+  "category": "Major",
+  "price": "₹4000",
+  "image": "https://drive.google.com/file/d/1QGfGsYoKOCvrLadn1bxaAGOO0coTSs49/view?usp=sharing",
+  "demoUrl": "",
+  "features": [
+    "User registration and JWT authentication",
+    "Upload and view PDF books",
+    "AI-generated audio from books using gTTS",
+    "Admin dashboard for book and user management",
+    "Responsive design for desktop and mobile",
+    "Audio playback directly from browser"
+  ],
+  "createdAt": "2024-06-20T12:00:00Z"
+}
+
 ]
