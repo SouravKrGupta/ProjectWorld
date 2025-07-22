@@ -209,7 +209,7 @@
     "description": "A modern and responsive eCommerce platform built using React and TailwindCSS, designed for showcasing and purchasing products online.",
     "tech": ["React", "TailwindCSS", "JavaScript"],
     "category": "Major",
-    "price": "₹3000",
+    "price": "₹1500",
     "image": "https://www.blog.shippypro.com/hs-fs/hubfs/Blog/fashion-ecommerce.jpg?width=1920&height=1080&name=fashion-ecommerce.jpg",
     "demoUrl": "https://fasco-react-tailwindcss.netlify.app/",
     "features": [
@@ -226,7 +226,7 @@
   "description": "An AI-powered web platform that enables users to upload, read, and listen to books using integrated PDF viewing and Google Text-to-Speech audio generation.",
   "tech": ["React.js", "Tailwind CSS", "Django", "Django REST Framework", "MySQL", "gTTS", "PyMuPDF"],
   "category": "Major",
-  "price": "₹4000",
+  "price": "₹1500",
   "image": "/book.png",
   "demoUrl": "",
   "features": [

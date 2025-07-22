@@ -49,28 +49,28 @@ const processSteps = [
   }
 ];
 
-const founders = [
-  {
-    name: "Sourav Kumar Gupta",
-    role: "Founder & CEO",
-    description: "A passionate tech entrepreneur with expertise in full-stack development and project architecture. Leading the technical vision and development strategy of Zypject.",
-    image: "https://avatars.githubusercontent.com/u/89971045?s=400&u=f67fc032815039900ae416aa5fe3e20706b1c2ca&v=4",
-    social: {
-      linkedin: "https://www.linkedin.com/in/sourav-kumar-gupta-18b638200/"
+// const founders = [
+//   {
+//     name: "Sourav Kumar Gupta",
+//     role: "Founder & CEO",
+//     description: "A passionate tech entrepreneur with expertise in full-stack development and project architecture. Leading the technical vision and development strategy of Zypject.",
+//     image: "https://avatars.githubusercontent.com/u/89971045?s=400&u=f67fc032815039900ae416aa5fe3e20706b1c2ca&v=4",
+//     social: {
+//       linkedin: "https://www.linkedin.com/in/sourav-kumar-gupta-18b638200/"
      
-    }
-  },
-  {
-    name: "Riya Singh",
-    role: "Co-Founder & COO",
-    description: "An innovative leader focusing on operations and client success. Driving the business strategy and ensuring seamless project delivery at Zypject.",
-    image: "https://media.licdn.com/dms/image/v2/D5603AQEhhppYrQfbjA/profile-displayphoto-shrink_800_800/B56ZQ29nUyHQAg-/0/1736088910699?e=1753920000&v=beta&t=aCC7k1mjckphbqhOaq681Srm_8ZSwTfiYRdTUknoQ_I",
-    social: {
-      linkedin: "https://www.linkedin.com/in/riya-singh-34b1aa19a/"
+//     }
+//   },
+//   {
+//     name: "Riya Singh",
+//     role: "Co-Founder & COO",
+//     description: "An innovative leader focusing on operations and client success. Driving the business strategy and ensuring seamless project delivery at Zypject.",
+//     image: "https://media.licdn.com/dms/image/v2/D5603AQEhhppYrQfbjA/profile-displayphoto-shrink_800_800/B56ZQ29nUyHQAg-/0/1736088910699?e=1753920000&v=beta&t=aCC7k1mjckphbqhOaq681Srm_8ZSwTfiYRdTUknoQ_I",
+//     social: {
+//       linkedin: "https://www.linkedin.com/in/riya-singh-34b1aa19a/"
       
-    }
-  }
-];
+//     }
+//   }
+// ];
 
 const About = () => {
   const { theme } = useContext(ThemeContext);
@@ -149,7 +149,7 @@ const About = () => {
       </div>
 
       {/* Founders Section */}
-      <div className="py-16 sm:py-24 md:py-32  from-white via-blue-50/10 to-white relative overflow-hidden dark:from-gray-900 dark:to-gray-900">
+      {/* <div className="py-16 sm:py-24 md:py-32  from-white via-blue-50/10 to-white relative overflow-hidden dark:from-gray-900 dark:to-gray-900">
         <div className="absolute inset-0 bg-grid-slate-100 dark:bg-grid-gray-800 [mask-image:linear-gradient(0deg,transparent,black,transparent)] pointer-events-none"></div>
         <div className="container mx-auto px-4 sm:px-6 relative">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 md:mb-24">
@@ -164,7 +164,7 @@ const About = () => {
             {founders.map((founder, index) => (
               <div key={index} className="relative group">
                 <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8 md:gap-12">
-                  {/* Profile Image */}
+                 
                   <div className="relative flex-shrink-0 group-hover:translate-y-[-8px] transition-all duration-500">
                     <div className="absolute inset-[-4px] rounded-full bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 blur-md transition-all duration-500"></div>
                     <div className="relative rounded-full p-1 bg-gradient-to-r from-blue-600 to-purple-600">
@@ -183,7 +183,7 @@ const About = () => {
                     </div>
                   </div>
 
-                  {/* Founder Info */}
+                  
                   <div className="flex-grow text-center md:text-left">
                     <div className="relative inline-block">
                       <h3 className={`text-xl sm:text-2xl md:text-3xl font-bold mb-2 group-hover:text-blue-600 transition-colors duration-300 ${textPrimaryHead}`}>
@@ -198,7 +198,7 @@ const About = () => {
                       <p className={`${textSecondaryDesc} text-sm sm:text-base leading-relaxed`}>
                         {founder.description}
                       </p>
-                      {/* Social Links */}
+                   
                       <div className="flex justify-center md:justify-start space-x-4 sm:space-x-5 pt-2">
                         {Object.entries(founder.social).map(([platform, url]) => (
                           <a
@@ -225,7 +225,7 @@ const About = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Call To Action */}
       <div className="py-8 sm:py-12 md:py-16">

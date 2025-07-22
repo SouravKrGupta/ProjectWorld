@@ -11,6 +11,8 @@ const Projects = () => {
   const [tech, setTech] = useState("All");
   const [type, setType] = useState("All");
   const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 6;
 
   useEffect(() => {
     fetch("/projects.json")
@@ -24,10 +26,20 @@ const Projects = () => {
       });
   }, []);
 
-  const filtered = projects.filter(
-    (p) =>
-      (tech === "All" || p.tech.includes(tech)) &&
-      (type === "All" || p.category === type)
+  // Filter and sort projects by descending id
+  const filtered = projects
+    .filter(
+      (p) =>
+        (tech === "All" || p.tech.includes(tech)) &&
+        (type === "All" || p.category === type)
+    )
+    .sort((a, b) => b.id - a.id);
+
+  // Pagination logic
+  const totalPages = Math.ceil(filtered.length / pageSize);
+  const paginatedProjects = filtered.slice(
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize
   );
 
   // Theme-based background classes
@@ -90,11 +102,31 @@ const Projects = () => {
               ))}
             </div>
           ) : filtered.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-              {filtered.map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-            </div>
+            <>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+                {paginatedProjects.map((project) => (
+                  <ProjectCard key={project.id} project={project} />
+                ))}
+              </div>
+              {/* Pagination Controls */}
+              <div className="flex justify-center items-center mt-8">
+                <button
+                  className={`px-4 py-2 mx-1 rounded-lg font-semibold ${currentPage === 1 ? 'bg-gray-200 text-gray-400 cursor-not-allowed' : 'bg-blue-600 text-white hover:bg-blue-700'}`}
+                  onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                  disabled={currentPage === 1}
+                >
+                  Prev
+                </button>
+                <span className="mx-2 text-base font-medium">Page {currentPage} of {totalPages}</span>
+                <button
+                  className={`px-4 py-2 mx-1 rounded-lg font-semibold ${currentPage === totalPages ? 'bg-gray-200 text-gray-400 cursor-not-allowed' : 'bg-blue-600 text-white hover:bg-blue-700'}`}
+                  onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+                  disabled={currentPage === totalPages}
+                >
+                  Next
+                </button>
+              </div>
+            </>
           ) : (
             <div className="text-center py-12 sm:py-16">
               <div
