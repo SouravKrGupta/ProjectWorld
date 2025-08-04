@@ -37,9 +37,8 @@ const FeaturedCarousel = () => {
         {projects.map((project, index) => (
           <div
             key={project.id}
-            className={`absolute inset-0 transition-all duration-700 transform ${
-              index === currentIndex ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'
-            }`}
+            className={`absolute inset-0 transition-all duration-700 transform ${index === currentIndex ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'
+              }`}
           >
             {/* Background Image with Gradient Overlay */}
             <div className="absolute inset-0">
@@ -88,10 +87,15 @@ const FeaturedCarousel = () => {
                     {project.description}
                   </p>
 
-                  <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4 lg:mb-8">
-                    <span className="text-lg sm:text-xl lg:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                      {project.price}
-                    </span>
+                  <div className="mb-2 sm:mb-3 text-base sm:text-lg font-semibold text-blue-600">
+                    {project.discountPrice ? (
+                      <div className="flex items-center gap-2">
+                        <span className="line-through text-gray-500">{project.price}</span>
+                        <span className="text-green-600">{project.discountPrice}</span>
+                      </div>
+                    ) : (
+                      <span>{project.price}</span>
+                    )}
                   </div>
 
                   <Link
@@ -137,11 +141,10 @@ const FeaturedCarousel = () => {
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`transition-all duration-200 ${
-              index === currentIndex
+            className={`transition-all duration-200 ${index === currentIndex
                 ? 'w-6 sm:w-8 lg:w-12 h-0.5 sm:h-1 lg:h-1.5 bg-gradient-to-r from-blue-400 to-purple-400'
                 : 'w-1.5 sm:w-2 lg:w-3 h-0.5 sm:h-1 lg:h-1.5 bg-gray-300 hover:bg-gray-400'
-            }`}
+              }`}
           >
             <span className="sr-only">Slide {index + 1}</span>
           </button>
