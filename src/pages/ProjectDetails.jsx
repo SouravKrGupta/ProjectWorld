@@ -358,14 +358,16 @@ const ProjectDetails = () => {
                   </span>
                 </div>
 
-                <div
-                  className={cn(
-                    "text-xl sm:text-2xl font-bold mb-4 sm:mb-6",
-                    theme === "dark" ? "text-blue-400" : "text-blue-600"
-                  )}
-                >
-                  {project.price}
-                </div>
+                <div className="mb-2 sm:mb-3 text-base sm:text-lg font-semibold text-blue-600">
+          {project.discountPrice ? (
+            <div className="flex items-center gap-2">
+              <span className="line-through text-gray-500">{project.price}</span>
+              <span className="text-green-600">{project.discountPrice}</span>
+            </div>
+          ) : (
+            <span>{project.price}</span>
+          )}
+      </div>
 
                 <div className="prose max-w-none mb-6 sm:mb-8">
                   <p
@@ -549,14 +551,16 @@ const ProjectDetails = () => {
                     >
                       {relatedProject.name}
                     </h3>
-                    <div
-                      className={cn(
-                        "text-sm sm:text-base font-medium",
-                        theme === "dark" ? "text-blue-400" : "text-blue-600"
-                      )}
-                    >
-                      {relatedProject.price}
-                    </div>
+                    <div className="mb-2 sm:mb-3 text-base sm:text-lg font-semibold text-blue-600">
+          {project.discountPrice ? (
+            <div className="flex items-center gap-2">
+              <span className="line-through text-gray-500">{project.price}</span>
+              <span className="text-green-600">{project.discountPrice}</span>
+            </div>
+          ) : (
+            <span>{project.price}</span>
+          )}
+      </div>
                   </Link>
                 ))}
           </div>
