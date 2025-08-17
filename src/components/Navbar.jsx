@@ -138,26 +138,6 @@ const Navbar = () => {
         </div>
 
         {/* Mobile menu */}
-        <div className={`${isOpen ? 'block' : 'hidden'} md:hidden pb-4`}>
-          <div className="flex flex-col space-y-2">
-            {['/', '/about', '/projects', '/courses', '/contact'].map((path, index) => {
-              const labels = ['Home', 'About', 'Projects', 'Courses', 'Contact Us'];
-              return (
-                <NavLink
-                  key={path}
-                  to={path}
-                  onClick={() => setIsOpen(false)}
-                  className={({ isActive }) => {
-                    if (isActive) {
-                      return `font-semibold px-4 py-2 rounded-lg ${theme === 'dark' ? 'text-gray-100 bg-gray-800' : 'text-gray-900 bg-blue-100'} `;
-                    }
-                    return `${theme === 'dark' ? 'text-gray-300' : 'text-gray-900'} hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-100 dark:hover:bg-gray-800 px-4 py-2 rounded-lg transition-colors duration-200`;
-                  }}
-                >
-                  {labels[index]}
-                </NavLink>
-              );
-            })}
         <div className={`${isOpen ? 'block' : 'hidden'} md:hidden py-2 sm:py-4`}>
           <div className="flex flex-col space-y-1 sm:space-y-2">
             {navLinks.map((path, index) => (
