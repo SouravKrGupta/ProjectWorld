@@ -10,6 +10,9 @@ import Contact from './pages/Contact';
 import DSASheets from './pages/DSASheets';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import MNCQuestions from './pages/MNCPrep';
+import B2BPages from './pages/B2BServices';
+import CollegeProjects from './pages/CollegeProjects';
 
 function App() {
   return (
@@ -24,6 +27,9 @@ function App() {
             <Route path="/projects/:id" element={<ProjectDetails />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/dsa-sheets" element={<DSASheets />} />
+            <Route path="/mnc-questions" element={<MNCQuestions />} />
+            <Route path="/b2b-pages" element={<B2BPages />} />
+            <Route path="/college-projects" element={<CollegeProjects />} />
           </Routes>
         </main>
         <Footer />

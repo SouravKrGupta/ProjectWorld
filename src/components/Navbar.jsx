@@ -21,8 +21,8 @@ const Navbar = () => {
   // Get theme and toggleTheme from context
   const { theme, toggleTheme } = useContext(ThemeContext);
 
-  const navLinks = ['/', '/about', '/projects', '/dsa-sheets', '/contact'];
-  const labels = ['Home', 'About', 'Projects', 'DSA Sheets', 'Contact Us'];
+  const navLinks = ['/', '/about','/college-projects', '/dsa-sheets', '/mnc-questions', '/b2b-pages','/contact' ];
+  const labels = ['Home', 'About', 'College Projects',  'DSA Sheets', 'MNC Questions', 'B2B Pages', 'Contact'];
 
   return (
     <nav
