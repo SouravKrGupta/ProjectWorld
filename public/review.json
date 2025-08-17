@@ -1,34 +1,62 @@
 [
     {
-      "name": "Rahul Sharma",
-      "college": "IIT Bombay",
-      "review": "The project quality exceeded my expectations. Perfect for my final year submission. The documentation was comprehensive and the code was well-structured.",
-      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzp0Z6ns4nJ_5jyECXsThghkk_E94XGYFawg&s",
-      "rating": 5,
-      "program": "B.Tech Computer Science"
+      "id": "vision",
+      "title": "Vision & Mission",
+      "subtitle": "Empowering Future Developers",
+      "content": "Our vision is to revolutionize project development by providing high-quality, industry-standard solutions that bridge the gap between academic learning and professional requirements. We aim to empower students with practical knowledge and real-world experience.",
+      "icon": "/icons/vision.svg",
+      "iconBg": "bg-blue-600",
+      "highlight": "Bridging Academia & Industry",
+      "category": "Strategic Vision",
+      "metrics": {
+        "projects": "1000+",
+        "satisfaction": "98%",
+        "growth": "Year-on-Year"
+      }
     },
     {
-      "name": "Priya Patel",
-      "college": "NIT Trichy",
-      "review": "Outstanding support from the team. They helped me understand every aspect of the project. Highly recommended for college projects!",
-      "avatar": "/avatars/student2.jpg",
-      "rating": 5,
-      "program": "M.Tech Software Systems"
+      "id": "motivation",
+      "title": "Our Purpose",
+      "subtitle": "Why Zypject Exists",
+      "content": "Zypject was born from the realization that students often struggle to find quality projects that meet academic standards while incorporating modern technologies. We're motivated by the desire to provide solutions that help students excel in their academic journey and prepare for industry roles.",
+      "icon": "/icons/purpose.svg",
+      "iconBg": "bg-purple-600",
+      "highlight": "Quality Education For All",
+      "category": "Core Purpose",
+      "metrics": {
+        "students": "10,000+",
+        "institutions": "100+",
+        "success": "95%"
+      }
     },
     {
-      "name": "Arun Kumar",
-      "college": "BITS Pilani",
-      "review": "The project was exactly what I needed for my semester project. Modern tech stack and clean code made it easy to customize.",
-      "avatar": "/avatars/student3.jpg",
-      "rating": 5,
-      "program": "B.E. Information Technology"
+      "id": "impact",
+      "title": "Learning Impact",
+      "subtitle": "DSA Excellence Program",
+      "content": "Our DSA sheets are carefully curated to provide a structured learning path. By combining theoretical concepts with practical implementation, we help students master data structures and algorithms while building a strong foundation for technical interviews and real-world problem solving.",
+      "icon": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTMgMkwzIDE0SDEyTDExIDIyTDIxIDEwSDEyTDEzIDJaIiBzdHJva2U9IiMwNTk2NjkiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+",
+      "iconBg": "bg-green-600",
+      "highlight": "Structured Learning Path",
+      "category": "Educational Impact",
+      "metrics": {
+        "placement": "90%+",
+        "problems": "2000+",
+        "mentors": "50+"
+      }
     },
     {
-      "name": "Sneha Reddy",
-      "college": "VIT Vellore",
-      "review": "Excellent project structure and implementation. The team was very helpful in customizing it according to my requirements.",
-      "avatar": "/avatars/student4.jpg",
-      "rating": 5,
-      "program": "MCA"
+      "id": "future",
+      "title": "Future Roadmap",
+      "subtitle": "Innovation & Growth",
+      "content": "We're committed to continuously expanding our project portfolio with cutting-edge technologies, introducing AI/ML projects, and creating comprehensive learning paths. Our goal is to become the ultimate platform for project-based learning and career preparation.",
+      "icon": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgOFYxMkwxNSAxNSIgc3Ryb2tlPSIjRUE1ODBDIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik0xMiAyMkM2LjQ3NyAyMiAyIDE3LjUyMyAyIDEyUzYuNDc3IDIgMTIgMnMxMCA0LjQ3NyAxMCAxMC00LjQ3NyAxMC0xMCAxMHoiIHN0cm9rZT0iI0VBNTgwQyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=",
+      "iconBg": "bg-orange-600",
+      "highlight": "Continuous Innovation",
+      "category": "Growth Strategy",
+      "metrics": {
+        "newTech": "5+",
+        "aiProjects": "Coming Soon",
+        "roadmap": "2024-25"
+      }
     }
 ]

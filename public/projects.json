@@ -6,7 +6,9 @@
     "tech": ["MERN", "Ant Design"],
     "category": "Major",
     "price": "₹1500",
+    "discountPrice": "Free",
     "image": "https://souravkumargupta.netlify.app/static/media/doc.e944a71bcacf3504468e.png",
+    "demoUrl": "",
     "features": [
       "Doctor and patient registration",
       "Appointment booking and management",
@@ -22,7 +24,9 @@
     "tech": ["React", "Three.js", "Tailwind CSS"],
     "category": "Mini",
     "price": "₹1000",
+    "discountPrice": "Free",
     "image": "https://raw.githubusercontent.com/ladunjexa/reactjs18-3d-portfolio/refs/heads/main/.github/README_ASSETS/3d-portfolio.png",
+    "demoUrl": "https://3dportfolioskg.netlify.app/",
     "features": [
       "3D hero section",
       "Interactive project showcases",
@@ -38,7 +42,9 @@
     "tech": ["React", "Node.js", "Express", "MySQL"],
     "category": "Advanced",
     "price": "₹2000",
+    "discountPrice": "Free",
     "image": "https://media.licdn.com/dms/image/v2/D5612AQHAAb9IJYeHbg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1693199223255?e=1753920000&v=beta&t=7sUGpLLAM7IzGAT-c3mX8iVcExRAaQLKRRtUIfWEgy8",
+    "demoUrl": "",
     "features": [
       "Event creation and editing",
       "User registration and authentication",
@@ -54,7 +60,9 @@
     "tech": ["MERN"],
     "category": "Major",
     "price": "₹1500",
+    "discountPrice": "Free",
     "image": "https://heloix.com/wp-content/uploads/2021/03/restaurant.png",
+    "demoUrl": "",
     "features": [
       "Restaurant listing",
       "Menu browsing",
@@ -70,7 +78,9 @@
     "tech": ["React", "Node.js", "Express", "MongoDB", "Material UI", "RapidAPI", "Formspree"],
     "category": "Major",
     "price": "₹1500",
+    "discountPrice": "Free",
     "image": "https://souravkumargupta.netlify.app/static/media/fitness.c908d568b8502ba2cb0c.png",
+    "demoUrl": "",
     "features": [
       "Workout logging",
       "Diet tracking",
@@ -86,7 +96,9 @@
     "tech": ["React", "Node.js", "Express", "MongoDB", "Material UI", "Socket.io"],
     "category": "Advanced",
     "price": "₹2000",
+    "discountPrice": "Free",
     "image": "https://blog.happyfox.com/wp-content/uploads/2019/05/in-app-chat-blog-cover-image.png",
+    "demoUrl": "",
     "features": [
       "Real-time messaging",
       "Chat rooms",
@@ -102,7 +114,9 @@
     "tech": ["MERN", "Material UI"],
     "category": "Major",
     "price": "₹1500",
+    "discountPrice": "Free",
     "image": "https://souravkumargupta.netlify.app/static/media/blog.e47e340f233ed18ec4e1.png",
+    "demoUrl": "",
     "features": [
       "User authentication",
       "Markdown editor",
@@ -118,7 +132,9 @@
     "tech": ["React", "Node.js", "Express", "MongoDB", "Material UI"],
     "category": "Advanced",
     "price": "₹2000",
+    "discountPrice": "Free",
     "image": "https://souravkumargupta.netlify.app/static/media/chat.3503adcffb5077be8b4d.png",
+    "demoUrl": "",
     "features": [
       "AI-powered chat interface",
       "User authentication",
@@ -134,7 +150,9 @@
     "tech": ["MERN"],
     "category": "Mini",
     "price": "₹1000",
+    "discountPrice": "Free",
     "image": "https://souravkumargupta.netlify.app/static/media/noteapp.8e16598c69b8be622e17.png",
+    "demoUrl": "",
     "features": [
       "Add/edit/delete notes",
       "User authentication",
@@ -150,7 +168,9 @@
     "tech": ["MERN"],
     "category": "Major",
     "price": "₹1500",
+    "discountPrice": "Free",
     "image": "https://souravkumargupta.netlify.app/static/media/ecommerce.ed536ee4076c68822ddf.png",
+    "demoUrl": "",
     "features": [
       "Product catalog",
       "Shopping cart",
@@ -166,7 +186,9 @@
     "tech": ["C"],
     "category": "Mini",
     "price": "₹1000",
+    "discountPrice": "Free",
     "image": "https://souravkumargupta.netlify.app/static/media/tic.0261253f923f17de827b.png",
+    "demoUrl": "",
     "features": [
       "Two-player mode",
       "Simple UI",
@@ -182,7 +204,9 @@
     "tech": ["HTML", "CSS", "JavaScript"],
     "category": "Mini",
     "price": "₹1000",
+    "discountPrice": "Free",
     "image": "https://souravkumargupta.netlify.app/static/media/quiz.bf3d544d8724268310c0.png",
+    "demoUrl": "https://thinkbotsquize.netlify.app/",
     "features": [
       "Multiple-choice questions",
       "player mode",
@@ -197,8 +221,10 @@
     "description": "A modern and responsive eCommerce platform built using React and TailwindCSS, designed for showcasing and purchasing products online.",
     "tech": ["React", "TailwindCSS", "JavaScript"],
     "category": "Major",
-    "price": "₹3000",
+    "price": "₹1500",
+    "discountPrice": "Free",
     "image": "https://www.blog.shippypro.com/hs-fs/hubfs/Blog/fashion-ecommerce.jpg?width=1920&height=1080&name=fashion-ecommerce.jpg",
+    "demoUrl": "https://fasco-react-tailwindcss.netlify.app/",
     "features": [
       "Product listing and filtering",
       "Cart and checkout functionality",
@@ -206,5 +232,26 @@
       "Responsive and mobile-friendly design"
     ],
     "createdAt": "2024-06-01T12:00:00Z"
-  }
+  },
+  {
+  "id": 14,
+  "name": "Book World – AI PDF Reader & Audio Platform",
+  "description": "An AI-powered web platform that enables users to upload, read, and listen to books using integrated PDF viewing and Google Text-to-Speech audio generation.",
+  "tech": ["React.js", "Tailwind CSS", "Django", "Django REST Framework", "MySQL", "gTTS", "PyMuPDF"],
+  "category": "Major",
+  "price": "₹1500",
+  "discountPrice": "Free",
+  "image": "/book.png",
+  "demoUrl": "",
+  "features": [
+    "User registration and JWT authentication",
+    "Upload and view PDF books",
+    "AI-generated audio from books using gTTS",
+    "Admin dashboard for book and user management",
+    "Responsive design for desktop and mobile",
+    "Audio playback directly from browser"
+  ],
+  "createdAt": "2025-07-20T12:00:00Z"
+}
+
 ]

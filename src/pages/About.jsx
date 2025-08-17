@@ -1,260 +1,307 @@
-// About page for Project World
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { ThemeContext } from '../context/ThemeContext'; // Adjust path as per your project
+// About.jsx
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { ThemeContext } from "../context/ThemeContext";
 
-const features = [
+const detailedFeatures = [
   {
     icon: "📦",
     title: "Full Source Code",
-    description: "Complete, well-structured source code delivered in a zip file"
+    description:
+      "Well-structured source code with comments, environment examples, and sample data — ready to run and customize.",
   },
   {
     icon: "📝",
-    title: "Documentation",
-    description: "Comprehensive documentation with setup and usage guidelines"
+    title: "Documentation & README",
+    description:
+      "Step-by-step README, setup commands, dependency list, and troubleshooting notes so you never get stuck.",
   },
   {
-    icon: "🚀",
-    title: "Deployment Guide",
-    description: "Step-by-step instructions for deploying your project"
+    icon: "🎓",
+    title: "College Project Pack",
+    description:
+      "PPT, detailed report, ER/DFD/UML diagrams, demo script and customization notes for final year submissions.",
   },
   {
-    icon: "📧",
+    icon: "📚",
+    title: "MNC Prep Guides",
+    description:
+      "Company-wise aptitude and coding round breakdowns, sample questions and a single master pack to practice from.",
+  },
+  {
+    icon: "🏢",
+    title: "B2B Solutions",
+    description:
+      "End-to-end product engineering for enterprises: discovery, SOW, agile delivery, CI/CD, and SLA-backed support.",
+  },
+  {
+    icon: "🔒",
+    title: "Security & Best Practices",
+    description:
+      "Secure SDLC, code reviews, dependency scans and deployment hardening included in every delivery.",
+  },
+  {
+    icon: "⚡",
     title: "Quick Delivery",
-    description: "Instant delivery via email after purchase confirmation"
-  }
+    description:
+      "Instant email + Drive link delivery for ready projects and predictable timelines for custom work.",
+  },
+  {
+    icon: "🤝",
+    title: "Post-Delivery Support",
+    description:
+      "Minor customizations, setup help, and viva / demo prep — we help until you're comfortable with the project.",
+  },
 ];
 
-const processSteps = [
+const pagesOverview = [
   {
-    number: "01",
-    title: "Share Your Idea",
-    description: "Connect with us via Gmail and WhatsApp to discuss your project requirements"
+    id: "projects",
+    title: "Projects",
+    subtitle: "All available ready-to-use projects",
+    bullets: [
+      "Browse by category (Mini/Major/Advanced).",
+      "View details, preview demo (if available), and get the full package.",
+    ],
+    link: "/projects",
   },
   {
-    number: "02",
-    title: "Initial Payment",
-    description: "Pay 50% of the project cost to start development"
+    id: "college",
+    title: "College Projects",
+    subtitle: "Submission-ready final-year project packages",
+    bullets: [
+      "PPT, detailed report, diagrams, source code and README.",
+      "Customization notes & demo script for viva preparation.",
+    ],
+    link: "/college-projects",
   },
   {
-    number: "03",
-    title: "Development",
-    description: "Our team develops your project with regular updates"
+    id: "mnc",
+    title: "MNC Prep",
+    subtitle: "Company-wise placement guides",
+    bullets: [
+      "Aptitude topics, coding topics, sample questions, and a master Drive pack.",
+      "Searchable and filtered to avoid hopping between sites.",
+    ],
+    link: "/mnc-questions",
   },
   {
-    number: "04",
-    title: "Final Delivery",
-    description: "Complete the remaining payment and receive your full project"
-  }
+    id: "b2b",
+    title: "B2B Services",
+    subtitle: "Custom enterprise-grade solutions",
+    bullets: [
+      "Discovery, SOW, agile sprints, CI/CD, monitoring and SLAs.",
+      "Engagement models: Fixed-price, T&M, Dedicated Team.",
+    ],
+    link: "/b2b-pages",
+  },
+  {
+    id: "dsa",
+    title: "DSA Sheets",
+    subtitle: "Curated DSA sheets from top creators",
+    bullets: [
+      "Apna College, Love Babbar, Striver, Arsh Goyal and more in one place.",
+      "Master pack link and step-by-step study plan included.",
+    ],
+    link: "/dsa-sheets",
+  },
 ];
 
-const founders = [
+const deliverySteps = [
   {
-    name: "Sourav Kumar Gupta",
-    role: "Founder & CEO",
-    description: "A passionate tech entrepreneur with expertise in full-stack development and project architecture. Leading the technical vision and development strategy of Project World.",
-    image: "https://avatars.githubusercontent.com/u/89971045?s=400&u=f67fc032815039900ae416aa5fe3e20706b1c2ca&v=4",
-    social: {
-      linkedin: "https://www.linkedin.com/in/sourav-kumar-gupta-18b638200/"
-     
-    }
+    step: "01",
+    title: "Discovery & Requirements",
+    detail:
+      "We discuss scope, college guidelines (if any), business KPIs or placement goals. Deliverables & timelines are agreed here.",
+    eta: "1–3 days",
   },
   {
-    name: "Riya Singh",
-    role: "Co-Founder & COO",
-    description: "An innovative leader focusing on operations and client success. Driving the business strategy and ensuring seamless project delivery at Project World.",
-    image: "https://media.licdn.com/dms/image/v2/D5603AQEhhppYrQfbjA/profile-displayphoto-shrink_800_800/B56ZQ29nUyHQAg-/0/1736088910699?e=1753920000&v=beta&t=aCC7k1mjckphbqhOaq681Srm_8ZSwTfiYRdTUknoQ_I",
-    social: {
-      linkedin: "https://www.linkedin.com/in/riya-singh-34b1aa19a/"
-      
-    }
-  }
+    step: "02",
+    title: "Proposal & SOW",
+    detail:
+      "You get a clear SOW with milestones, tech stack, pricing and acceptance criteria. Sign-off moves the project forward.",
+    eta: "1–2 days",
+  },
+  {
+    step: "03",
+    title: "Initial Payment & Kickoff",
+    detail:
+      "Pay the initial 30–50% (per plan) and we start. We set up repo, branching, and sprint cadence.",
+    eta: "Immediate",
+  },
+  {
+    step: "04",
+    title: "Development & Demos",
+    detail:
+      "Sprint delivery with weekly demos, code reviews, and continuous QA. You can request small changes during sprints.",
+    eta: "Depends on scope",
+  },
+  {
+    step: "05",
+    title: "QA, UAT & Finalization",
+    detail:
+      "Full testing, UAT sign-off, and final packaging: PPT, report, diagrams, source, and README for college projects or SRE runbooks for B2B.",
+    eta: "1–2 weeks (typical)",
+  },
+  {
+    step: "06",
+    title: "Delivery & Handover",
+    detail:
+      "You receive zip + Drive link, demo recordings, and a KT session. Minor fixes and setup assistance provided post-delivery.",
+    eta: "24–72 hrs",
+  },
+  {
+    step: "07",
+    title: "Support & Iteration",
+    detail:
+      "SLA-bound support for production issues or extra customization—choose an hourly plan or dedicated team model.",
+    eta: "Ongoing",
+  },
 ];
 
 const About = () => {
   const { theme } = useContext(ThemeContext);
+  const isDark = theme === "dark";
 
-  const bgClass =
-    theme === "dark"
-      ? "bg-gray-900 text-gray-100"
-      : "bg-gradient-to-b from-blue-50 via-white to-white text-gray-900";
-  const featureBgClass = theme === "dark" ? "bg-blue-100" : "bg-white";
-  const featureTextClass = theme === "dark" ? "text-gray-800" : "text-gray-600";
-  const textPrimary = theme === "dark" ? "text-gray-200" : "text-gray-900";
-  const textPrimaryHeading = theme === "dark" ? "text-gray-900" : "text-gray-900";
-  const textSecondary = theme === "dark" ? "text-gray-900" : "text-gray-900";
-  const textAccent = theme === "dark" ? "text-blue-300" : "text-blue-600";
-  const badgeBg = theme === "dark" ? "bg-blue-800/40" : "bg-blue-50";
-  const textSecondaryDesc = theme === "dark" ? "text-gray-100" : "text-gray-900";
-  const textPrimaryHead = theme === "dark" ? "text-gray-200" : "text-gray-900";
+  const bgClass = isDark ? "bg-gray-950 text-gray-100" : "bg-gradient-to-b from-blue-50 via-white to-white text-gray-900";
+  const cardBg = isDark ? "bg-gray-900 border-gray-800" : "bg-white border-gray-200";
+  const subtle = isDark ? "text-gray-300" : "text-gray-600";
+  const lead = isDark ? "text-white" : "text-gray-900";
 
   return (
     <div className={`min-h-screen ${bgClass}`}>
-      {/* Hero Section */}
-      <div className="py-16 sm:py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              About Project World
+      <div className="max-w-6xl mx-auto px-4 py-12">
+
+        {/* HERO */}
+        <section className={`relative rounded-2xl p-6 md:p-10 mb-8 ${isDark ? "bg-gray-900/60 border border-gray-800" : "bg-white/90 border border-gray-200"}`}>
+          <div className="absolute -right-16 -top-16 w-60 h-60 rounded-full opacity-20 pointer-events-none" style={{ background: "linear-gradient(135deg,#60a5fa,#a78bfa)" }} />
+          <div className="relative">
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">Zypject • 2025</span>
+            <h1 className="mt-4 text-3xl md:text-4xl font-extrabold leading-tight">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">About Zypject</span>
             </h1>
-            <p className={`text-lg sm:text-xl leading-relaxed ${textSecondaryDesc}`}>
-              We're on a mission to simplify the project development journey by providing high-quality, ready-to-use software projects for students and professionals.
+            <p className={`mt-3 max-w-3xl ${subtle}`}>
+              We provide ready-to-use projects, placement guides, DSA sheets and enterprise-grade development services — all designed to help students and businesses ship faster and with confidence.
             </p>
-          </div>
-        </div>
-      </div>
 
-      {/* Features Grid */}
-      <div className="py-16" style={{ backgroundColor: theme === "dark" ? "#1f2937" : "white" }}>
-        <div className="container mx-auto px-4">
-          <h2 className={`text-3xl font-bold text-center mb-12 ${textPrimary}`}>What We Offer</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className={`${featureBgClass} rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-200`}
-              >
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className={`text-xl font-semibold mb-2 ${textPrimaryHeading}`}>{feature.title}</h3>
-                <p className={featureTextClass}>{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Process Section */}
-      <div className={`py-16 ${theme === "dark" ? "bg-gray-800" : "bg-gray-50"}`}>
-        <div className="container mx-auto px-4">
-          <h2 className={`text-3xl font-bold text-center mb-12 ${textPrimary}`}>
-            How Custom Projects Work
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <div key={index} className="relative">
-                <div
-                  className={`${featureBgClass} rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-200`}
-                >
-                  <div className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    {step.number}
-                  </div>
-                  <h3 className={`text-xl font-semibold mb-2 ${textPrimaryHeading}`}>{step.title}</h3>
-                  <p className={featureTextClass}>{step.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Founders Section */}
-      <div className="py-32 bg-gradient-to-br from-white via-blue-50/10 to-white relative overflow-hidden dark:from-gray-900 dark:to-gray-900">
-        <div className="absolute inset-0 bg-grid-slate-100 dark:bg-grid-gray-800 [mask-image:linear-gradient(0deg,transparent,black,transparent)] pointer-events-none"></div>
-        <div className="container mx-auto px-4 relative">
-          <div className="text-center max-w-3xl mx-auto mb-24">
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6">
-              Meet Our Founders
-            </h2>
-            <p className={`text-xl leading-relaxed ${textSecondaryDesc}`}>
-              The visionary minds behind Project World, committed to revolutionizing project development and delivery.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
-            {founders.map((founder, index) => (
-              <div key={index} className="relative group">
-                <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                  {/* Profile Image */}
-                  <div className="relative flex-shrink-0 group-hover:translate-y-[-8px] transition-all duration-500">
-                    <div className="absolute inset-[-4px] rounded-full bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 blur-md transition-all duration-500"></div>
-                    <div className="relative rounded-full p-1 bg-gradient-to-r from-blue-600 to-purple-600">
-                      <div className="w-40 h-40 md:w-44 md:h-44 rounded-full overflow-hidden bg-white">
-                        <img
-                          src={founder.image}
-                          alt={founder.name}
-                          className="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110"
-                          onError={(e) => {
-                            e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(
-                              founder.name
-                            )}&background=0D8ABC&color=fff&size=128`;
-                          }}
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Founder Info */}
-                  <div className="flex-grow text-center md:text-left">
-                    <div className="relative inline-block">
-                      <h3 className={`text-3xl font-bold mb-2 group-hover:text-blue-600 transition-colors duration-300 ${textPrimaryHead}`}>
-                        {founder.name}
-                      </h3>
-                      <div className="h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-500"></div>
-                    </div>
-                    <div className="mt-3 space-y-4">
-                      <p className={`font-medium px-4 py-1.5 rounded-full text-sm inline-block ${textAccent} ${badgeBg}`}>
-                        {founder.role}
-                      </p>
-                      <p className={`${textSecondaryDesc} text-base leading-relaxed`}>
-                        {founder.description}
-                      </p>
-                      {/* Social Links */}
-                      <div className="flex md:justify-start justify-center space-x-5 pt-2">
-                        {Object.entries(founder.social).map(([platform, url]) => (
-                          <a
-                            key={platform}
-                            href={url}
-                            className="group/icon relative p-2"
-                            aria-label={platform}
-                          >
-                            <div className="absolute inset-0 bg-blue-100/80 dark:bg-blue-900/20 rounded-lg scale-0 group-hover/icon:scale-100 transition-transform duration-300 -z-10"></div>
-                            <div className={`relative ${textSecondary} group-hover/icon:${textAccent} transition-all duration-300 transform group-hover/icon:translate-y-[-2px]`}>
-                              {platform === 'linkedin' && (
-                                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                                </svg>
-                              )}
-                           
-                            </div>
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Call To Action */}
-      <div className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl shadow-xl overflow-hidden">
-            <div className="p-8 sm:p-12 text-center">
-              <h3 className="text-3xl font-bold text-white mb-6">Ready to Start Your Project?</h3>
-              <p className="text-lg text-blue-100 mb-8">
-                Whether you need a ready-made solution or a custom project, we're here to help you succeed.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link
-                  to="/projects"
-                  className="inline-flex items-center px-6 py-3 rounded-lg bg-white text-blue-600 hover:bg-blue-50 transition-colors duration-200 font-semibold"
-                >
-                  View Projects
-                </Link>
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center px-6 py-3 rounded-lg border-2 border-white text-white hover:bg-white hover:text-blue-600 transition-colors duration-200 font-semibold"
-                >
-                  Custom Project
-                </Link>
-              </div>
+            <div className="mt-6 flex flex-col sm:flex-row gap-3">
+              <Link to="/projects" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:from-blue-700 hover:to-purple-700 transition transform hover:-translate-y-0.5">
+                Browse Projects
+              </Link>
+              <Link to="/b2b-pages" className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg border ${isDark ? "border-gray-700 text-blue-300" : "border-gray-200 text-blue-700"} font-semibold hover:bg-blue-50 transition`}>
+                B2B Services
+              </Link>
             </div>
           </div>
-        </div>
+        </section>
+
+        {/* FEATURES */}
+        <section className="mb-10">
+          <h2 className={`text-2xl font-bold mb-4 ${lead}`}>What we provide — feature details</h2>
+          <p className={`${subtle} mb-6`}>Each project or service comes with clear deliverables and support — below are the core features explained.</p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {detailedFeatures.map((f, i) => (
+              <article key={f.title} className={`rounded-xl p-5 border ${cardBg} shadow-sm hover:shadow-lg transform transition hover:-translate-y-1`} style={{ animation: `rise .45s ease both`, animationDelay: `${0.03 * i}s` }}>
+                <div className="flex items-start gap-3">
+                  <div className="text-3xl">{f.icon}</div>
+                  <div>
+                    <h3 className="font-semibold">{f.title}</h3>
+                    <p className={`text-sm mt-1 ${subtle}`}>{f.description}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* PAGES OVERVIEW */}
+        <section className="mb-10">
+          <h2 className={`text-2xl font-bold mb-4 ${lead}`}>Site sections & what they do</h2>
+          <p className={`${subtle} mb-6`}>Quick overview of the new pages we added and how they help you.</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {pagesOverview.map((p, i) => (
+              <div key={p.id} className={`rounded-lg p-5 border ${cardBg} shadow-sm hover:shadow-lg transition transform hover:-translate-y-1`} style={{ animation: `rise .45s ease both`, animationDelay: `${0.03 * i}s` }}>
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="text-lg font-semibold">{p.title}</h3>
+                    <p className={`text-sm mt-1 ${subtle}`}>{p.subtitle}</p>
+                    <ul className="list-disc pl-5 mt-3 text-sm text-gray-500">
+                      {p.bullets.map((b, bi) => (
+                        <li key={bi} className="mb-1">{b}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="flex-shrink-0 flex flex-col items-end gap-2">
+                    <Link to={p.link} className="px-3 py-2 rounded-md bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700">
+                      Open
+                    </Link>
+                    <a href={p.link} className="text-xs underline opacity-80 hidden" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* STEP-BY-STEP DELIVERY (TIMELINE) */}
+        <section className="mb-12">
+          <h2 className={`text-2xl font-bold mb-6 ${lead}`}>How we work — step-by-step</h2>
+
+          <div className="relative pl-6 md:pl-10">
+            <div className={`absolute left-3 top-0 w-[4px] rounded-full ${isDark ? "bg-blue-500/30" : "bg-blue-500/20"} animate-grow`} style={{ height: "100%" }} />
+            <div className="space-y-5">
+              {deliverySteps.map((s, i) => (
+                <div key={s.step} className="relative flex items-start gap-4" style={{ animation: `rise .45s ease both`, animationDelay: `${0.04 * i}s` }}>
+                  <div className="absolute -left-5 mt-2">
+                    <div className="h-5 w-5 rounded-full ring-4 ring-blue-200/60 bg-blue-600 animate-pop" />
+                  </div>
+                  <div className={`w-full rounded-xl p-4 border ${cardBg} shadow-sm`}>
+                    <div className="flex items-start gap-3">
+                      <div>
+                        <div className="text-xs font-semibold px-2 py-1 rounded-full bg-blue-100 text-blue-700">{s.step}</div>
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3">
+                          <h3 className="font-semibold">{s.title}</h3>
+                          <span className="ml-auto text-xs px-2 py-0.5 rounded-md bg-gray-100 text-gray-600">{s.eta}</span>
+                        </div>
+                        <p className={`text-sm mt-2 ${subtle}`}>{s.detail}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SUPPORT & CTA */}
+        <section className={`rounded-xl p-6 ${isDark ? "bg-gray-900/60 border border-gray-800" : "bg-white/90 border border-gray-200"}`}>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+              <h3 className="text-lg font-semibold">Need a custom project or company SOW?</h3>
+              <p className={`text-sm mt-1 ${subtle}`}>Fill the form or book a discovery call — we'll prepare a tailored SOW with timelines and pricing.</p>
+            </div>
+            <div className="flex gap-3">
+              <Link to="/contact" className="px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700">Contact Us</Link>
+              <Link to="/projects" className={`px-4 py-2 rounded-lg border ${isDark ? "border-gray-700 text-white" : "border-gray-200 text-gray-700"}`}>Browse Projects</Link>
+            </div>
+          </div>
+        </section>
+
       </div>
+
+      {/* Lightweight CSS animations */}
+      <style>{`
+        @keyframes rise { 0% { opacity:0; transform: translateY(8px); } 100% { opacity:1; transform: translateY(0); } }
+        @keyframes pop { 0% { transform: scale(.9); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+        @keyframes growLine { 0% { height: 0; } 100% { height: 100%; } }
+        .animate-pop { animation: pop .35s ease both; }
+        .animate-grow { animation: growLine 1s ease-out both; }
+        .animate-rise { animation: rise .45s ease both; }
+      `}</style>
     </div>
   );
 };

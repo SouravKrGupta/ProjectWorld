@@ -1,0 +1,26 @@
+[
+  {
+    "name": "TCS",
+    "process": "TCS conducts an online placement test (TCS NQT) divided into Foundation (quantitative, logical, verbal) and Advanced sections (including coding for certain roles), followed by technical interview rounds and a final HR interview.",
+    "aptitudeTopics": ["Number System", "Time & Work", "Probability", "Ratio & Proportion", "Data Interpretation"],
+    "codingTopics": ["Reverse a Linked List", "Find Missing Number in an Array", "Anagram Check (String)", "Sorting Algorithms (e.g., QuickSort)", "Pattern Printing"],
+    "aptitudeLink": "https://prepinsta.com/tcs-quantitative-aptitude-questions",
+    "codingLink": "https://prepinsta.com/tcs-coding-questions"
+  },
+  {
+    "name": "Infosys",
+    "process": "Infosys conducts an online test (covering quantitative aptitude, logical reasoning, and verbal ability), followed by a technical interview and an HR interview.",
+    "aptitudeTopics": ["Percentage", "Probability", "Data Interpretation", "Time & Work", "Permutations & Combinations"],
+    "codingTopics": ["Palindrome Check (String)", "Binary Search", "Recursion (Factorial)", "Array Rotations", "Pattern Printing"],
+    "aptitudeLink": "https://prepinsta.com/infosys-aptitude-questions",
+    "codingLink": "https://prepinsta.com/infosys-interview-questions"
+  },
+  {
+    "name": "Wipro",
+    "process": "Wipro’s recruitment includes an online assessment (aptitude test, written communication, and coding tests), followed by a technical interview and an HR interview.",
+    "aptitudeTopics": ["Time & Work", "Profit & Loss", "Speed & Distance", "Permutations & Combinations", "Probability"],
+    "codingTopics": ["Pattern Printing", "Fibonacci Series", "Linked List Operations", "Binary Search", "GCD Calculation"],
+    "aptitudeLink": "https://prepinsta.com/wipro-quantitative-aptitude-questions",
+    "codingLink": "https://prepinsta.com/wipro-coding-questions"
+  }
+]
