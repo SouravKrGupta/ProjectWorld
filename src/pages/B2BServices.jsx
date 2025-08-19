@@ -109,7 +109,7 @@ const B2BPages = () => {
 
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="https://forms.gle/your-google-form-link"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeshbdduIfxS0Pnpj7PuWJ_-q_WAOFmhCZXlzInW12zkgHEoQ/viewform?usp=header"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-lg px-5 py-3 font-semibold transition transform hover:-translate-y-[1px] focus:outline-none focus:ring bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700"
@@ -212,7 +212,12 @@ const B2BPages = () => {
 
                   <div className={cn("w-full rounded-xl border p-4 md:p-5 transition hover:translate-x-0.5", cardBg)}>
                     <div className="flex items-center gap-2 mb-1.5">
-                      <span className="text-xs font-semibold inline-flex px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">{s.badge}</span>
+                      <span className={cn(
+                        "text-xs font-semibold inline-flex px-2 py-0.5 rounded-full",
+                        theme === "dark"
+                          ? "bg-blue-900/40 text-blue-300"
+                          : "bg-blue-100 text-blue-900"
+                      )}>{s.badge}</span>
                       <h3 className="text-base md:text-lg font-semibold">{s.title}</h3>
                       <span className={cn("ml-auto text-xs px-2 py-0.5 rounded-full", theme === "dark" ? "bg-gray-800 text-gray-300" : "bg-gray-100 text-gray-600")}>{s.eta}</span>
                     </div>
@@ -274,7 +279,7 @@ const B2BPages = () => {
           <h2 className="text-2xl sm:text-3xl font-bold mb-3">Ready to Transform Your Business?</h2>
           <p className="mb-6 text-blue-100">Let’s collaborate to build scalable products with measurable impact.</p>
           <a
-            href="https://forms.gle/your-google-form-link" // replace with your actual form link
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeshbdduIfxS0Pnpj7PuWJ_-q_WAOFmhCZXlzInW12zkgHEoQ/viewform?usp=header" // replace with your actual form link
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-6 py-3 bg-white text-blue-700 font-semibold rounded-lg shadow-md hover:bg-blue-50 transition"
@@ -301,7 +306,7 @@ const B2BPages = () => {
           </div>
           <div className="flex gap-2">
             <a
-              href="https://forms.gle/your-google-form-link"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeshbdduIfxS0Pnpj7PuWJ_-q_WAOFmhCZXlzInW12zkgHEoQ/viewform?usp=header"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-lg px-4 py-2.5 font-semibold bg-blue-600 text-white hover:bg-blue-700 transition"

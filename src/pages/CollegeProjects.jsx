@@ -5,6 +5,7 @@ import { ThemeContext } from "../context/ThemeContext";
 const CollegeProjects = () => {
   const { theme } = useContext(ThemeContext);
   const cn = (...c) => c.filter(Boolean).join(" ");
+  const isDark = theme === "dark";
 
   const included = [
     { title: "PowerPoint (PPT)", desc: "Clean, faculty-friendly slides with problem, approach, modules & results." },
@@ -69,7 +70,7 @@ const CollegeProjects = () => {
                style={{ background: "linear-gradient(135deg,#34d399,#60a5fa)" }} />
 
           <div className="relative">
-            <span className="inline-flex items-center text-xs font-semibold px-3 py-1 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 animate-pop">
+            <span className={`inline-flex items-center text-xs font-semibold px-3 py-1 rounded-full ${isDark ? "bg-blue-900/30 text-blue-300" : "bg-blue-600 text-white"} animate-pop`}>
               Final Year Ready • Documentation + Code
             </span>
 
@@ -175,8 +176,10 @@ const CollegeProjects = () => {
                     )}
                   >
                     <div className="flex items-center gap-2 mb-1.5">
-                      <span className="text-xs font-semibold inline-flex px-2 py-0.5 rounded-full
-                        bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">
+                      <span className={cn(
+                        "text-xs font-semibold inline-flex px-2 py-0.5 rounded-full",
+                        isDark ? "bg-blue-900/30 text-blue-300" : "bg-blue-600 text-white"
+                      )}>
                         {s.badge}
                       </span>
                       <h3 className="text-base md:text-lg font-semibold">{s.title}</h3>

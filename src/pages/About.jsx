@@ -173,29 +173,29 @@ const About = () => {
       <div className="max-w-6xl mx-auto px-4 py-12">
 
         {/* HERO */}
-        <section className={`relative rounded-2xl p-6 md:p-10 mb-8 ${isDark ? "bg-gray-900/60 border border-gray-800" : "bg-white/90 border border-gray-200"}`}>
-          <div className="absolute -right-16 -top-16 w-60 h-60 rounded-full opacity-20 pointer-events-none" style={{ background: "linear-gradient(135deg,#60a5fa,#a78bfa)" }} />
-          <div className="relative">
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">Zypject • 2025</span>
-            <h1 className="mt-4 text-3xl md:text-4xl font-extrabold leading-tight">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">About Zypject</span>
-            </h1>
-            <p className={`mt-3 max-w-3xl ${subtle}`}>
-              We provide ready-to-use projects, placement guides, DSA sheets and enterprise-grade development services — all designed to help students and businesses ship faster and with confidence.
-            </p>
+          <section className={`relative rounded-2xl p-6 md:p-10 mb-8 ${isDark ? "bg-gray-900/60 border border-gray-800" : "bg-white/90 border border-gray-200"}`}>
+            <div className="absolute -right-16 -top-16 w-60 h-60 rounded-full opacity-20 pointer-events-none" style={{ background: "linear-gradient(135deg,#60a5fa,#a78bfa)" }} />
+            <div className="relative">
+              <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${isDark ? "bg-blue-900/30 text-blue-300" : "bg-blue-600 text-white"}`}>Zypject • 2025</span>
+              <h1 className="mt-4 text-3xl md:text-4xl font-extrabold leading-tight">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">About Zypject</span>
+              </h1>
+              <p className={`mt-3 max-w-3xl ${subtle}`}>
+                We provide ready-to-use projects, placement guides, DSA sheets and enterprise-grade development services — all designed to help students and businesses ship faster and with confidence.
+              </p>
 
-            <div className="mt-6 flex flex-col sm:flex-row gap-3">
-              <Link to="/projects" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:from-blue-700 hover:to-purple-700 transition transform hover:-translate-y-0.5">
-                Browse Projects
-              </Link>
-              <Link to="/b2b-pages" className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg border ${isDark ? "border-gray-700 text-blue-300" : "border-gray-200 text-blue-700"} font-semibold hover:bg-blue-50 transition`}>
-                B2B Services
-              </Link>
+              <div className="mt-6 flex flex-col sm:flex-row gap-3">
+                <Link to="/projects" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:from-blue-700 hover:to-purple-700 transition transform hover:-translate-y-0.5">
+            Browse Projects
+                </Link>
+                <Link to="/b2b-pages" className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg border ${isDark ? "border-gray-700 text-blue-300" : "border-gray-200 text-blue-700"} font-semibold hover:bg-blue-50 transition`}>
+            B2B Services
+                </Link>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* FEATURES */}
+          {/* FEATURES */}
         <section className="mb-10">
           <h2 className={`text-2xl font-bold mb-4 ${lead}`}>What we provide — feature details</h2>
           <p className={`${subtle} mb-6`}>Each project or service comes with clear deliverables and support — below are the core features explained.</p>
