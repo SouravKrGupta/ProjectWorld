@@ -58,10 +58,10 @@ const CollegeProjects = () => {
         {/* HERO / INTRO */}
         <section
           className={cn(
-            "relative overflow-hidden rounded-2xl border p-6 md:p-10 mb-8 animate-fade-in",
+            "relative overflow-hidden rounded-2xl border p-6 md:p-10 mb-8 animate-fade-in glass-effect hover-shimmer",
             theme === "dark"
               ? "bg-gray-900/70 border-gray-800 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.6)]"
-              : "bg-white border-gray-200 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.15)]"
+              : "bg-white/90 border-gray-200 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.15)]"
           )}
         >
           <div className="absolute -top-20 -right-24 h-72 w-72 rounded-full blur-3xl opacity-30 pointer-events-none"
@@ -88,8 +88,8 @@ const CollegeProjects = () => {
             <div className="mt-6 flex flex-col sm:flex-row gap-3">
               <Link
                 to="/projects"
-                className="inline-flex items-center justify-center rounded-lg px-5 py-3 font-semibold transition transform hover:-translate-y-[1px] focus:outline-none focus:ring
-                  bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700"
+                className="inline-flex items-center justify-center rounded-lg px-5 py-3 font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900
+                  bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 hover-shimmer"
               >
                 Browse Projects
                 <svg className="w-5 h-5 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -102,10 +102,10 @@ const CollegeProjects = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
-                  "inline-flex items-center justify-center rounded-lg px-5 py-3 font-semibold transition border",
+                  "inline-flex items-center justify-center rounded-lg px-5 py-3 font-semibold transition-all duration-300 border transform hover:-translate-y-1 hover:shadow-lg hover-shimmer",
                   theme === "dark"
-                    ? "border-blue-400 text-blue-300 hover:bg-blue-900/30"
-                    : "border-blue-600 text-blue-700 hover:bg-blue-50"
+                    ? "border-blue-400 text-blue-300 hover:bg-blue-900/30 focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-900"
+                    : "border-blue-600 text-blue-700 hover:bg-blue-50 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
                 )}
               >
                 Request Customization
@@ -122,10 +122,13 @@ const CollegeProjects = () => {
               <div
                 key={it.title}
                 className={cn(
-                  "rounded-xl p-4 md:p-5 border group relative overflow-hidden animate-rise",
+                  "rounded-xl p-4 md:p-5 border group relative overflow-hidden animate-rise hover-shimmer transition-all hover:shadow-lg",
                   theme === "dark" ? "bg-gray-900/70 border-gray-800" : "bg-white border-gray-200"
                 )}
-                style={{ animationDelay: `${0.03 * (idx + 1)}s` }}
+                style={{ 
+                  animationDelay: `${0.03 * (idx + 1)}s`,
+                  '--index': idx 
+                }}
               >
                 <div className="absolute -right-6 -top-6 h-16 w-16 rounded-full opacity-10 group-hover:opacity-20 transition"
                      style={{ background: "radial-gradient(circle, #60a5fa 0%, transparent 60%)" }} />
@@ -171,7 +174,7 @@ const CollegeProjects = () => {
 
                   <div
                     className={cn(
-                      "w-full rounded-xl border p-4 md:p-5 transition hover:translate-x-0.5",
+                      "w-full rounded-xl border p-4 md:p-5 transition-all hover:translate-x-1 hover:shadow-lg hover-shimmer",
                       theme === "dark" ? "bg-gray-900/70 border-gray-800" : "bg-white border-gray-200"
                     )}
                   >
@@ -299,17 +302,77 @@ const CollegeProjects = () => {
 
       {/* Lightweight CSS animations */}
       <style>{`
-        @keyframes fade-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-fade-in { animation: fade-in 0.5s ease both; }
+        @keyframes fade-in { 
+          from { opacity: 0; transform: translateY(10px); } 
+          to { opacity: 1; transform: translateY(0); } 
+        }
+        .animate-fade-in { 
+          animation: fade-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+          animation-delay: calc(var(--index, 0) * 0.1s);
+        }
 
-        @keyframes pop { 0% { transform: scale(0.9); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
-        .animate-pop { animation: pop 0.35s ease both; }
+        @keyframes pop { 
+          0% { transform: scale(0.95); opacity: 0; } 
+          50% { transform: scale(1.02); }
+          100% { transform: scale(1); opacity: 1; } 
+        }
+        .animate-pop { 
+          animation: pop 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+          animation-delay: calc(var(--index, 0) * 0.1s);
+        }
 
-        @keyframes rise { 0% { opacity:0; transform: translateY(10px); } 100% { opacity:1; transform: translateY(0); } }
-        .animate-rise { animation: rise .5s ease both; }
+        @keyframes rise { 
+          0% { opacity:0; transform: translateY(15px); } 
+          100% { opacity:1; transform: translateY(0); } 
+        }
+        .animate-rise { 
+          animation: rise 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+          animation-delay: calc(var(--index, 0) * 0.1s);
+        }
 
-        @keyframes growLine { 0% { height: 0; } 100% { height: 100%; } }
-        .animate-grow { animation: growLine 1.2s ease-out both; }
+        @keyframes growLine { 
+          0% { height: 0; opacity: 0; } 
+          100% { height: 100%; opacity: 1; } 
+        }
+        .animate-grow { 
+          animation: growLine 1.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+        }
+
+        @keyframes shimmer {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+        .hover-shimmer {
+          position: relative;
+          overflow: hidden;
+        }
+        .hover-shimmer:hover::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 200%;
+          height: 100%;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.1),
+            transparent
+          );
+          animation: shimmer 1.5s ease;
+        }
+
+        /* Improved transitions */
+        .transition-all {
+          transition-duration: 300ms;
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Enhanced hover states */
+        .group:hover .group-hover\:scale-105 {
+          transform: scale(1.05);
+          transition-duration: 300ms;
+        }
       `}</style>
     </div>
   );

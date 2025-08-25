@@ -112,7 +112,7 @@ const B2BPages = () => {
               href="https://docs.google.com/forms/d/e/1FAIpQLSeshbdduIfxS0Pnpj7PuWJ_-q_WAOFmhCZXlzInW12zkgHEoQ/viewform?usp=header"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-lg px-5 py-3 font-semibold transition transform hover:-translate-y-[1px] focus:outline-none focus:ring bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700"
+              className="inline-flex items-center justify-center rounded-lg px-5 py-3 font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 hover-shimmer"
             >
               Book a Discovery Call
               <svg className="w-5 h-5 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
@@ -138,8 +138,14 @@ const B2BPages = () => {
             {strengths.map((s, i) => (
               <div
                 key={i}
-                className={cn("rounded-xl p-6 border shadow-lg hover:shadow-2xl transition-transform hover:scale-[1.02] animate-rise", cardBg)}
-                style={{ animationDelay: `${0.03 * (i + 1)}s` }}
+                className={cn(
+                  "rounded-xl p-6 border shadow-lg hover:shadow-2xl transition-all hover:scale-[1.02] animate-rise hover-shimmer gradient-border",
+                  cardBg
+                )}
+                style={{ 
+                  animationDelay: `${0.03 * (i + 1)}s`,
+                  '--index': i 
+                }}
               >
                 <div className="text-4xl mb-3">{s.icon}</div>
                 <h3 className="text-lg font-semibold mb-1.5">{s.title}</h3>
@@ -204,10 +210,10 @@ const B2BPages = () => {
             <div className={cn("absolute left-2 md:left-3 top-0 w-[3px] rounded-full animate-grow", theme === "dark" ? "bg-blue-500/40" : "bg-blue-500/30")} style={{ height: "100%" }} />
             <div className="space-y-5">
               {timeline.map((s, i) => (
-                <div key={s.title} className="relative flex items-start gap-4 animate-rise" style={{ animationDelay: `${0.04 * (i + 1)}s` }}>
+                <div key={s.title} className="relative flex items-start gap-4 animate-rise" style={{ animationDelay: `${0.04 * (i + 1)}s`, '--index': i }}>
                   {/* node */}
                   <div className="absolute -left-[2px] md:-left-[3px] mt-2">
-                    <div className="h-4 w-4 rounded-full ring-4 ring-blue-500/20 bg-blue-600 animate-pop" />
+                    <div className="h-4 w-4 rounded-full ring-4 ring-blue-500/20 bg-gradient-to-r from-blue-600 to-purple-600 animate-pop transition-transform hover:scale-125" />
                   </div>
 
                   <div className={cn("w-full rounded-xl border p-4 md:p-5 transition hover:translate-x-0.5", cardBg)}>
@@ -326,17 +332,106 @@ const B2BPages = () => {
 
       {/* Lightweight CSS animations */}
       <style>{`
-        @keyframes fade-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-fade-in { animation: fade-in .5s ease both; }
+        @keyframes fade-in { 
+          from { opacity: 0; transform: translateY(10px); } 
+          to { opacity: 1; transform: translateY(0); } 
+        }
+        .animate-fade-in { 
+          animation: fade-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+          animation-delay: calc(var(--index, 0) * 0.1s);
+        }
 
-        @keyframes pop { 0% { transform: scale(.9); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
-        .animate-pop { animation: pop .35s ease both; }
+        @keyframes pop { 
+          0% { transform: scale(0.95); opacity: 0; } 
+          50% { transform: scale(1.02); }
+          100% { transform: scale(1); opacity: 1; } 
+        }
+        .animate-pop { 
+          animation: pop 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+          animation-delay: calc(var(--index, 0) * 0.1s);
+        }
 
-        @keyframes rise { 0% { opacity:0; transform: translateY(10px); } 100% { opacity:1; transform: translateY(0); } }
-        .animate-rise { animation: rise .5s ease both; }
+        @keyframes rise { 
+          0% { opacity:0; transform: translateY(15px); } 
+          100% { opacity:1; transform: translateY(0); } 
+        }
+        .animate-rise { 
+          animation: rise 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+          animation-delay: calc(var(--index, 0) * 0.1s);
+        }
 
-        @keyframes growLine { 0% { height: 0; } 100% { height: 100%; } }
-        .animate-grow { animation: growLine 1.2s ease-out both; }
+        @keyframes growLine { 
+          0% { height: 0; opacity: 0; } 
+          100% { height: 100%; opacity: 1; } 
+        }
+        .animate-grow { 
+          animation: growLine 1.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+        }
+
+        @keyframes shimmer {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+        .hover-shimmer {
+          position: relative;
+          overflow: hidden;
+        }
+        .hover-shimmer:hover::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 200%;
+          height: 100%;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.1),
+            transparent
+          );
+          animation: shimmer 1.5s ease;
+        }
+
+        /* Glass effect for cards */
+        .glass-effect {
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+        }
+
+        /* Enhanced hover states */
+        .group:hover .group-hover\:scale-105 {
+          transform: scale(1.05);
+          transition-duration: 300ms;
+        }
+
+        /* Improved transitions */
+        .transition-all {
+          transition-duration: 300ms;
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Gradient borders */
+        .gradient-border {
+          position: relative;
+          background-clip: padding-box;
+          border: 2px solid transparent;
+        }
+        .gradient-border:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+          margin: -2px;
+          border-radius: inherit;
+          background: linear-gradient(
+            to right,
+            rgba(96, 165, 250, 0.5),
+            rgba(167, 139, 250, 0.5)
+          );
+        }
       `}</style>
     </div>
   );

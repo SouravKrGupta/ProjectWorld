@@ -185,8 +185,8 @@ const About = () => {
         >
           <div
             className="
-              absolute -right-8 -top-8 
-              w-28 h-28 sm:w-40 sm:h-40 md:w-60 md:h-60 
+              absolute -right-4 -top-8 
+              w-28 h-28
               rounded-full opacity-20 pointer-events-none
             "
             style={{ background: "linear-gradient(135deg,#60a5fa,#a78bfa)" }}

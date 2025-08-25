@@ -1,21 +1,38 @@
-// Home page for Zypject
 import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import FeaturedCarousel from "../components/FeaturedCarousel";
-import { ThemeContext } from "../context/ThemeContext"; // Adjust path as needed
+import { ThemeContext } from "../context/ThemeContext";
 
-const stats = [
-  { label: "Projects Ready", value: "25+", icon: "📦" }, // or "Projects Available"
-  { label: "Clients Onboarded", value: "10+", icon: "😊" }, // or "Early Clients"
-  { label: "Tech Stacks", value: "5+", icon: "💻" }, // Django, MySQL, Node, MongoDB, React
+const services = [
+  {
+    title: "Ready-Made College Projects",
+    description: "Complete academic projects with documentation, code & viva prep",
+    icon: "🎓",
+    link: "/college-projects",
+    gradient: "from-blue-600 to-indigo-600",
+    highlights: ["Project Files + Source Code", "Documentation & PPT", "Viva Support"],
+    badge: "Student Favorite"
+  },
+  {
+    title: "MNC Interview Success Kit",
+    description: "Your complete roadmap to crack top tech company interviews",
+    icon: "💼",
+    link: "/mnc-questions",
+    gradient: "from-purple-600 to-pink-600",
+    highlights: ["DSA & Coding Prep", "Company Specific Tests", "Mock Interviews"],
+    badge: "High Success Rate"
+  },
+  {
+    title: "Enterprise Software Solutions",
+    description: "Custom software development for growing businesses",
+    icon: "🚀",
+    link: "/b2b-pages",
+    gradient: "from-green-600 to-teal-600",
+    highlights: ["Custom Development", "Digital Transformation", "24/7 Support"],
+    badge: "Business Growth"
+  }
 ];
 
-
-const categories = [
-  { name: "Mini Projects", icon: "📱", color: "blue" },          
-  { name: "Major Projects", icon: "🌐", color: "orange" },       
-  { name: "Advanced Projects", icon: "🤖", color: "yellow" },   
-];
 
 const Home = () => {
   const { theme } = useContext(ThemeContext);
@@ -28,25 +45,9 @@ const Home = () => {
       .catch((error) => console.error("Error loading reviews:", error));
   }, []);
 
-  const bgClasses = {
-    blue: "bg-gradient-to-r from-blue-600 to-purple-600 text-white",
-    orange: "bg-gradient-to-r from-orange-500 to-pink-500 text-white",
-    yellow: "bg-gradient-to-r from-yellow-400 to-pink-400 text-white",
-  };
-
-  const textPrimaryClasses = {
-    blue: "text-gray-900 dark:text-gray-100",
-    orange: "text-gray-900 dark:text-gray-100",
-    yellow: "text-gray-900 dark:text-gray-100",
-  };
-
-  const textSecondaryClasses = {
-    blue: "text-gray-800 dark:text-gray-200",
-    orange: "text-gray-800 dark:text-gray-200",
-    yellow: "text-gray-800 dark:text-gray-200",
-  };
 
   return (
+    <>
     <div
       className={`min-h-screen ${
         theme === "dark"
@@ -56,29 +57,51 @@ const Home = () => {
     >
       {/* Hero Section */}
       <div
-        className={`relative py-12 sm:py-16 lg:py-24 ${
+        className={`relative overflow-hidden py-12 sm:py-16 lg:py-20 ${
           theme === "dark"
-            ? "bg-gradient-to-b from-gray-900 to-gray-800"
+            ? "bg-gray-900"
             : "bg-gradient-to-b from-blue-50 to-white"
         }`}
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 sm:mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Your One-Stop Destination for Quality Software Projects
+        {/* Background Elements */}
+        <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full blur-3xl opacity-20 pointer-events-none"
+             style={{ background: "linear-gradient(135deg,#60a5fa,#a78bfa)" }} />
+        <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full blur-3xl opacity-20 pointer-events-none"
+             style={{ background: "linear-gradient(135deg,#34d399,#60a5fa)" }} />
+
+        <div className="container relative mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="text-center max-w-4xl mx-auto animate-fade-in">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border-2 border-blue-500/20 bg-white/10 backdrop-blur-sm mb-6 animate-pop">
+                <span className="flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                <span className={`text-xs font-semibold ${
+                  theme === "dark" ? "text-blue-300" : "text-blue-600"
+                }`}>
+                  Trusted by 1000+ Students & Businesses
+                </span>
+              </div>
+            
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 sm:mb-6">
+              Turn Your Tech Dreams Into{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                Reality
+              </span>
             </h1>
             <p
               className={`text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 max-w-3xl mx-auto ${
                 theme === "dark" ? "text-gray-300" : "text-gray-600"
               }`}
             >
-              Discover a curated collection of ready-made software projects for
-              students, developers, and professionals.
+              Whether you're a student looking for project solutions, preparing for MNC interviews, 
+              or a business seeking digital transformation — we're here to help you succeed.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link
                 to="/projects"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-200 font-semibold text-base sm:text-lg w-full sm:w-auto"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-base sm:text-lg transform transition-all hover:-translate-y-0.5
+                  bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700"
               >
                 Browse Projects
                 <svg
@@ -97,7 +120,11 @@ const Home = () => {
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-lg border-2 border-blue-600 text-blue-600 hover:bg-blue-50 transition-colors duration-200 font-semibold text-base sm:text-lg w-full sm:w-auto"
+                className={`inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-base sm:text-lg border-2 transform transition-all hover:-translate-y-0.5 ${
+                  theme === "dark" 
+                    ? "border-blue-400 text-blue-300 hover:bg-blue-900/30"
+                    : "border-blue-600 text-blue-700 hover:bg-blue-50"
+                }`}
               >
                 Custom Project
                 <svg
@@ -119,23 +146,120 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Stats Section */}
-      <div className={`py-12 sm:py-16 lg:py-24 ${theme === "dark" ? "bg-gray-800" : "bg-white"}`}>
+      {/* Services Section */}
+      <div className={`py-12 sm:py-16 lg:py-20 ${theme === "dark" ? "bg-gray-900" : "bg-white"}`}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {stats.map((stat, i) => (
-              <div key={i} className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl transform rotate-1 group-hover:rotate-2 transition-transform duration-200"></div>
-                <div
-                  className={`relative rounded-2xl shadow-lg p-6 sm:p-8 transform -rotate-1 group-hover:-rotate-2 transition-transform duration-200 ${
-                    theme === "dark"
-                      ? "bg-gray-900 text-gray-100"
-                      : "bg-white text-gray-900"
-                  }`}
-                >
-                  <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">{stat.icon}</div>
-                  <div className="text-2xl sm:text-3xl font-bold mb-2">{stat.value}</div>
-                  <div className="font-medium text-sm sm:text-base">{stat.label}</div>
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className={`inline-flex items-center text-xs font-semibold px-3 py-1 rounded-full mb-4 ${
+              theme === "dark" ? "bg-blue-900/30 text-blue-300" : "bg-blue-600 text-white"
+            } animate-pop`}>
+              All-in-One Tech Solutions Platform
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+              What We Offer
+            </h2>
+            <p className={`text-sm sm:text-base lg:text-lg ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
+              From college projects to enterprise solutions, we're your partner in tech success
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {services.map((service, i) => (
+              <Link
+                key={service.title}
+                to={service.link}
+                className={`group rounded-xl sm:rounded-2xl overflow-hidden border transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg animate-rise ${
+                  theme === "dark" ? "bg-gray-900 border-gray-800" : "bg-white border-gray-200"
+                }`}
+                style={{ animationDelay: `${0.1 * (i + 1)}s` }}
+              >
+                <div className={`h-2 bg-gradient-to-r ${service.gradient}`} />
+                <div className="p-6 sm:p-8">
+                  <div className="flex flex-col">
+                    <div className={`inline-flex items-center gap-2 px-2 py-1 rounded-full text-xs font-medium mb-4 ${
+                      theme === "dark" ? "bg-gray-800" : "bg-gray-100"
+                    }`}>
+                      <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${service.gradient}`}></div>
+                      {service.badge}
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <div className={`shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br ${service.gradient} flex items-center justify-center text-2xl shadow-lg`}>
+                        {service.icon}
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
+                        <p className={`text-sm mb-4 ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
+                          {service.description}
+                        </p>
+                        <ul className="space-y-2">
+                          {service.highlights.map((highlight, j) => (
+                            <li key={j} className="flex items-center text-sm">
+                              <svg className={`w-4 h-4 mr-2 ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`} 
+                                   viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                              </svg>
+                              <span className={theme === "dark" ? "text-gray-300" : "text-gray-600"}>{highlight}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className={`h-1 w-0 group-hover:w-full transition-all duration-300 bg-gradient-to-r ${service.gradient}`} />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Why Choose Us Section */}
+      <div className={`py-12 sm:py-16 lg:py-20 ${theme === "dark" ? "bg-gray-800" : "bg-gray-50"}`}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+              Why Choose Us?
+            </h2>
+            <p className={`text-sm sm:text-base lg:text-lg ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
+              Our commitment to excellence sets us apart
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+            {[
+              {
+                icon: "💯",
+                title: "Quality Assured",
+                description: "Every project undergoes rigorous testing and review before delivery",
+                gradient: "from-blue-500 to-indigo-500"
+              },
+              {
+                icon: "🚀",
+                title: "Fast Delivery",
+                description: "Quick turnaround time with regular updates and support",
+                gradient: "from-purple-500 to-pink-500"
+              },
+              {
+                icon: "🎯",
+                title: "Targeted Solutions",
+                description: "Customized approach for students, professionals, and businesses",
+                gradient: "from-green-500 to-teal-500"
+              }
+            ].map((feature, i) => (
+              <div
+                key={i}
+                className={`group rounded-xl sm:rounded-2xl border relative overflow-hidden animate-rise ${
+                  theme === "dark" ? "bg-gray-900 border-gray-800" : "bg-white border-gray-200"
+                }`}
+                style={{ animationDelay: `${0.1 * (i + 1)}s` }}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-5 transition-opacity group-hover:opacity-10`} />
+                <div className="relative p-6 sm:p-8">
+                  <div className="mb-4 text-3xl">{feature.icon}</div>
+                  <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
+                  <p className={`text-sm ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
+                    {feature.description}
+                  </p>
                 </div>
               </div>
             ))}
@@ -143,70 +267,40 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Categories Section */}
-      <div
-        className={`py-12 sm:py-16 lg:py-24 ${theme === "dark" ? "bg-gray-900" : "bg-gray-50"}`}
-      >
+      {/* Featured Projects Section with Title */}
+      <div className={`py-12 sm:py-16 lg:py-20 ${theme === "dark" ? "bg-gray-900" : "bg-white"}`}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <h2
-            className={`text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 sm:mb-12 ${
-              theme === "dark" ? "text-gray-100" : "text-gray-900"
-            }`}
-          >
-            Project Categories
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {categories.map((category, i) => (
-              <div
-                key={i}
-                className={`${
-                  bgClasses[category.color]
-                } rounded-2xl p-6 sm:p-8 text-center transform hover:-translate-y-1 transition-transform duration-200 cursor-pointer shadow-lg hover:shadow-xl`}
-              >
-                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">{category.icon}</div>
-                <h3
-                  className={`text-lg sm:text-xl font-semibold ${
-                    textPrimaryClasses[category.color]
-                  }`}
-                >
-                  {category.name}
-                </h3>
-                <p className={`${textSecondaryClasses[category.color]} mt-2 text-sm sm:text-base`}>
-                  Perfect for{" "}
-                  {category.name === "Mini Projects"
-                    ? "beginners"
-                    : category.name === "Major Projects"
-                    ? "intermediate"
-                    : "advanced"}{" "}
-                  developers
-                </p>
-              </div>
-            ))}
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+              Featured Projects
+            </h2>
+            <p className={`text-sm sm:text-base lg:text-lg ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
+              Explore our most popular and highly-rated projects
+            </p>
           </div>
-        </div>
-      </div>
-
-      {/* Featured Projects Section */}
-      <div className={`py-12 sm:py-16 lg:py-24 ${theme === "dark" ? "bg-gray-900" : "bg-white"}`}>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <FeaturedCarousel />
         </div>
       </div>
 
       {/* DSA Sheets Section */}
-      <div className={`py-12 sm:py-16 lg:py-24 relative overflow-hidden ${theme === "dark" ? "bg-gray-800" : "bg-gradient-to-b from-white via-blue-50/20 to-white"}`}>
+      <div className={`py-12 sm:py-16 lg:py-20 relative overflow-hidden ${theme === "dark" ? "bg-gray-800" : "bg-gradient-to-b from-white via-blue-50/20 to-white"}`}>
         {/* Background decorative elements */}
         <div className="absolute -top-24 -right-24 w-64 sm:w-96 h-64 sm:h-96 bg-blue-100 rounded-full mix-blend-multiply blur-3xl opacity-20"></div>
         <div className="absolute -bottom-24 -left-24 w-64 sm:w-96 h-64 sm:h-96 bg-purple-100 rounded-full mix-blend-multiply blur-3xl opacity-20"></div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12 sm:mb-16">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4 sm:mb-6">
-                Prepare for Technical Interviews 
+            <div className="text-center mb-12">
+              <span className={`inline-flex items-center text-xs font-semibold px-3 py-1 rounded-full mb-4 ${
+                theme === "dark" ? "bg-blue-900/30 text-blue-300" : "bg-blue-600 text-white"
+              } animate-pop`}>
+                DSA Interview Preparation
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+                Master Technical Interviews
               </h2>
-              <p className={`text-base sm:text-lg ${theme === "dark" ? "text-gray-300" : "text-gray-600"} max-w-3xl mx-auto`}>
-                Access hand-picked DSA sheets from India's best tech educators and YouTubers
+              <p className={`text-sm sm:text-base lg:text-lg ${theme === "dark" ? "text-gray-300" : "text-gray-600"} max-w-3xl mx-auto`}>
+                Access hand-picked DSA sheets from India's leading tech educators and ace your coding interviews
               </p>
             </div>
 
@@ -328,26 +422,127 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Vision Section */}
-      <div className="py-8 sm:py-16 lg:py-20 bg-gradient-to-b from-white via-blue-50/20 to-white relative overflow-hidden">
+      {/* Vision & Impact Section */}
+      <div className={`py-12 sm:py-16 lg:py-20 relative overflow-hidden ${
+        theme === "dark" ? "bg-gray-900" : "bg-gradient-to-b from-white via-blue-50/20 to-white"
+      }`}>
         <div className="absolute -top-24 -right-24 w-48 sm:w-96 h-48 sm:h-96 bg-blue-100 rounded-full mix-blend-multiply blur-3xl opacity-20"></div>
         <div className="absolute -bottom-24 -left-24 w-48 sm:w-96 h-48 sm:h-96 bg-purple-100 rounded-full mix-blend-multiply blur-3xl opacity-20"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative">
-          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-3 sm:mb-6">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className={`inline-flex items-center text-xs font-semibold px-3 py-1 rounded-full mb-4 ${
+              theme === "dark" ? "bg-blue-900/30 text-blue-300" : "bg-blue-600 text-white"
+            } animate-pop`}>
+              Transforming Tech Education & Careers
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
               Our Vision & Impact
             </h2>
-            <p className="text-sm sm:text-base lg:text-lg text-gray-600">
-              Shaping the future of technical education and career development
+            <p className={`text-sm sm:text-base lg:text-lg ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
+              Building a complete ecosystem where students, professionals, and businesses thrive together
             </p>
           </div>
+          
+          {/* Feature Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                title: "Student Success",
+                icon: "🎓",
+                stats: "500+",
+                description: "Projects Delivered",
+                features: ["Ready-made Projects", "Viva Support", "Documentation"],
+                gradient: "from-blue-600 to-indigo-600"
+              },
+              {
+                title: "Career Growth",
+                icon: "💼",
+                stats: "85%",
+                description: "Interview Success Rate",
+                features: ["DSA Practice", "Company Guides", "Mock Tests"],
+                gradient: "from-purple-600 to-pink-600"
+              },
+              {
+                title: "Business Impact",
+                icon: "🚀",
+                stats: "100+",
+                description: "Business Solutions",
+                features: ["Custom Development", "Digital Transform", "24/7 Support"],
+                gradient: "from-green-600 to-teal-600"
+              }
+            ].map((pillar, idx) => (
+              <div
+                key={idx}
+                className={`relative group rounded-xl overflow-hidden border ${
+                  theme === "dark" ? "bg-gray-900/50 border-gray-800" : "bg-white/50 border-gray-200"
+                } backdrop-blur-sm animate-rise`}
+                style={{ animationDelay: `${idx * 150}ms` }}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${pillar.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+                <div className="relative p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-2xl">{pillar.icon}</span>
+                    <h3 className="text-lg font-semibold">{pillar.title}</h3>
+                  </div>
+                  
+                  <div className="flex items-baseline gap-2 mb-4">
+                    <span className={`text-3xl font-bold bg-gradient-to-r ${pillar.gradient} bg-clip-text text-transparent`}>
+                      {pillar.stats}
+                    </span>
+                    <span className={`text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
+                      {pillar.description}
+                    </span>
+                  </div>
+
+                  <ul className="space-y-2">
+                    {pillar.features.map((feature, fidx) => (
+                      <li key={fidx} className="flex items-center gap-2 text-sm">
+                        <svg className="w-4 h-4 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className={theme === "dark" ? "text-gray-300" : "text-gray-600"}>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Achievement Badges */}
+          <div className="flex flex-wrap justify-center gap-4 m-6">
+            {[
+              { label: "Trusted Platform", icon: "⭐", color: "blue" },
+              { label: "Expert Support", icon: "👨‍💻", color: "purple" },
+              { label: "Quick Delivery", icon: "🚀", color: "green" },
+              { label: "Quality Assured", icon: "✅", color: "indigo" }
+            ].map((badge, idx) => (
+              <div
+                key={idx}
+                className={`flex items-center gap-2 px-4 py-2 rounded-full border backdrop-blur-sm animate-rise ${
+                  theme === "dark" 
+                    ? "bg-gray-900/30 border-gray-800" 
+                    : "bg-white/30 border-gray-200"
+                }`}
+                style={{ animationDelay: `${idx * 100}ms` }}
+              >
+                <span className="text-lg">{badge.icon}</span>
+                <span className={`text-sm font-medium ${
+                  theme === "dark" ? "text-gray-300" : "text-gray-700"
+                }`}>
+                  {badge.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto">
-            {reviews.map((item) => (
+            {reviews && reviews.map((item) => (
               <div key={item.id} className="group h-[360px] sm:h-[420px] lg:h-[480px] [perspective:1000px]">
                 <div className="relative h-full w-full transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                   {/* Front of Card */}
                   <div className="absolute inset-0 bg-white rounded-xl sm:rounded-2xl shadow-md sm:shadow-lg [backface-visibility:hidden] flex flex-col">
-                    <div className={`h-16 sm:h-20 lg:h-24 ${item.iconBg} rounded-t-xl sm:rounded-t-2xl flex items-center justify-center flex-shrink-0`}>
+                    <div className={`h-16 sm:h-20 lg:h-24 ${item.iconBg || ''} rounded-t-xl sm:rounded-t-2xl flex items-center justify-center flex-shrink-0`}>
                       <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-white rounded-full flex items-center justify-center shadow-lg">
                         <img
                           src={item.icon}
@@ -386,7 +581,7 @@ const Home = () => {
                   </div>
 
                   {/* Back of Card */}
-                  <div className={`absolute inset-0 ${item.iconBg} text-white rounded-xl sm:rounded-2xl p-4 sm:p-5 lg:p-6 [transform:rotateY(180deg)] [backface-visibility:hidden] flex flex-col`}>
+                  <div className={`absolute inset-0 ${item.iconBg || ''} text-white rounded-xl sm:rounded-2xl p-4 sm:p-5 lg:p-6 [transform:rotateY(180deg)] [backface-visibility:hidden] flex flex-col`}>
                     <div className="mb-3 sm:mb-4 flex-shrink-0">
                       <h4 className="text-base sm:text-lg font-bold mb-2">{item.highlight}</h4>
                       <div className="h-0.5 w-12 bg-white/30 rounded"></div>
@@ -399,7 +594,7 @@ const Home = () => {
                     <div className="pt-3 sm:pt-4 mt-auto">
                       <h5 className="font-semibold mb-2 sm:mb-3 text-sm sm:text-base">Key Metrics</h5>
                       <div className="grid grid-cols-2 gap-2">
-                        {Object.entries(item.metrics).map(([key, value]) => (
+                        {item.metrics && Object.entries(item.metrics).map(([key, value]) => (
                           <div key={key} className="bg-white/10 rounded-lg p-2 sm:p-2.5">
                             <div className="text-xs sm:text-sm font-bold text-white mb-0.5">{value}</div>
                             <div className="text-[8px] sm:text-[10px] text-white/80 capitalize">
@@ -459,50 +654,86 @@ const Home = () => {
         </div>
       </div>
 
+     
       {/* CTA Section */}
-      <div
-        className={`py-8 sm:py-12 lg:py-16 ${
-          theme === "dark"
-            ? "bg-gradient-to-b from-gray-900 to-gray-800"
-            : "bg-gradient-to-b from-white to-blue-50"
-        }`}
-      >
+      <div className={`py-12 sm:py-16 lg:py-20 relative ${
+        theme === "dark"
+          ? "bg-gray-800"
+          : "bg-gradient-to-b from-white to-blue-50"
+      }`}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div
-            className={`max-w-4xl mx-auto bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl sm:rounded-2xl shadow-xl overflow-hidden`}
-          >
-            <div className="p-6 sm:p-8 lg:p-12 text-center">
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 lg:mb-6 text-gray-100">
-                Have a Unique Project Idea? 🚀
-              </h3>
-              <p className="text-sm sm:text-base lg:text-lg mb-4 sm:mb-6 lg:mb-8 max-w-2xl mx-auto text-gray-200">
-                Whether it's a college submission, startup MVP, or personal
-                project, our team can bring your vision to life.
-              </p>
-              <Link
-                to="/contact"
-                className="inline-flex items-center px-6 sm:px-8 py-2.5 sm:py-3 lg:py-4 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 transition-all duration-200 text-sm sm:text-base lg:text-lg font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-              >
-                Start Your Project
-                <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 ml-1.5 sm:ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
-              </Link>
+          <div className={`relative max-w-4xl mx-auto rounded-2xl shadow-xl overflow-hidden`}>
+            {/* Background gradient with overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600"></div>
+            <div className="absolute inset-0 bg-grid-white/[0.2] bg-[length:16px_16px]"></div>
+            
+            <div className="relative p-6 sm:p-8 lg:p-12">
+              <div className="text-center">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/20 text-white mb-6 animate-pop">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  <span className="text-xs font-semibold">Let's Build Something Amazing</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 text-white">
+                  Ready to Start Your Tech Journey? 🚀
+                </h3>
+                <p className="text-sm sm:text-base lg:text-lg mb-8 max-w-2xl mx-auto text-gray-100">
+                  From college projects to enterprise solutions, we're here to help you succeed.
+                  Join thousands of satisfied clients who've transformed their ideas into reality.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-base
+                      bg-white text-blue-600 hover:bg-blue-50 transition-all duration-200 transform hover:-translate-y-0.5 hover:shadow-lg"
+                  >
+                    Start Your Project
+                    <svg className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" 
+                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </Link>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSf5EGUr-B_J0AlhU8cggOuhM6KX7R6CeWvD09q93FpNlvZStw/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-base
+                      border-2 border-white/50 text-white hover:bg-white/10 transition-all duration-200 transform hover:-translate-y-0.5 hover:shadow-lg"
+                  >
+                    Get Custom Quote
+                    <svg className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" 
+                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      
+      {/* Lightweight CSS animations */}
+      <style>{`
+        @keyframes fade-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fade-in .5s ease both; }
+
+        @keyframes rise { 0% { opacity:0; transform: translateY(10px); } 100% { opacity:1; transform: translateY(0); } }
+        .animate-rise { animation: rise .5s ease both; }
+
+        @keyframes pop { 0% { transform: scale(.96); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+        .animate-pop { animation: pop .35s ease both; }
+
+        @keyframes growLine { 0% { height: 0; } 100% { height: 100%; } }
+        .animate-grow { animation: growLine 1s ease-out both; }
+
+        .bg-grid-white {
+          background-image: linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
+                          linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px);
+        }
+      `}</style>
+    </>
   );
 };
 
