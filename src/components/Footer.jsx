@@ -55,6 +55,31 @@ const Footer = () => {
 
           </div>
 
+          {/* Services */}
+          <div>
+            <h4 className={`${isDark ? 'text-white' : 'text-gray-900'} text-sm sm:text-base font-semibold mb-3 sm:mb-4`}>
+              Services
+            </h4>
+            <ul className="space-y-2">
+              {[
+                { label: 'College Projects', href: '/college-projects' },
+                { label: 'DSA Sheets', href: '/dsa-sheets' },
+                { label: 'Placement Prep', href: '/mnc-questions' },
+                { label: 'Mentorship', href: '/mentorship' },
+                { label: 'Corporate Services', href: '/b2b-pages' },
+              ].map((link, idx) => (
+                <li key={idx}>
+                  <a
+                    href={link.href}
+                    className={`${isDark ? 'text-gray-300 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'} transition-colors text-sm sm:text-base`}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Quick Links */}
           <div>
             <h4 className={`${isDark ? 'text-white' : 'text-gray-900'} text-sm sm:text-base font-semibold mb-3 sm:mb-4`}>
@@ -63,7 +88,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {[
                 { label: 'About Us', href: '/about' },
-                { label: 'Projects', href: '/projects' },
+                { label: 'All Projects', href: '/projects' },
                 { label: 'Contact', href: '/contact' },
               ].map((link, idx) => (
                 <li key={idx}>

@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import MNCQuestions from './pages/MNCPrep';
 import B2BPages from './pages/B2BServices';
 import CollegeProjects from './pages/CollegeProjects';
+import Mentorship from './pages/Mentorship';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/mnc-questions" element={<MNCQuestions />} />
             <Route path="/b2b-pages" element={<B2BPages />} />
             <Route path="/college-projects" element={<CollegeProjects />} />
+            <Route path="/mentorship" element={<Mentorship />} />
           </Routes>
         </main>
         <Footer />

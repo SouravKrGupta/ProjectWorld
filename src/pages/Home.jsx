@@ -44,6 +44,19 @@ const services = [
     ],
     badge: "Business Growth",
   },
+  {
+    title: "Expert Mentorship Program",
+    description: "Learn from industry professionals at Microsoft, Google, Amazon and more",
+    icon: "👨‍🏫",
+    link: "/mentorship",
+    gradient: "from-orange-600 to-red-600",
+    highlights: [
+      "Real Industry Experience",
+      "Upskilling Guidance",
+      "Placement Support",
+    ],
+    badge: "Career Accelerator",
+  },
 ];
 
 const Home = () => {
@@ -194,7 +207,7 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
               {services.map((service, i) => (
                 <Link
                   key={service.title}

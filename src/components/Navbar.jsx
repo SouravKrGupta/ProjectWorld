@@ -17,12 +17,21 @@ const Logo = () => (
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [servicesDropdown, setServicesDropdown] = useState(false);
 
   // Get theme and toggleTheme from context
   const { theme, toggleTheme } = useContext(ThemeContext);
 
-  const navLinks = ['/', '/about','/college-projects', '/dsa-sheets', '/mnc-questions', '/b2b-pages','/contact' ];
-  const labels = ['Home', 'About', 'College Projects',  'DSA Sheets', 'Placement Prep', 'Corporate Services', 'Contact'];
+  const navLinks = ['/', '/about', '/contact'];
+  const labels = ['Home', 'About', 'Contact'];
+
+  const services = [
+    { path: '/college-projects', label: 'College Projects' },
+    { path: '/dsa-sheets', label: 'DSA Sheets' },
+    { path: '/mnc-questions', label: 'Placement Prep' },
+    { path: '/mentorship', label: 'Mentorship' },
+    { path: '/b2b-pages', label: 'Corporate Services' },
+  ];
 
   return (
     <nav
@@ -55,6 +64,53 @@ const Navbar = () => {
                 {labels[index]}
               </NavLink>
             ))}
+
+            {/* Services Dropdown */}
+            <div className="relative">
+              <button
+                onMouseEnter={() => setServicesDropdown(true)}
+                onMouseLeave={() => setServicesDropdown(false)}
+                className={`flex items-center ${theme === 'dark' ? 'text-gray-300 hover:text-blue-400' : 'text-gray-900 hover:text-blue-600'} transition-colors duration-200 text-sm lg:text-base`}
+              >
+                Services
+                <svg
+                  className={`w-4 h-4 ml-1 transition-transform duration-200 ${servicesDropdown ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {/* Dropdown Menu */}
+              <div
+                className={`absolute top-full left-0 mt-2 w-56 rounded-lg shadow-lg border transition-all duration-200 ${
+                  theme === 'dark'
+                    ? 'bg-gray-800 border-gray-700'
+                    : 'bg-white border-gray-200'
+                } ${servicesDropdown ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
+                onMouseEnter={() => setServicesDropdown(true)}
+                onMouseLeave={() => setServicesDropdown(false)}
+              >
+                <div className="py-2">
+                  {services.map((service) => (
+                    <NavLink
+                      key={service.path}
+                      to={service.path}
+                      className={({ isActive }) =>
+                        isActive
+                          ? `block px-4 py-2 text-sm font-semibold border-l-4 border-blue-600 ${theme === 'dark' ? 'text-blue-300 bg-gray-700' : 'text-blue-700 bg-blue-50'}`
+                          : `block px-4 py-2 text-sm transition-colors ${theme === 'dark' ? 'text-gray-300 hover:text-blue-400 hover:bg-gray-700' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'}`
+                      }
+                      onClick={() => setServicesDropdown(false)}
+                    >
+                      {service.label}
+                    </NavLink>
+                  ))}
+                </div>
+              </div>
+            </div>
 
             {/* Theme toggle */}
             <button
@@ -155,6 +211,28 @@ const Navbar = () => {
                 {labels[index]}
               </NavLink>
             ))}
+
+            {/* Mobile Services Section */}
+            <div className="pt-2 border-t border-gray-200 dark:border-gray-700 mt-2">
+              <div className={`px-3 sm:px-4 py-2 text-sm font-semibold ${theme === 'dark' ? 'text-gray-100' : 'text-gray-900'}`}>
+                Services
+              </div>
+              {services.map((service) => (
+                <NavLink
+                  key={service.path}
+                  to={service.path}
+                  onClick={() => setIsOpen(false)}
+                  className={({ isActive }) => {
+                    if (isActive) {
+                      return `font-semibold px-6 sm:px-8 py-2 rounded-lg text-sm ${theme === 'dark' ? 'text-blue-300 bg-gray-800' : 'text-blue-700 bg-blue-100'} `;
+                    }
+                    return `${theme === 'dark' ? 'text-gray-300' : 'text-gray-900'} hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-100 dark:hover:bg-gray-800 px-6 sm:px-8 py-2 rounded-lg transition-colors duration-200 text-sm`;
+                  }}
+                >
+                  {service.label}
+                </NavLink>
+              ))}
+            </div>
           </div>
         </div>
       </div>
