@@ -18,6 +18,7 @@ const Logo = () => (
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [servicesDropdown, setServicesDropdown] = useState(false);
+  const [mobileServicesDropdown, setMobileServicesDropdown] = useState(false);
 
   // Get theme and toggleTheme from context
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -174,7 +175,10 @@ const Navbar = () => {
             </button>
             {/* Mobile menu toggle */}
             <button
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => {
+                setIsOpen(!isOpen);
+                if (isOpen) setMobileServicesDropdown(false);
+              }}
               className={`relative w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center focus:outline-none border-2 ${isOpen ? (theme === 'dark' ? 'border-blue-400' : 'border-blue-600') : 'border-transparent'} transition-all duration-300 bg-purple-600 dark:bg-gray-800 rounded-lg shadow-md`}
               aria-label="Toggle navigation menu"
             >
@@ -214,24 +218,40 @@ const Navbar = () => {
 
             {/* Mobile Services Section */}
             <div className="pt-2 border-t border-gray-200 dark:border-gray-700 mt-2">
-              <div className={`px-3 sm:px-4 py-2 text-sm font-semibold ${theme === 'dark' ? 'text-gray-100' : 'text-gray-900'}`}>
+              <button
+                onClick={() => setMobileServicesDropdown(!mobileServicesDropdown)}
+                className={`flex items-center w-full px-3 sm:px-4 py-2 text-sm font-semibold ${theme === 'dark' ? 'text-gray-100' : 'text-gray-900'} hover:bg-blue-100 dark:hover:bg-gray-800 rounded-lg transition-colors duration-200`}
+              >
                 Services
-              </div>
-              {services.map((service) => (
-                <NavLink
-                  key={service.path}
-                  to={service.path}
-                  onClick={() => setIsOpen(false)}
-                  className={({ isActive }) => {
-                    if (isActive) {
-                      return `font-semibold px-6 sm:px-8 py-2 rounded-lg text-sm ${theme === 'dark' ? 'text-blue-300 bg-gray-800' : 'text-blue-700 bg-blue-100'} `;
-                    }
-                    return `${theme === 'dark' ? 'text-gray-300' : 'text-gray-900'} hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-100 dark:hover:bg-gray-800 px-6 sm:px-8 py-2 rounded-lg transition-colors duration-200 text-sm`;
-                  }}
+                <svg
+                  className={`w-4 h-4 ml-auto transition-transform duration-200 ${mobileServicesDropdown ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  {service.label}
-                </NavLink>
-              ))}
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className={`${mobileServicesDropdown ? 'flex flex-col' : 'hidden'} mt-1`}>
+                {services.map((service) => (
+                  <NavLink
+                    key={service.path}
+                    to={service.path}
+                    onClick={() => {
+                      setIsOpen(false);
+                      setMobileServicesDropdown(false);
+                    }}
+                    className={({ isActive }) => {
+                      if (isActive) {
+                        return `font-semibold px-6 sm:px-8 py-2 rounded-lg text-sm ${theme === 'dark' ? 'text-blue-300 bg-gray-800' : 'text-blue-700 bg-blue-100'} `;
+                      }
+                      return `${theme === 'dark' ? 'text-gray-300' : 'text-gray-900'} hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-100 dark:hover:bg-gray-800 px-6 sm:px-8 py-2 rounded-lg transition-colors duration-200 text-sm`;
+                    }}
+                  >
+                    {service.label}
+                  </NavLink>
+                ))}
+              </div>
             </div>
           </div>
         </div>

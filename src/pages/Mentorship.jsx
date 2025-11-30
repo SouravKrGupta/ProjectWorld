@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../context/ThemeContext";
-
+import abhi from '../assets/abhi.jpeg';
 const Mentorship = () => {
   const { theme } = useContext(ThemeContext);
 
@@ -53,10 +53,11 @@ const Mentorship = () => {
       about: "With a robust foundation in Computer Science from IIT Ropar, my journey has led me to Microsoft, where I apply my expertise in C++, Python, and Machine Learning to create innovative software solutions. At the heart of my work is a commitment to continuous improvement, favoring progress over perfection. As part of a dynamic team at Microsoft, we've fostered a culture of problem-solving, leveraging my skills in database and software development, as well as my proficiency in web technologies like React and backend frameworks such as Django and FastAPI/Flask. Always keen on growth, I embrace new challenges and opportunities with an open mind.",
       expertise: ["C++", "Python", "Machine Learning", "Database Development", "Software Development", "React", "Django", "FastAPI", "Flask"],
       services: ["Application Development", "Cloud Application Development", "Database Development", "Web Development", "Custom Software Development", "Cloud Management", "Mobile Application Development", "Software Testing"],
-      image: "https://media.licdn.com/dms/image/v2/D5603AQF8HPMuptpovw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1685558389338?e=1762387200&v=beta&t=t8MRfjg7sEfQuXQb5HLI1zQC16DgxWFOG9VK1Ek7GNM",
+      image: abhi,
       linkedin: "https://linkedin.com/in/abhishek-kumar-gupta",
       connections: "500+ connections",
     },
+     
   
   ];
 
