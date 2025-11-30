@@ -670,7 +670,7 @@ const Home = () => {
                 {
                   title: "Student Success",
                   icon: "🎓",
-                  stats: "500+",
+                  stats: "5+",
                   description: "Projects Delivered",
                   features: [
                     "Ready-made Projects",
