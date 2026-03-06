@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ProjectPopup from './ProjectPopup';
+
 const FeaturedCarousel = () => {
   const [projects, setProjects] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPopupOpen, setIsPopupOpen] = useState(() => {
+    const hasClosedPopup = localStorage.getItem('hasClosedPopup');
+    return !hasClosedPopup;
+  });
+  const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
     fetch('/projects.json')
@@ -11,6 +18,14 @@ const FeaturedCarousel = () => {
         // Get featured or latest projects
         const featuredProjects = data.slice(0, 5);
         setProjects(featuredProjects);
+        
+        // Find all projects with showPopup: true
+        const popupProjects = data.filter(project => project.showPopup);
+        if (popupProjects.length > 0) {
+          // Randomly select one project to show
+          const randomProject = popupProjects[Math.floor(Math.random() * popupProjects.length)];
+          setSelectedProject(randomProject);
+        }
       });
   }, []);
 
@@ -31,7 +46,8 @@ const FeaturedCarousel = () => {
   };
 
   return (
-    <div className="relative rounded-2xl overflow-hidden bg-white">
+    <>
+      <div className="relative rounded-2xl overflow-hidden bg-white">
       {/* Main Carousel */}
       <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] overflow-hidden">
         {projects.map((project, index) => (
@@ -151,6 +167,18 @@ const FeaturedCarousel = () => {
         ))}
       </div>
     </div>
+
+    {selectedProject && (
+      <ProjectPopup
+        isOpen={isPopupOpen}
+        onClose={() => {
+          setIsPopupOpen(false);
+          setSelectedProject(null);
+        }}
+        project={selectedProject}
+      />
+    )}
+    </>
   );
 };
 

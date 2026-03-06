@@ -271,5 +271,31 @@
     "Database: MongoDB for data storage and management"
   ],
   "createdAt": "2025-10-18T18:59:00Z"
-}
+  
+  },
+  {
+    "id": 16,
+    "name": "cloud-based quantum computing simulator  ",
+    "description": "A cloud-based quantum computing simulator that provides an intuitive interface for designing, simulating, and visualizing quantum circuits. It supports voice commands, ZX-calculus visualization, and real-time quantum circuit simulation.",
+    "tech": ["React 19", "Tailwind CSS 4", "Vite", "Django 4.2", "Django REST Framework", "MySQL", "Qiskit", "ZX-Calculus"],
+    "category": "Advanced",
+    "price": "₹12000",
+    "discountPrice": "₹9000",
+    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop",
+    "demoUrl": "",
+    "features": [
+      "Intuitive drag-and-drop quantum circuit composer",
+      "Real-time quantum state visualization with Bloch spheres and state vectors",
+      "Voice command recognition for circuit creation",
+      "ZX-calculus graph visualization and simplification",
+      "Quantum circuit simulation using Qiskit",
+      "Circuit to ZX-graph conversion and vice versa",
+      "User authentication and authorization",
+      "Save and share quantum circuits",
+      "Public circuit gallery",
+      "Contact form with backend storage"
+    ],
+    "createdAt": "2026-03-06T19:00:00Z",
+    "showPopup": true
+  }
 ]

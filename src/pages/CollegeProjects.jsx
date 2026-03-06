@@ -1,9 +1,27 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../context/ThemeContext";
+import ProjectPopup from "../components/ProjectPopup";
 
 const CollegeProjects = () => {
   const { theme } = useContext(ThemeContext);
+  const [isPopupOpen, setIsPopupOpen] = useState(() => {
+    const hasClosedPopup = localStorage.getItem('hasClosedPopup');
+    return !hasClosedPopup;
+  });
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  useEffect(() => {
+    fetch('/projects.json')
+      .then(res => res.json())
+      .then(data => {
+        const popupProjects = data.filter(project => project.showPopup);
+        if (popupProjects.length > 0) {
+          const randomProject = popupProjects[Math.floor(Math.random() * popupProjects.length)];
+          setSelectedProject(randomProject);
+        }
+      });
+  }, []);
   const cn = (...c) => c.filter(Boolean).join(" ");
   const isDark = theme === "dark";
 
@@ -374,6 +392,17 @@ const CollegeProjects = () => {
           transition-duration: 300ms;
         }
       `}</style>
+
+      {selectedProject && (
+        <ProjectPopup
+          isOpen={isPopupOpen}
+          onClose={() => {
+            setIsPopupOpen(false);
+            setSelectedProject(null);
+          }}
+          project={selectedProject}
+        />
+      )}
     </div>
   );
 };
