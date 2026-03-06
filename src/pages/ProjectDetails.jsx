@@ -13,7 +13,7 @@ const ProjectDetails = () => {
     fetch("/projects.json")
       .then((res) => res.json())
       .then((data) => {
-        const found = data.find((p) => p.id === Number(id));
+        const found = data.find((p) => p.id === (id));
         setProject(found);
         setData(data);
         setLoading(false);

@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "7bWGHT6r6Mk",
     "name": "Appointment System",
     "description": "A MERN stack application for scheduling medical appointments with intuitive dashboards for both doctors and patients.",
     "tech": ["MERN", "Ant Design"],
@@ -19,7 +19,7 @@
     "showPopup": true
   },
   {
-    "id": 2,
+    "id": "aPqR9xK2nZw",
     "name": "3D Portfolio",
     "description": "A modern 3D portfolio built with React.js and Three.js to showcase developer skills with immersive animations.",
     "tech": ["React", "Three.js", "Tailwind CSS"],
@@ -38,7 +38,7 @@
     "showPopup": true
   },
   {
-    "id": 3,
+    "id": "9mJ5LtY8vBq",
     "name": "Event Management System",
     "description": "A full-stack platform for organizing events with user registrations, admin controls, and attendee tracking.",
     "tech": ["React", "Node.js", "Express", "MySQL"],
@@ -57,7 +57,7 @@
     "showPopup": true
   },
   {
-    "id": 4,
+    "id": "3xN6pW4sHjk",
     "name": "Food Application",
     "description": "A MERN stack-based food delivery platform to browse restaurants, menus, and manage online orders.",
     "tech": ["MERN"],
@@ -75,7 +75,7 @@
     "createdAt": "2024-06-01T10:00:00Z"
   },
   {
-    "id": 5,
+    "id": "8cF2vD7rMgL",
     "name": "Fitness Application",
     "description": "A fitness tracking app with workout logging, diet management, and visual progress tracking.",
     "tech": ["React", "Node.js", "Express", "MongoDB", "Material UI", "RapidAPI", "Formspree"],
@@ -93,7 +93,7 @@
     "createdAt": "2024-06-01T10:00:00Z"
   },
   {
-    "id": 6,
+    "id": "1iO3eA5uTyP",
     "name": "Chat Application",
     "description": "A real-time chat app featuring group chats, private messages, and live communication using Socket.io.",
     "tech": ["React", "Node.js", "Express", "MongoDB", "Material UI", "Socket.io"],
@@ -111,7 +111,7 @@
     "createdAt": "2024-06-01T10:00:00Z"
   },
   {
-    "id": 7,
+    "id": "4kS6wJ9nQmR",
     "name": "MERN Blog App",
     "description": "A blogging platform with rich Markdown support, comments, and responsive UI for readers and authors.",
     "tech": ["MERN", "Material UI"],
@@ -129,7 +129,7 @@
     "createdAt": "2024-06-01T10:00:00Z"
   },
   {
-    "id": 8,
+    "id": "2hB8zX1cV5F",
     "name": "ChatGPT Clone",
     "description": "An AI chatbot application mimicking ChatGPT, built with full-stack technologies and styled UI.",
     "tech": ["React", "Node.js", "Express", "MongoDB", "Material UI"],
@@ -147,7 +147,7 @@
     "createdAt": "2024-06-01T10:00:00Z"
   },
   {
-    "id": 9,
+    "id": "6gL4tY7jKpN",
     "name": "Notes App",
     "description": "A fast and user-friendly note-taking app with full CRUD functionality and responsive interface.",
     "tech": ["MERN"],
@@ -165,7 +165,7 @@
     "createdAt": "2024-06-01T10:00:00Z"
   },
   {
-    "id": 10,
+    "id": "5dW2mE9rSoH",
     "name": "Ecommerce App 2023",
     "description": "A full-featured MERN e-commerce app with cart, checkout, and admin management features.",
     "tech": ["MERN"],
@@ -183,7 +183,7 @@
     "createdAt": "2024-06-01T10:00:00Z"
   },
   {
-    "id": 11,
+    "id": "aQx3nP8bYkM",
     "name": "Tic Tac Toe",
     "description": "A classic two-player Tic Tac Toe game built in C with a simple console UI and replay option.",
     "tech": ["C"],
@@ -201,7 +201,7 @@
     "createdAt": "2024-06-01T10:00:00Z"
   },
   {
-    "id": 12,
+    "id": "fT6vJ2sL7Wq",
     "name": "Think-Bots (Quiz App)",
     "description": "A fun and interactive quiz application built with vanilla HTML, CSS, and JavaScript for two players.",
     "tech": ["HTML", "CSS", "JavaScript"],
@@ -219,7 +219,7 @@
     "createdAt": "2024-06-01T10:00:00Z"
   },
    {
-    "id": 13,
+    "id": "uR9hG1cK4zX",
     "name": "fasco-React-tailwindcss (eCommerce Website)",
     "description": "A modern and responsive eCommerce platform built using React and TailwindCSS, designed for showcasing and purchasing products online.",
     "tech": ["React", "TailwindCSS", "JavaScript"],
@@ -237,7 +237,7 @@
     "createdAt": "2024-06-01T12:00:00Z"
   },
   {
-  "id": 14,
+  "id": "pD5mV8nE2Jw",
   "name": "Book World – AI PDF Reader & Audio Platform",
   "description": "An AI-powered web platform that enables users to upload, read, and listen to books using integrated PDF viewing and Google Text-to-Speech audio generation.",
   "tech": ["React.js", "Tailwind CSS", "Django", "Django REST Framework", "MySQL", "gTTS", "PyMuPDF"],
@@ -257,7 +257,7 @@
   "createdAt": "2025-07-20T12:00:00Z"
 },
 {
-  "id": 15,
+  "id": "jY3bT6fL9sX",
   "name": "College Management System",
   "description": "A comprehensive MERN stack-based College Management System that helps manage academic activities, student information, faculty details, and administrative tasks. This system streamlines the management of educational institutions by providing a centralized platform for administrators, faculty, and students.",
   "tech": ["MERN", "Node.js", "React", "MongoDB", "JWT"],
@@ -277,8 +277,8 @@
   
   },
   {
-    "id": 16,
-    "name": "cloud-based quantum computing simulator  ",
+    "id": "eG7wK1rQ4mZ",
+    "name": "Cloud-Based Quantum Computing Simulator",
     "description": "A cloud-based quantum computing simulator that provides an intuitive interface for designing, simulating, and visualizing quantum circuits. It supports voice commands, ZX-calculus visualization, and real-time quantum circuit simulation.",
     "tech": ["React 19", "Tailwind CSS 4", "Vite", "Django 4.2", "Django REST Framework", "MySQL", "Qiskit", "ZX-Calculus"],
     "category": "Advanced",
