@@ -9,7 +9,7 @@ const FeaturedCarousel = () => {
     const hasClosedPopup = localStorage.getItem('hasClosedPopup');
     return !hasClosedPopup;
   });
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [popupProjects, setPopupProjects] = useState([]);
 
   useEffect(() => {
     fetch('/projects.json')
@@ -22,9 +22,7 @@ const FeaturedCarousel = () => {
         // Find all projects with showPopup: true
         const popupProjects = data.filter(project => project.showPopup);
         if (popupProjects.length > 0) {
-          // Randomly select one project to show
-          const randomProject = popupProjects[Math.floor(Math.random() * popupProjects.length)];
-          setSelectedProject(randomProject);
+          setPopupProjects(popupProjects);
         }
       });
   }, []);
@@ -168,14 +166,14 @@ const FeaturedCarousel = () => {
       </div>
     </div>
 
-    {selectedProject && (
+    {popupProjects.length > 0 && (
       <ProjectPopup
         isOpen={isPopupOpen}
         onClose={() => {
           setIsPopupOpen(false);
-          setSelectedProject(null);
+          setPopupProjects([]);
         }}
-        project={selectedProject}
+        projects={popupProjects}
       />
     )}
     </>

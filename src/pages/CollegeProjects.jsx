@@ -9,7 +9,7 @@ const CollegeProjects = () => {
     const hasClosedPopup = localStorage.getItem('hasClosedPopup');
     return !hasClosedPopup;
   });
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [popupProjects, setPopupProjects] = useState([]);
 
   useEffect(() => {
     fetch('/projects.json')
@@ -17,8 +17,7 @@ const CollegeProjects = () => {
       .then(data => {
         const popupProjects = data.filter(project => project.showPopup);
         if (popupProjects.length > 0) {
-          const randomProject = popupProjects[Math.floor(Math.random() * popupProjects.length)];
-          setSelectedProject(randomProject);
+          setPopupProjects(popupProjects);
         }
       });
   }, []);
@@ -393,14 +392,14 @@ const CollegeProjects = () => {
         }
       `}</style>
 
-      {selectedProject && (
+      {popupProjects.length > 0 && (
         <ProjectPopup
           isOpen={isPopupOpen}
           onClose={() => {
             setIsPopupOpen(false);
-            setSelectedProject(null);
+            setPopupProjects([]);
           }}
-          project={selectedProject}
+          projects={popupProjects}
         />
       )}
     </div>
