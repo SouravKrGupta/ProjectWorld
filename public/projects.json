@@ -19,6 +19,27 @@
     "showPopup": true
   },
   {
+  "id": "QtmS9xP2Lw",
+  "name": "QuantumSim",
+  "description": "A cloud-based quantum computing simulator that allows users to design, simulate, and visualize quantum circuits with real-time analytics and ZX-calculus visualization.",
+  "tech": ["React 19", "Django", "MySQL", "Qiskit", "Tailwind CSS"],
+  "category": "Major",
+  "price": "₹15000",
+  "discountPrice": "₹10000",
+  "image": "https://drive.google.com/file/d/1luH6t1xs5PcRnE-t3NhlCbyKZOYH7lt4/view?usp=sharing",
+  "demoUrl": "",
+  "features": [
+    "Drag and drop quantum circuit composer",
+    "Real-time quantum circuit simulation",
+    "Voice command based circuit creation",
+    "ZX-calculus graph visualization",
+    "User authentication with OTP and Google OAuth",
+    "Save and share quantum circuits"
+  ],
+  "createdAt": "2026-05-08T10:00:00Z",
+  "showPopup": true
+},
+  {
     "id": "aPqR9xK2nZw",
     "name": "3D Portfolio",
     "description": "A modern 3D portfolio built with React.js and Three.js to showcase developer skills with immersive animations.",
