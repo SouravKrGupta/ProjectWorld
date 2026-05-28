@@ -1,23 +1,30 @@
 [
-  {
-    "id": "7bWGHT6r6Mk",
-    "name": "Appointment System",
-    "description": "A MERN stack application for scheduling medical appointments with intuitive dashboards for both doctors and patients.",
-    "tech": ["MERN", "Ant Design"],
-    "category": "Major",
-    "price": "₹3000",
-    "discountPrice": "₹1500",
-    "image": "https://souravkumargupta.netlify.app/static/media/doc.e944a71bcacf3504468e.png",
-    "demoUrl": "",
-    "features": [
-      "Doctor and patient registration",
-      "Appointment booking and management",
-      "Admin dashboard",
-      "Notifications system"
-    ],
-    "createdAt": "2024-06-01T10:00:00Z",
-    "showPopup": true
-  },
+{
+  "id": "7bWGHT6r6Mk",
+  "name": "Appointy - Doctor Appointment System",
+  "description": "A full-stack MERN doctor appointment platform with separate patient, admin, and doctor applications. It supports appointment booking, real-time chat, notifications, doctor management, patient profiles, and admin dashboards.",
+  "tech": ["MERN", "Socket.IO", "Ant Design", "Vite"],
+  "category": "Major",
+  "price": "₹3000",
+  "discountPrice": "₹1500",
+  "image": "https://drive.google.com/file/d/1u9qeYBaz3dqDLE4d-bCgmwDzkykWanO5/view?usp=sharing",
+  "demoUrl": "https://appointy-doctorappointmentsystem.netlify.app/",
+  "features": [
+    "Patient signup and login",
+    "Doctor and admin dashboards",
+    "Appointment booking and cancellation",
+    "Doctor listing by specialty",
+    "Real-time patient-doctor chat",
+    "Real-time notifications system",
+    "Patient profile editing with image upload",
+    "Admin doctor creation and management",
+    "Doctor appointment board and profile editing",
+    "Demo payment integration",
+    "Built-in patient help bot"
+  ],
+  "createdAt": "2024-06-01T10:00:00Z",
+  "showPopup": true
+},
  
   {
     "id": "aPqR9xK2nZw",
