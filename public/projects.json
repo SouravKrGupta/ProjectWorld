@@ -7,7 +7,7 @@
   "category": "Major",
   "price": "₹3000",
   "discountPrice": "₹1500",
-  "image": "https://drive.google.com/file/d/1u9qeYBaz3dqDLE4d-bCgmwDzkykWanO5/view?usp=sharing",
+  "image": "/docs.png",
   "demoUrl": "https://appointy-doctorappointmentsystem.netlify.app/",
   "features": [
     "Patient signup and login",
