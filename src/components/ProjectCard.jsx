@@ -28,17 +28,6 @@ const ProjectCard = ({ project }) => (
           {project.category}
         </span>
       </div>
-      <div className="mb-2 sm:mb-3 text-base sm:text-lg font-semibold text-blue-600">
-          {project.discountPrice ? (
-            <div className="flex items-center gap-2">
-              <span className="line-through text-gray-500">{project.price}</span>
-              <span className="text-green-600">{project.discountPrice}</span>
-            </div>
-          ) : (
-            <span>{project.price}</span>
-          )}
-      </div>
-
       <p className="mb-3 sm:mb-4 text-sm sm:text-base text-gray-600 line-clamp-2">
         {project.description}
       </p>

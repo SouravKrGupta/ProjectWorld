@@ -5,8 +5,6 @@
   "description": "A full-stack MERN doctor appointment platform with separate patient, admin, and doctor applications. It supports appointment booking, real-time chat, notifications, doctor management, patient profiles, and admin dashboards.",
   "tech": ["MERN", "Socket.IO", "Tailwind CSS ", "Vite"],
   "category": "Major",
-  "price": "₹3000",
-  "discountPrice": "₹1500",
   "image": "/docs.png",
   "demoUrl": "https://appointy-doctorappointmentsystem.netlify.app/",
   "features": [
@@ -32,8 +30,6 @@
     "description": "A modern 3D portfolio built with React.js and Three.js to showcase developer skills with immersive animations.",
     "tech": ["React", "Three.js", "Tailwind CSS"],
     "category": "Mini",
-    "price": "₹2000",
-    "discountPrice": "₹1500",
     "image": "https://raw.githubusercontent.com/ladunjexa/reactjs18-3d-portfolio/refs/heads/main/.github/README_ASSETS/3d-portfolio.png",
     "demoUrl": "https://3dportfolioskg.netlify.app/",
     "features": [
@@ -51,8 +47,6 @@
     "description": "A full-stack platform for organizing events with user registrations, admin controls, and attendee tracking.",
     "tech": ["React", "Node.js", "Express", "MySQL"],
     "category": "Advanced",
-    "price": "₹3500",
-    "discountPrice": "₹1500",
     "image": "https://www.alphansotech.com/Frontend/img/eventz_landing/section_one_img.png",
     "demoUrl": "",
     "features": [
@@ -70,8 +64,6 @@
     "description": "A MERN stack-based food delivery platform to browse restaurants, menus, and manage online orders.",
     "tech": ["MERN"],
     "category": "Major",
-    "price": "₹3000",
-    "discountPrice": "₹1500",
     "image": "https://www.synergysuite.com/wp-content/uploads/2023/07/food-safety-management-systems-1024x576.png",
     "demoUrl": "",
     "features": [
@@ -88,8 +80,6 @@
     "description": "A fitness tracking app with workout logging, diet management, and visual progress tracking.",
     "tech": ["React", "Node.js", "Express", "MongoDB", "Material UI", "RapidAPI", "Formspree"],
     "category": "Major",
-    "price": "₹3000",
-    "discountPrice": "₹1500",
     "image": "https://souravkumargupta.netlify.app/static/media/fitness.c908d568b8502ba2cb0c.png",
     "demoUrl": "",
     "features": [
@@ -106,8 +96,6 @@
     "description": "A real-time chat app featuring group chats, private messages, and live communication using Socket.io.",
     "tech": ["React", "Node.js", "Express", "MongoDB", "Material UI", "Socket.io"],
     "category": "Advanced",
-    "price": "₹3500",
-    "discountPrice": "₹1500",
     "image": "https://blog.happyfox.com/wp-content/uploads/2019/05/in-app-chat-blog-cover-image.png",
     "demoUrl": "",
     "features": [
@@ -124,8 +112,6 @@
     "description": "A blogging platform with rich Markdown support, comments, and responsive UI for readers and authors.",
     "tech": ["MERN", "Material UI"],
     "category": "Major",
-    "price": "₹3000",
-    "discountPrice": "₹1500",
     "image": "https://souravkumargupta.netlify.app/static/media/blog.e47e340f233ed18ec4e1.png",
     "demoUrl": "",
     "features": [
@@ -142,8 +128,6 @@
     "description": "An AI chatbot application mimicking ChatGPT, built with full-stack technologies and styled UI.",
     "tech": ["React", "Node.js", "Express", "MongoDB", "Material UI"],
     "category": "Advanced",
-    "price": "₹3500",
-    "discountPrice": "₹1500",
     "image": "https://souravkumargupta.netlify.app/static/media/chat.3503adcffb5077be8b4d.png",
     "demoUrl": "",
     "features": [
@@ -160,8 +144,6 @@
     "description": "A fast and user-friendly note-taking app with full CRUD functionality and responsive interface.",
     "tech": ["MERN"],
     "category": "Mini",
-    "price": "₹2000",
-    "discountPrice": "₹1500",
     "image": "https://souravkumargupta.netlify.app/static/media/noteapp.8e16598c69b8be622e17.png",
     "demoUrl": "",
     "features": [
@@ -178,8 +160,6 @@
     "description": "A full-featured MERN e-commerce app with cart, checkout, and admin management features.",
     "tech": ["MERN"],
     "category": "Major",
-    "price": "₹3000",
-    "discountPrice": "₹1500",
     "image": "https://souravkumargupta.netlify.app/static/media/ecommerce.ed536ee4076c68822ddf.png",
     "demoUrl": "",
     "features": [
@@ -196,8 +176,6 @@
     "description": "A classic two-player Tic Tac Toe game built in C with a simple console UI and replay option.",
     "tech": ["C"],
     "category": "Mini",
-    "price": "₹2000",
-    "discountPrice": "₹1500",
     "image": "https://souravkumargupta.netlify.app/static/media/tic.0261253f923f17de827b.png",
     "demoUrl": "",
     "features": [
@@ -214,8 +192,6 @@
     "description": "A fun and interactive quiz application built with vanilla HTML, CSS, and JavaScript for two players.",
     "tech": ["HTML", "CSS", "JavaScript"],
     "category": "Mini",
-    "price": "₹2000",
-    "discountPrice": "₹1500",
     "image": "https://souravkumargupta.netlify.app/static/media/quiz.bf3d544d8724268310c0.png",
     "demoUrl": "https://thinkbotsquize.netlify.app/",
     "features": [
@@ -232,8 +208,6 @@
     "description": "A modern and responsive eCommerce platform built using React and TailwindCSS, designed for showcasing and purchasing products online.",
     "tech": ["React", "TailwindCSS", "JavaScript"],
     "category": "Major",
-    "price": "₹3000",
-    "discountPrice": "₹1500",
     "image": "https://www.blog.shippypro.com/hs-fs/hubfs/Blog/fashion-ecommerce.jpg?width=1920&height=1080&name=fashion-ecommerce.jpg",
     "demoUrl": "https://fasco-react-tailwindcss.netlify.app/",
     "features": [
@@ -250,8 +224,6 @@
   "description": "An AI-powered web platform that enables users to upload, read, and listen to books using integrated PDF viewing and Google Text-to-Speech audio generation.",
   "tech": ["React.js", "Tailwind CSS", "Django", "Django REST Framework", "MySQL", "gTTS", "PyMuPDF"],
   "category": "Major",
-  "price": "₹3000",
-  "discountPrice": "₹1500",
   "image": "/book.png",
   "demoUrl": "",
   "features": [
@@ -270,8 +242,6 @@
   "description": "A comprehensive MERN stack-based College Management System that helps manage academic activities, student information, faculty details, and administrative tasks. This system streamlines the management of educational institutions by providing a centralized platform for administrators, faculty, and students.",
   "tech": ["MERN", "Node.js", "React", "MongoDB", "JWT"],
   "category": "Advanced",
-  "price": "₹3500",
-  "discountPrice": "₹1500",
   "image": "https://images.projectsgeek.com/2014/11/College-Management-System.jpg",
   "demoUrl": "",
   "features": [
@@ -290,8 +260,6 @@
     "description": "A cloud-based quantum computing simulator that provides an intuitive interface for designing, simulating, and visualizing quantum circuits. It supports voice commands, ZX-calculus visualization, and real-time quantum circuit simulation.",
     "tech": ["React 19", "Tailwind CSS 4", "Vite", "Django 4.2", "Django REST Framework", "MySQL", "Qiskit", "ZX-Calculus"],
     "category": "Advanced",
-    "price": "₹12000",
-    "discountPrice": "₹9000",
     "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop",
     "demoUrl": "",
     "features": [

@@ -5,7 +5,7 @@ Zypject is a modern web application built with React and Vite, offering a curate
 ## Features
 
 - Browse and filter projects by tech stack and category
-- Detailed project pages with features and pricing
+- Detailed project pages with features and tech stack details
 - Responsive, dark-themed UI with custom fonts
 - Contact form for inquiries
 - Easy purchase process via Google Form

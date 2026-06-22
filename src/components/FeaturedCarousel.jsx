@@ -101,17 +101,6 @@ const FeaturedCarousel = () => {
                     {project.description}
                   </p>
 
-                  <div className="mb-2 sm:mb-3 text-base sm:text-lg font-semibold text-blue-600">
-                    {project.discountPrice ? (
-                      <div className="flex items-center gap-2">
-                        <span className="line-through text-gray-500">{project.price}</span>
-                        <span className="text-green-600">{project.discountPrice}</span>
-                      </div>
-                    ) : (
-                      <span>{project.price}</span>
-                    )}
-                  </div>
-
                   <Link
                     to={`/projects/${project.id}`}
                     className="inline-flex items-center px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 rounded-lg text-white bg-gradient-to-r from-blue-400 to-purple-400 hover:from-blue-500 hover:to-purple-500 transition-all duration-200 text-xs sm:text-sm lg:text-lg font-medium group shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
