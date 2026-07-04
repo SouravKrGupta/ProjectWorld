@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../context/ThemeContext";
-import abhi from '../assets/abhi.jpeg';
+import abhi from '../assets/sourav_img.jpeg';
 const Mentorship = () => {
   const { theme } = useContext(ThemeContext);
 
@@ -43,20 +43,52 @@ const Mentorship = () => {
 
   const mentors = [
     {
-      name: "Abhishek Kumar Gupta",
-      company: "Microsoft",
-      role: "Software Engineer 2",
-      experience: "3+ years",
-      location: "Bengaluru, Karnataka, India",
-      education: "BTech in CSE @IIT Ropar",
-      previousCompany: "Ex-Orange Power Ltd",
-      about: "With a robust foundation in Computer Science from IIT Ropar, my journey has led me to Microsoft, where I apply my expertise in C++, Python, and Machine Learning to create innovative software solutions. At the heart of my work is a commitment to continuous improvement, favoring progress over perfection. As part of a dynamic team at Microsoft, we've fostered a culture of problem-solving, leveraging my skills in database and software development, as well as my proficiency in web technologies like React and backend frameworks such as Django and FastAPI/Flask. Always keen on growth, I embrace new challenges and opportunities with an open mind.",
-      expertise: ["C++", "Python", "Machine Learning", "Database Development", "Software Development", "React", "Django", "FastAPI", "Flask"],
-      services: ["Application Development", "Cloud Application Development", "Database Development", "Web Development", "Custom Software Development", "Cloud Management", "Mobile Application Development", "Software Testing"],
-      image: abhi,
-      linkedin: "https://linkedin.com/in/abhishek-kumar-gupta",
-      connections: "500+ connections",
-    },
+  name: "Sourav Kumar Gupta",
+  company: "Special Software (India) Pvt. Ltd.",
+  role: "Software Development Engineer (Full Stack)",
+  experience: "2+ years",
+  location: "Jamshedpur, Jharkhand, India (Open to Remote)",
+  education: "B.Tech in Computer Science & Engineering @RVS College of Engineering and Technology",
+  previousCompany: "Ex-Vignam Labs Pvt. Ltd.",
+  about:
+    "Software Engineer with 2+ years of experience building scalable full-stack and backend applications using Python, Django REST Framework, React.js, and MySQL. Experienced in developing production-grade REST APIs, real-time systems with WebSockets, AI-powered applications using OpenAI and Gemini APIs, and deploying cloud applications on AWS with CI/CD automation. Passionate about writing clean, maintainable code, solving complex engineering problems, and continuously learning modern technologies.",
+  expertise: [
+    "Python",
+    "Django",
+    "Django REST Framework",
+    "React.js",
+    "JavaScript",
+    "TypeScript",
+    "Node.js",
+    "Express.js",
+    "MySQL",
+    "PostgreSQL",
+    "MongoDB",
+    "Redis",
+    "WebSockets",
+    "AWS",
+    "Docker",
+    "GitHub Actions",
+    "OpenAI API",
+    "Gemini API"
+  ],
+  services: [
+    "Full-Stack Web Development",
+    "Backend Development",
+    "REST API Development",
+    "Real-Time Application Development",
+    "AI Application Development",
+    "Cloud Deployment (AWS)",
+    "Database Design & Development",
+    "CI/CD Automation",
+    "Custom Software Development"
+  ],
+  image: abhi,
+  linkedin: "https://www.linkedin.com/in/sourav-kumar-gupta-18b638200/",
+  github: "https://github.com/SouravKrGupta",
+  portfolio: "https://souravkumargupta.netlify.app/",
+  connections: "500+ connections on LinkedIn"
+}
      
   
   ];
